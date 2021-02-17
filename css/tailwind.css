@@ -12,6 +12,12 @@ body {
   font-family: 'TypoGrotesk'
 }
 
+/* Scroll Bar */
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
 input:focus,
 select:focus,
 .form-control:focus,
