@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "vite"
+    "dev": "vite",
+    "build": "postcss css/tailwind.css -o public/css/tailwind.css"
   },
   "keywords": [],
   "author": "",

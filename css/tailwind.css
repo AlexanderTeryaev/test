@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: 'TypoGrotesk';
-  src: url('../public/font/TypoGrotesk.woff') format('woff');
+  src: url('../font/TypoGrotesk.woff') format('woff');
   font-display: swap;
 }
 
