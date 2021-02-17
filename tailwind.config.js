@@ -4,7 +4,9 @@ module.exports = {
   theme: {
     extend: {
       fontSize: {
+        90: '5.625rem',
         50: '3.125rem',
+        32: '2rem',
       },
       height: {},
       width: {},
@@ -23,6 +25,8 @@ module.exports = {
         gray3: '#898A8D',
         gray4: '#4F5154',
         gray5: '#181A1D',
+        gray6: '#254254',
+        gray7: '#A7B4C0',
         lightblue: '#44e0b7',
       }
     },
