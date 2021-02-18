@@ -6,11 +6,11 @@ module.exports = {
       fontSize: {
         90: '5.625rem',
         50: '3.125rem',
-        32: '2rem',
+        32: '2rem'
       },
       height: {
         75: '18.75rem',
-        50: '12.5rem',
+        50: '12.5rem'
       },
       width: {},
       minWidth: {},
@@ -30,7 +30,11 @@ module.exports = {
         gray5: '#181A1D',
         gray6: '#254254',
         gray7: '#A7B4C0',
-        lightblue: '#44e0b7',
+        green: '#34D399',
+        lightgreen: '#44e0b7'
+      },
+      zIndex: {
+        '-1': '-1'
       }
     },
     screens: {
