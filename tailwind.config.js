@@ -9,8 +9,7 @@ module.exports = {
         32: '2rem'
       },
       height: {
-        75: '18.75rem',
-        50: '12.5rem'
+        75: '18.75rem'
       },
       width: {},
       minWidth: {},
