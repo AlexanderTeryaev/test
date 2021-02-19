@@ -6,48 +6,76 @@ select:focus,
 .form-control:focus,
 textarea:focus,
 button:focus {
-  @apply outline-none;
-  @apply shadow-none;
+  @apply outline-none shadow-none;
 }
 
 .btn {
-  @apply rounded-full;
-  @apply px-8;
-  @apply py-2;
-  @apply font-bold;
+  @apply rounded-full px-8 py-2 font-bold;
 }
 .btn-purple {
-  @apply bg-purple2;
-  @apply text-white;
+  @apply bg-purple2 text-white;
 }
 .btn-purple:hover {
   @apply bg-purple1
 }
 
 .btn-green {
-  @apply bg-lightgreen;
-  @apply text-gray2;
+  @apply bg-lightgreen text-gray2;
 }
 .btn-green:hover {
   @apply bg-green
 }
 
 .flex-between {
-  @apply flex;
-  @apply items-center;
-  @apply justify-between;
+  @apply flex items-center justify-between;
 }
 
 .flex-center {
-  @apply flex;
-  @apply items-center;
-  @apply justify-center;
+  @apply flex items-center justify-center;
 }
 
 .flex-col-center {
-  @apply flex;
-  @apply items-center;
-  @apply flex-col;
+  @apply flex items-center flex-col;
+}
+
+.hero-section {
+  background: #fff url(../images/home-banner.svg) no-repeat;
+  @apply bg-bottom bg-cover h-screen;
+}
+
+/* Css classes for range input */
+.range {
+  -webkit-appearance: none;
+  @apply align-middle outline-none border-none p-0 bg-none;
+}
+
+.range::-webkit-slider-runnable-track {
+  @apply bg-purple2 h-0.5;
+}
+
+.range::-ms-track {
+  @apply text-transparent border-none bg-none h-0.5;
+}
+
+.range::-ms-tooltip { 
+  @apply hidden; 
+}
+
+.range:active::-moz-range-thumb {
+  @apply outline-none;
+}
+
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  @apply rounded-full bg-white border-2 border-solid border-purple2 h-4 w-4 -m-2;
+}
+
+.range:active::-webkit-slider-thumb {
+  @apply outline-none;
+}
+
+.range:active::-ms-thumb {
+  @apply border-none;
 }
 
 @tailwind utilities;
