@@ -33,7 +33,8 @@ module.exports = {
         lightgreen: '#44e0b7'
       },
       zIndex: {
-        '-1': '-1'
+        '-1': '-1',
+        '999': '999'
       }
     },
     screens: {
