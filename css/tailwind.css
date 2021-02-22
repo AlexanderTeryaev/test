@@ -10,7 +10,7 @@ button:focus {
 }
 
 .btn {
-  @apply rounded-full px-8 py-2 font-bold;
+  @apply rounded-full px-8 py-3.5 font-bold;
 }
 .btn-purple {
   @apply bg-purple2 text-white;
