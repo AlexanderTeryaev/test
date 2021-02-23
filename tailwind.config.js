@@ -5,7 +5,9 @@ module.exports = {
     extend: {
       fontSize: {
         90: '5.625rem',
+        60: '3.75rem',
         50: '3.125rem',
+        28: '1.75rem',
         32: '2rem'
       },
       height: {
@@ -29,6 +31,7 @@ module.exports = {
         gray5: '#181A1D',
         gray6: '#254254',
         gray7: '#A7B4C0',
+        gray8: '#393B3F',
         green: '#34D399',
         lightgreen: '#44e0b7'
       },
