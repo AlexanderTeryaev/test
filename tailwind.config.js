@@ -16,6 +16,9 @@ module.exports = {
       width: {},
       minWidth: {},
       margin: {},
+      borderRadius: {
+        '24': '1.5rem'
+      },
       body: ['"TypoGrotesk"'],
       display: ['TypoGrotesk'],
       fontFamily: {
@@ -32,6 +35,7 @@ module.exports = {
         gray6: '#254254',
         gray7: '#A7B4C0',
         gray8: '#393B3F',
+        gray9: '#232529',
         green: '#34D399',
         lightgreen: '#44e0b7'
       },
