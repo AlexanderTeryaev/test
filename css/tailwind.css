@@ -78,6 +78,19 @@ button:focus {
   @apply border-none;
 }
 
+/* auto refinance page */
+.auto-refinance-title-section {
+  background: #fff url(../images/vehicle.svg) no-repeat;
+  @apply bg-right max-sm:bg-none;
+}
+
+/* auto lease purchase page */
+.auto-lease-purchase-title-section {
+  background: #fff url(../images/lease.svg) no-repeat;
+  @apply bg-right max-sm:bg-none;
+}
+
+
 @tailwind utilities;
 
 @font-face {
