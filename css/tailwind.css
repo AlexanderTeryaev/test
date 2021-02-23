@@ -90,6 +90,12 @@ button:focus {
   @apply bg-right max-sm:bg-none;
 }
 
+/* motorcycle refinance page */
+.motorcycle-refinance-title-section {
+  background: #fff url(../images/motorcycle.svg) no-repeat;
+  @apply bg-right max-sm:bg-none;
+}
+
 
 @tailwind utilities;
 
