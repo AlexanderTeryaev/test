@@ -24,6 +24,9 @@ module.exports = {
       fontFamily: {
         typoGrotesk: 'TypoGrotesk'
       },
+      borderRadius: {
+        '22': '22px'
+      },
       colors: {
         purple1: '#6948B7',
         purple2: '#5230A2',
