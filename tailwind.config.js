@@ -15,17 +15,18 @@ module.exports = {
       },
       width: {},
       minWidth: {},
+      maxWidth: {
+        '8xl': '120rem'
+      },      
       margin: {},
-      borderRadius: {
-        '24': '1.5rem'
-      },
       body: ['"TypoGrotesk"'],
       display: ['TypoGrotesk'],
       fontFamily: {
         typoGrotesk: 'TypoGrotesk'
       },
       borderRadius: {
-        '22': '22px'
+        '24': '1.5rem',
+        '22': '1.375rem'
       },
       colors: {
         purple1: '#6948B7',
@@ -39,6 +40,7 @@ module.exports = {
         gray7: '#A7B4C0',
         gray8: '#393B3F',
         gray9: '#232529',
+        gray10: '#65676A',
         green: '#34D399',
         lightgreen: '#44e0b7'
       },

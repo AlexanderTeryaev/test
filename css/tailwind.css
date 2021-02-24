@@ -8,6 +8,9 @@ textarea:focus,
 button:focus {
   @apply outline-none shadow-none;
 }
+header {
+  @apply flex justify-center
+}
 
 .btn {
   @apply rounded-full px-8 py-3.5 font-bold;
@@ -89,6 +92,8 @@ button:focus {
 body {
   font-family: 'TypoGrotesk'
 }
+
+
 
 /* Scroll Bar */
 ::-webkit-scrollbar {
