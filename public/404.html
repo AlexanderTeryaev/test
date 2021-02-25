@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Not Found</title>
+    <link href="css/tailwind.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div>
+
+      <!-- Header -->
+      <header>
+        <div class="py-4 px-20 max-sm:px-4 bg-transparent absolute w-full z-999 max-w-8xl">
+          <div class="mb-4 font-bold text-right text-purple1 text-base max-sm:hidden pr-6">
+            (844) 336-3365
+          </div>
+          <div class="flex-between">
+            <img class="cursor-pointer" src="icons/logo.svg" alt="" />
+            <div class="flex-center max-sm:hidden">
+              <button class="text-purple1 text-sm font-bold mx-5">
+                Why Auto Approve
+              </button>
+              <button class="text-purple1 text-sm font-bold mx-5">
+                Products
+              </button>
+              <button class="text-purple1 text-sm font-bold mx-5">
+                Resources
+              </button>
+              <button class="text-purple1 text-sm font-bold mx-5">FAQ</button>
+            </div>
+            <button class="btn-purple btn max-sm:hidden">
+              Get a quote
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Content -->
+      <main class="pt-40 pb-16 max-md:pt-20 h-screen">
+        <div class="flex max-md:flex-col bg-section">
+          <div class="max-md:w-full w-5/12 max-md:px-4 flex flex-col justify-center">
+            <div class="mx-auto max-md:mx-0 py-4">
+              <div class="text-207 max-sm:text-9xl text-lightgreen">404</div>
+              <div class="text-xl max-sm:text-lg mb-4 text-gray9">Looks like you may be lost.</div>
+              <div class="text-xl max-sm:text-lg mb-10 text-gray9">Why don’t you head back home?</div>  
+              <button class="btn-purple btn">
+                Take me home
+              </button>
+            </div>
+          </div> 
+          <div class="max-3xl:hidden max-md:block w-full flex-1 pt-10">
+            <img src="images/bg-404.svg" alt="">   
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
+
+<style>
+.bg-section {
+  background: #fff url(./images/bg-404.svg) no-repeat;
+  background-size: 900px;
+  background-position: calc(100% - 50px) 50%;
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .bg-section {
+    background-position: 125%;
+    background-size: 900px;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) and (min-width: 1025px) and (max-width: 1290px) {
+  .bg-section {
+    background-position: 125%;
+    background-size: 65%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .bg-section {
+    background-size: 68%;
+    background-position: 125%;
+  }
+}
+
+@media (max-width: 768px) {
+  .bg-section {
+    background: none;
+  }
+}  
+</style>
