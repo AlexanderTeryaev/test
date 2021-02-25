@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontSize: {
+        2.25: '0.563rem',
         90: '5.625rem',
         60: '3.75rem',
         50: '3.125rem',
@@ -12,8 +13,10 @@ module.exports = {
         207: '207px'
       },
       height: {
+        50: '3.125rem',
         75: '18.75rem'
       },
+      minWidth: {},
       width: {},
       minWidth: {},
       maxWidth: {
@@ -29,6 +32,9 @@ module.exports = {
         '24': '1.5rem',
         '22': '1.375rem'
       },
+      opacity: {
+        '16': '.16'
+      },
       colors: {
         purple1: '#6948B7',
         purple2: '#5230A2',
@@ -42,6 +48,8 @@ module.exports = {
         gray8: '#393B3F',
         gray9: '#232529',
         gray10: '#65676A',
+        gray11: '#BDBEBF',
+        lightgray1: '#F4F4F4',
         green: '#34D399',
         lightgreen: '#44e0b7'
       },
