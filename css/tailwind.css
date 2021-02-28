@@ -12,6 +12,26 @@ header {
   @apply flex justify-center
 }
 
+.dropdown {
+  @apply relative inline-block;
+}
+
+.dropdown-content {
+  @apply hidden absolute text-gray2 bg-white mt-2 shadow z-10;
+  box-shadow: 10px 5px 80px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown:hover .dropdown-content {
+  @apply block;
+}
+
+.triangle {
+  @apply absolute left-0 -top-2 w-0 h-0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid white;
+}
+
 .btn {
   @apply rounded-full px-8 py-3.5 font-bold;
 }
