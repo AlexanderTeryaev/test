@@ -42,8 +42,8 @@ header {
 }
 
 .hero-section {
-  background: #fff url(../images/home-banner.svg) no-repeat;
-  @apply bg-bottom bg-cover h-screen;
+  background: #fff url(../images/home-banner-without-cloud.svg) no-repeat;
+  @apply bg-bottom bg-contain h-screen;
 }
 
 /* Css classes for range input */
