@@ -17,7 +17,10 @@ header {
 }
 
 .dropdown-content {
-  @apply hidden absolute text-gray2 bg-white mt-2 shadow z-10;
+  @apply hidden absolute text-gray2 bg-white shadow z-10;
+}
+
+.dropdown-sub-content {
   box-shadow: 10px 5px 80px rgba(0, 0, 0, 0.1);
 }
 

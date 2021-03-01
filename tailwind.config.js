@@ -36,6 +36,9 @@ module.exports = {
       opacity: {
         '16': '.16'
       },
+      transitionProperty: {
+        'right': 'right'
+      },
       colors: {
         purple1: '#6948B7',
         purple2: '#5230A2',

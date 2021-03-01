@@ -16,7 +16,7 @@
           <div class="mb-4 font-bold text-right text-purple1 text-base max-lg:hidden pr-6 header-phone-number">
             (844) 336-3365
           </div>
-          <div class="flex-between">
+          <div class="flex-between max-lg:w-full">
             <img class="cursor-pointer" src="icons/logo.svg" alt="" />
             <div class="flex-center max-lg:hidden">
               <button class="text-purple1 text-sm font-bold mx-5">
@@ -26,20 +26,22 @@
                 <button class="text-purple1 text-sm font-bold">
                   Products
                 </button>
-                <div class="dropdown-content px-7 py-5 mt-4">
-                  <div class="triangle"></div>
-                  <a href="#" class="flex min-w-max items-center gap-4 py-4">
-                    <img src="icons/taxi2.svg" alt="" />
-                    <div>Vehicle Refinance</div>
-                  </a>
-                  <a href="#" class="flex min-w-max items-center gap-4 py-2">
-                    <img src="icons/percentage.svg" alt="" />
-                    <div>Lease Purchase</div>
-                  </a>
-                  <a href="#" class="flex min-w-max items-center gap-4 py-4">
-                    <img src="icons/motorcycle.svg" alt="" />
-                    <div>Motorcycle Refinance</div>
-                  </a>
+                <div class="dropdown-content py-5 bg-transparent">
+                  <div class="relative p-4 bg-white dropdown-sub-content">
+                    <div class="triangle"></div>
+                    <a href="#" class="flex min-w-max items-center gap-4 py-4">
+                      <img src="icons/taxi2.svg" alt="" />
+                      <div>Vehicle Refinance</div>
+                    </a>
+                    <a href="#" class="flex min-w-max items-center gap-4 py-2">
+                      <img src="icons/percentage.svg" alt="" />
+                      <div>Lease Purchase</div>
+                    </a>
+                    <a href="#" class="flex min-w-max items-center gap-4 py-4">
+                      <img src="icons/motorcycle.svg" alt="" />
+                      <div>Motorcycle Refinance</div>
+                    </a>
+                  </div>
                 </div>
               </div>
               <button class="text-purple1 text-sm font-bold mx-5">
@@ -50,23 +52,23 @@
             <button class="btn-purple btn max-lg:hidden">
               Get a quote
             </button>
-            <img class="cursor-pointer hidden max-sm:block" src="icons/hamburger.svg" alt="" />
+            <img id="hamburger" onclick="show_sidemenu()" class="cursor-pointer hidden max-lg:block" src="icons/hamburger.svg" alt="" />
           </div>
         </div>
-        <div class="hidden h-full z-9999 w-1 h-1">
-          <div class="h-full w-full fixed top-0 left-0 cursor-pointer overflow-hidden bg-black bg-opacity-50 z-9999"></div>
-          <div class="fixed w-72 h-full right-0 top-0 z-9999 overflow-x-hidden bg-white">
-            <div class="flex flex-col gap-8 px-4 py-2 text-purple2 text-base font-bold">
-              <a href="javascript:void(0)" class="text-right text-4xl mb-2">×</a>
-              <a href="#">Why Auto Approve</a>
-              <a href="#">Products</a>
-              <a href="#">FAQ</a>
-              <div class="flex flex-col-center gap-2">
-                <div>(844) 336-3365</div>
-                <button class="btn-purple w-full btn max-sm:hidden">
-                  Get a quote
-                </button>
-              </div>
+        <div id="side-bg" onclick="hide_sidemenu()" class="hidden h-full w-full fixed top-0 left-0 cursor-pointer overflow-hidden bg-black bg-opacity-50 z-9999"></div>
+        <div id="side-menu" class="fixed w-72 h-full -right-72 top-0 z-9999 overflow-x-hidden bg-white transition-right duration-700">
+          <div class="flex flex-col gap-8 px-4 py-2 text-purple2 text-base font-bold">
+            <div class="text-right text-4xl mb-2">
+              <a class="p-2" onclick="hide_sidemenu()" href="javascript:void(0)">×</a>
+            </div>
+            <a href="#">Why Auto Approve</a>
+            <a href="#">Products</a>
+            <a href="#">FAQ</a>
+            <div class="flex flex-col-center gap-2">
+              <div>(844) 336-3365</div>
+              <button class="btn-purple w-full btn">
+                Get a quote
+              </button>
             </div>
           </div>
         </div>
@@ -95,8 +97,8 @@
             </button>
           </div>    
           <!-- Animation Section -->
-          <div class="cloud-anim max-sm:hidden">
-          </div>
+          <!-- <div class="cloud-anim max-sm:hidden">
+          </div> -->
           <div class="max-3xl:hidden max-sm:block flex-1 pt-10">
             <img src="images/home-banner-mobile.svg" alt="">   
           </div>
@@ -475,6 +477,23 @@
           headerElement.classList.remove('fixed-header');
         }
       }
+    }
+
+    // Side menu
+    function show_sidemenu() {
+      var side_bg = document.getElementById("side-bg");
+      side_bg.style.display = "block";
+      var side_menu = document.getElementById("side-menu");
+      side_menu.style.right = "0";
+      document.getElementsByTagName("body")[0].style.overflow = "hidden";
+    }
+
+    function hide_sidemenu() {
+      var side_bg = document.getElementById("side-bg");
+      side_bg.style.display = "none";
+      var side_menu = document.getElementById("side-menu");
+      side_menu.style.right = "-18rem";
+      document.getElementsByTagName("body")[0].style.overflow = "auto";
     }
 
     // Calculator form
