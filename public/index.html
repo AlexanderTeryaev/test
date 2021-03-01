@@ -50,6 +50,24 @@
             <button class="btn-purple btn max-sm:hidden">
               Get a quote
             </button>
+            <img class="cursor-pointer hidden max-sm:block" src="icons/hamburger.svg" alt="" />
+          </div>
+        </div>
+        <div class="hidden h-full z-9999 w-1 h-1">
+          <div class="h-full w-full fixed top-0 left-0 cursor-pointer overflow-hidden bg-black bg-opacity-50 z-9999"></div>
+          <div class="fixed w-72 h-full right-0 top-0 z-9999 overflow-x-hidden bg-white">
+            <div class="flex flex-col gap-8 px-4 py-2 text-purple2 text-base font-bold">
+              <a href="javascript:void(0)" class="text-right text-4xl mb-2">×</a>
+              <a href="#">Why Auto Approve</a>
+              <a href="#">Products</a>
+              <a href="#">FAQ</a>
+              <div class="flex flex-col-center gap-2">
+                <div>(844) 336-3365</div>
+                <button class="btn-purple w-full btn max-sm:hidden">
+                  Get a quote
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </header>
@@ -118,27 +136,34 @@
             <div class="max-w-md">
               <div class="mb-9">
                 <div class="text-xs text-purple1 font-bold">Lean Amount</div>
-                <div class="flex font-bold text-gray6"><span class="text-base pt-2 max-sm:pt-0">$</span><div class="px-1 text-32 max-sm:text-xl">20,000</div></div>
-                <input type="range" class="w-full range"/>
+                <div class="flex font-bold text-gray6">
+                  <span class="text-base pt-2 max-sm:pt-0">$</span>
+                  <div id="curLoan" class="px-1 text-32 max-sm:text-xl"></div>
+                </div>
+                <input type="range" id="loan_range" min="5000" max="85000" onchange="onChangeLoan(this.value)" class="w-full range"/>
                 <div class="flex-between text-xs text-gray7 font-bold">
-                  <div>$ 0</div>
-                  <div>$ 2 million</div>
+                  <div>$5,000</div>
+                  <div>$85,000</div>
                 </div>
               </div>
               <div class="mb-9">
                 <div class="text-xs text-purple1 font-bold">Lean Term</div>
-                <div class="flex items-end font-bold text-gray6"><div class="text-32 max-sm:text-xl -mb-2 max-sm:mb-0">6</div><span class="text-base px-1">months</span></div>
-                <input type="range" class="w-full range"/>
+                <div class="flex items-end font-bold text-gray6">
+                  <div id="curMonth" class="text-32 max-sm:text-xl -mb-2 max-sm:mb-0"></div>
+                  <span class="text-base px-1">months</span>
+                </div>
+                <input type="range" id="month_range" min="48" max="84" onchange="onChangeMonth(this.value)" class="w-full range"/>
                 <div class="flex-between text-xs text-gray7">
-                  <div>1 month</div>
-                  <div>45 months</div>
+                  <div>48 months</div>
+                  <div>84 months</div>
                 </div>
               </div>
               <div class="flex">
                 <div class="flex-1 mr-14">
                   <div class="text-xs mb-2.5 text-purple1 font-bold">Current Rate (APR)</div>
                   <div class="relative mb-3 w-full flex flex-wrap items-stretch">
-                    <input type="text" class="relative py-2 px-2 pr-10 w-full bg-white rounded shadow outline-none text-base text-gray6 font-bold placeholder-gray-400 focus:outline-none focus:shadow-outline"/>
+                    <input type="text" id="rate1" oninput="current_rate_cal()" onkeypress="return isNumberKey(event)" class="relative py-2 px-2 pr-10 w-full bg-white rounded shadow outline-none text-base text-gray6 font-bold placeholder-gray-400 focus:outline-none focus:shadow-outline"/>
+                    <input type="hidden" id="interest1" />
                     <span class="absolute right-0 z-10 py-2 pr-2 w-8 h-full leading-snug bg-transparent rounded text-base font-normal text-gray7 text-center flex-center">
                       %
                     </span>
@@ -147,7 +172,8 @@
                 <div class="flex-1">
                   <div class="text-xs mb-2.5 text-purple1 font-bold">New Rate (APR)</div>
                   <div class="relative mb-3 w-full flex flex-wrap items-stretch">
-                    <input type="text" class="relative py-2 px-2 pr-10 w-full bg-white rounded shadow outline-none text-base text-gray6 font-bold placeholder-gray-400 focus:outline-none focus:shadow-outline"/>
+                    <input type="text" id="rate2" oninput="new_rate_cal()" onkeypress="return isNumberKey(event)" class="relative py-2 px-2 pr-10 w-full bg-white rounded shadow outline-none text-base text-gray6 font-bold placeholder-gray-400 focus:outline-none focus:shadow-outline"/>
+                    <input type="hidden" id="interest2" />
                     <span class="absolute right-0 z-10 py-2 pr-2 w-8 h-full leading-snug bg-transparent rounded text-base font-normal text-gray7 text-center flex-center">
                       %
                     </span>
@@ -157,7 +183,9 @@
             </div>
             <div class="my-3 max-w-md bg-white pl-10 pt-8 rounded-2xl h-75 max-sm:h-48">
               <div class="text-base mb-3 text-gray5 font-bold">You could save</div>
-              <div class="text-90 max-sm:text-3xl text-purple2 font-bold mb-2">$4,515</div>
+              <div class="text-90 max-sm:text-3xl text-purple2 font-bold mb-2">
+                $<span id="saving"></span>
+              </div>
               <div class="text-purple1 mb-9 font-bold">in interest</div>
               <button class="btn-purple btn">
                 Start saving today
@@ -447,6 +475,71 @@
                 headerElement.classList.remove('fixed-header');
             }
         }
+    }
+
+    // Calculator form
+    calc_init();
+    function calc_init() {
+      document.getElementById('rate1').value = 10;
+      document.getElementById('rate2').value = 0.25;
+      document.getElementById('curLoan').innerHTML = '35,000';
+      document.getElementById('curMonth').innerHTML = 60;
+      current_rate_cal();
+    }
+
+    function onChangeMonth(val) {
+      document.getElementById('curMonth').innerHTML = val;
+      current_rate_cal();
+    }
+
+    function onChangeLoan(val) {
+      var test = formatNum(parseInt(val).toFixed(2));
+      document.getElementById('curLoan').innerHTML = test.substring(0, test.length - 3);
+      current_rate_cal();
+    }
+
+    function isNumberKey(evt) {
+      var charCode = (evt.which) ? evt.which : evt.keyCode;
+      if (charCode != 46 && charCode > 31 
+        && (charCode < 48 || charCode > 57))
+          return false;
+
+      return true;
+    }
+    
+    function PMT(i, n, p) {
+      return (i * p * Math.pow(1 + i, n)) / (1 - Math.pow(1 + i, n));
+    }
+
+    function current_rate_cal() {
+      var rate = document.getElementById('rate1').value;
+      var loan_amount = document.getElementById('loan_range').value;
+      var loan_term = document.getElementById('month_range').value;
+      var payment = PMT(rate / 1200, loan_term, -loan_amount)
+      var interest = payment * loan_term - loan_amount;
+      document.getElementById('interest1').value = interest.toFixed(2);
+      this.new_rate_cal();
+    }
+
+    function new_rate_cal() {
+      var rate = document.getElementById('rate2').value;
+      var loan_amount = document.getElementById('loan_range').value;
+      var loan_term = document.getElementById('month_range').value;
+      var payment = PMT(rate / 1200, loan_term, -loan_amount)
+      var interest = payment * loan_term - loan_amount;
+      document.getElementById('interest2').value = interest.toFixed(2);
+      savings();
+    }
+
+    function savings() {
+      var interest1 = document.getElementById('interest1').value;
+      var interest2 = document.getElementById('interest2').value;
+      var savings = interest1 - interest2;
+      document.getElementById('saving').innerHTML = formatNum(savings.toFixed(2));
+    }
+
+    function formatNum(n) {
+      return n.replace(/\d(?=(\d{3})+\.)/g, '$&,');
     }
 </script>
 <style>
