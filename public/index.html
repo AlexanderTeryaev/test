@@ -141,24 +141,24 @@
           <div class="grid grid-cols-2 max-lg:grid-cols-1 gap-16 max-sm:gap-8 mx-16 max-xl:mx-8 max-sm:mx-4">
             <div class="max-w-md">
               <div class="mb-9">
-                <div class="text-xs text-purple1 font-bold">Lean Amount</div>
+                <div class="text-xs text-purple1 font-bold">Loan Amount</div>
                 <div class="flex font-bold text-gray6">
                   <span class="text-base pt-2 max-sm:pt-0">$</span>
                   <div id="curLoan" class="px-1 text-32 max-sm:text-xl"></div>
                 </div>
-                <input type="range" id="loan_range" min="5000" max="85000" onchange="onChangeLoan(this.value)" class="w-full range"/>
+                <input type="range" id="loan_range" min="5000" max="85000" oninput="onChangeLoan(this.value)" onchange="current_rate_cal()" class="w-full range"/>
                 <div class="flex-between text-xs text-gray7 font-bold">
                   <div>$5,000</div>
                   <div>$85,000</div>
                 </div>
               </div>
               <div class="mb-9">
-                <div class="text-xs text-purple1 font-bold">Lean Term</div>
+                <div class="text-xs text-purple1 font-bold">Loan Term</div>
                 <div class="flex items-end font-bold text-gray6">
                   <div id="curMonth" class="text-32 max-sm:text-xl -mb-2 max-sm:mb-0"></div>
                   <span class="text-base px-1">months</span>
                 </div>
-                <input type="range" id="month_range" min="48" max="84" onchange="onChangeMonth(this.value)" class="w-full range"/>
+                <input type="range" id="month_range" min="48" max="84" oninput="onChangeMonth(this.value)" onchange="current_rate_cal()" class="w-full range"/>
                 <div class="flex-between text-xs text-gray7">
                   <div>48 months</div>
                   <div>84 months</div>
@@ -545,7 +545,7 @@
     calc_init();
     function calc_init() {
       document.getElementById('rate1').value = 10;
-      document.getElementById('rate2').value = 0.25;
+      document.getElementById('rate2').value = 2.25;
       document.getElementById('curLoan').innerHTML = '35,000';
       document.getElementById('curMonth').innerHTML = 60;
       current_rate_cal();
@@ -553,13 +553,11 @@
 
     function onChangeMonth(val) {
       document.getElementById('curMonth').innerHTML = val;
-      current_rate_cal();
     }
 
     function onChangeLoan(val) {
       var test = formatNum(parseInt(val).toFixed(2));
       document.getElementById('curLoan').innerHTML = test.substring(0, test.length - 3);
-      current_rate_cal();
     }
 
     function isNumberKey(evt) {
