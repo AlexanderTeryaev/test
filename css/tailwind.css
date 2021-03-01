@@ -63,6 +63,7 @@ header {
 
 .hero-section {
   background: #fff url(../images/home-banner-without-cloud.svg) no-repeat;
+  /* @apply bg-bottom bg-contain; */
   @apply bg-bottom bg-contain h-screen;
 }
 
