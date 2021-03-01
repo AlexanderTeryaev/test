@@ -12,13 +12,13 @@
 
       <!-- Header -->
       <header>
-        <div id="header" class="py-4 px-20 max-sm:px-4 bg-transparent absolute w-full z-999 max-w-8xl max-sm:flex">
-          <div class="mb-4 font-bold text-right text-purple1 text-base max-sm:hidden pr-6 header-phone-number">
+        <div id="header" class="py-4 px-20 max-sm:px-4 bg-transparent absolute w-full z-999 max-w-8xl max-lg:flex">
+          <div class="mb-4 font-bold text-right text-purple1 text-base max-lg:hidden pr-6 header-phone-number">
             (844) 336-3365
           </div>
           <div class="flex-between">
             <img class="cursor-pointer" src="icons/logo.svg" alt="" />
-            <div class="flex-center max-sm:hidden">
+            <div class="flex-center max-lg:hidden">
               <button class="text-purple1 text-sm font-bold mx-5">
                 Why Auto Approve
               </button>
@@ -47,7 +47,7 @@
               </button>
               <button class="text-purple1 text-sm font-bold mx-5">FAQ</button>
             </div>
-            <button class="btn-purple btn max-sm:hidden">
+            <button class="btn-purple btn max-lg:hidden">
               Get a quote
             </button>
             <img class="cursor-pointer hidden max-sm:block" src="icons/hamburger.svg" alt="" />
@@ -76,7 +76,7 @@
       <main class="relative">
           
         <!-- Better Way -->
-        <div class="pt-28 hero-section max-sm:bg-white max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center max-w-8xl mx-auto">
+        <div class="hero-section max-sm:bg-none pt-28 max-sm:bg-white max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center max-w-8xl mx-auto">
           <div class="flex-center flex-col pt-40 max-sm:pt-0 max-sm:mx-4">
             <div class="font-bold text-xl max-sm:text-base text-purple2 mb-2 text-center">
               A Better Way To Refinance Your Automobile
@@ -459,22 +459,22 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        console.log('document ready');
-        window.addEventListener('scroll', handleScroll);
+      console.log('document ready');
+      window.addEventListener('scroll', handleScroll);
     });
 
     function handleScroll(ev) {
-        let headerElement = document.getElementById("header");
+      let headerElement = document.getElementById("header");
 
-        if (window.scrollY >= 100) {
-            if (!headerElement.classList.contains('fixed-header')) {
-                headerElement.classList.add('fixed-header');
-            }
-        } else {
-            if (headerElement.classList.contains('fixed-header')) {
-                headerElement.classList.remove('fixed-header');
-            }
+      if (window.scrollY >= 100) {
+        if (!headerElement.classList.contains('fixed-header')) {
+          headerElement.classList.add('fixed-header');
         }
+      } else {
+        if (headerElement.classList.contains('fixed-header')) {
+          headerElement.classList.remove('fixed-header');
+        }
+      }
     }
 
     // Calculator form
@@ -544,38 +544,38 @@
 </script>
 <style>
     .fixed-header {
-        background-color: #fff;
-        position: fixed;
-        z-index: 9999;
-        width: 100%;
-        min-height: 75px;
-        transition: all .5s;
-        top: 0;
-        left: 0;
-        box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
+      background-color: #fff;
+      position: fixed;
+      z-index: 9999;
+      width: 100%;
+      min-height: 75px;
+      transition: all .5s;
+      top: 0;
+      left: 0;
+      box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
 
-        -webkit-animation-name: slideInDown;
-        animation-name: slideInDown;
+      -webkit-animation-name: slideInDown;
+      animation-name: slideInDown;
 
-        -webkit-animation-duration: 1s;
-        animation-duration: 1s;
-        -webkit-animation-fill-mode: both;
-        animation-fill-mode: both;
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
     }
 
     .fixed-header .header-phone-number {
-        display: none;
+      display: none;
     }
 
     @keyframes slideInDown {
-        0% {
-            transform: translate3d(0,-100%,0);
-            visibility: visible;
-        }
+      0% {
+        transform: translate3d(0,-100%,0);
+        visibility: visible;
+      }
 
-        100% {
-            transform: translateZ(0);
-        }
+      100% {
+        transform: translateZ(0);
+      }
     }
 
     .cloud-anim {
@@ -585,13 +585,13 @@
     .cloud-anim::after {
       content: "";
       position: absolute;
-      top: 150px;
+      top: 120px;
       left: 0px;
       width: 100vw;
       height: 100%;
       background-image: url(images/home-cloud.svg);
       background-repeat: repeat-x;
-      background-size: contain;
+      /* background-size: contain; */
       animation-iteration-count: infinite;
       animation-timing-function: linear;
       animation-duration: 60s;
@@ -602,13 +602,13 @@
     .cloud-anim::before {
       content: "";
       position: absolute;
-      top: 150px;
+      top: 120px;
       left: 0px;
       width: 100vw;
       height: 100%;
       background-image: url(images/home-cloud.svg);
       background-repeat: repeat-x;
-      background-size: contain;
+      /* background-size: contain; */
       animation-iteration-count: infinite;
       animation-timing-function: linear;
       animation-duration: 60s;
@@ -627,12 +627,12 @@
     }
 
     @keyframes clouldAnimation2 {
-        0% {
-          transform: translateX(100vw);
-          visibility: visible;
-        }
-        100% {
-          transform: translateX(0);
-        }
+      0% {
+        transform: translateX(100vw);
+        visibility: visible;
+      }
+      100% {
+        transform: translateX(0);
+      }
     }
 </style>
