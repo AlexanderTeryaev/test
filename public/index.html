@@ -79,10 +79,10 @@
       </header>
 
       <!-- Content -->
-      <main class="relative">
+      <main class="relative w-screen overflow-x-hidden">
           
         <!-- Better Way -->
-        <div class="hero-section max-sm:bg-none pt-28 max-sm:bg-white max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center max-w-8xl mx-auto">
+        <div class="hero-section pt-28 max-w-8xl mx-auto max-sm:hidden">
           <div class="flex-center flex-col pt-40 max-sm:pt-0 max-sm:mx-4">
             <div class="font-bold text-xl max-sm:text-base text-purple2 mb-2 text-center">
               A Better Way To Refinance Your Automobile
@@ -101,15 +101,35 @@
             </button>
           </div>    
           <!-- Animation Section -->
-          <div class="cloud-anim max-sm:hidden">
+          <div class="cloud-anim">
           </div>
-          <div class="max-3xl:hidden max-sm:block flex-1 pt-10">
-            <img src="images/home-banner-mobile.svg" alt="">   
+        </div>
+
+        <div class="hero-mobile pt-28 mx-auto max-3xl:hidden max-sm:block">
+          <div class="flex-center flex-col pt-40 max-sm:pt-0">
+            <div class="font-bold text-xl max-sm:text-base text-purple2 mb-2 text-center">
+              A Better Way To Refinance Your Automobile
+            </div>
+            <div class="font-bold text-50 max-sm:text-3xl text-gray5 mb-2 text-center">
+              Less Paperwork. Less Time
+            </div>
+            <div class="font-bold text-50 max-sm:text-3xl text-lightgreen mb-2">
+              Lower Payments
+            </div>
+            <div class="font-bold text-xl max-sm:text-base text-gray5 mb-8">
+              Rates as low as 1.9% APR*
+            </div>
+            <button class="btn-purple btn">
+              Get your quote in minutes
+            </button>
+          </div>    
+          <!-- Animation Section -->
+          <div class="cloud-anim">
           </div>
         </div>
 
         <!-- Refinancing Painless -->
-        <div class="flex-center flex-col bg-gray1 py-24 max-sm:py-12 max-sm:mt-8">
+        <div class="flex-center flex-col bg-gray1 py-24 max-sm:py-12">
           <div class="text-gray5 text-50 max-sm:text-3xl max-w-3xl text-center mb-20 max-sm:mb-10 max-sm:mx-4">
             We Make Refinancing Painless. Just 3 Easy Steps.
           </div>
@@ -499,7 +519,9 @@
         autoplay: true,
         pagination: false,
         arrows: false,
-        interval: 3000,
+        interval: 4000,
+        speed: 4000,
+        rewindSpeed: 4000,
         perMove: 1,
         gap: 32,
         breakpoints: {
@@ -644,37 +666,32 @@
     width: 100%;
   }
 
-  .cloud-anim::after {
+  .cloud-anim::after, .cloud-anim::before {
     content: "";
     position: absolute;
-    top: 120px;
+    top: 20px;
     left: 0px;
     width: 100vw;
-    height: 100vh;
+    height: 50vh;
     background-image: url(images/home-cloud.svg);
-    background-repeat: repeat-x;
     background-size: contain;
+    background-repeat: repeat-x;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     animation-duration: 60s;
     animation-delay: -30s;
-    animation-name: clouldAnimation1;
   }
 
+  @media (max-width: 639px) {
+    .cloud-anim::after, .cloud-anim::before {
+      top: 50vh;
+      background-image: url(images/home-cloud-mobile.svg);
+    }
+  }
+  .cloud-anim::after {
+    animation-name: clouldAnimation1;
+  }
   .cloud-anim::before {
-    content: "";
-    position: absolute;
-    top: 120px;
-    left: 0px;
-    width: 100vw;
-    height: 100vh;
-    background-image: url(images/home-cloud.svg);
-    background-repeat: repeat-x;
-    background-size: contain;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    animation-duration: 60s;
-    animation-delay: -30s;
     animation-name: clouldAnimation2;
   }
   
@@ -709,4 +726,5 @@
       max-width: 368px;
     }
   }
+  
 </style>

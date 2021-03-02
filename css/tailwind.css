@@ -69,6 +69,12 @@ header {
   @apply bg-bottom bg-contain h-screen;
 }
 
+.hero-mobile {
+  background: #fff url(../images/home-banner-without-cloud-mobile.svg) no-repeat;
+  width: 90vw;
+  @apply bg-bottom bg-contain h-screen;
+}
+
 /* Css classes for range input */
 .range {
   -webkit-appearance: none;
