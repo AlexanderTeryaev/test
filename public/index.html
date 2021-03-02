@@ -178,7 +178,7 @@
                   <div id="curMonth" class="text-32 max-sm:text-xl -mb-2 max-sm:mb-0"></div>
                   <span class="text-base px-1">months</span>
                 </div>
-                <input type="range" id="month_range" min="48" max="84" oninput="onChangeMonth(this.value)" onchange="current_rate_cal()" class="w-full range"/>
+                <input type="range" id="month_range" min="48" max="84" step="12" oninput="onChangeMonth(this.value)" onchange="current_rate_cal()" class="w-full range"/>
                 <div class="flex-between text-xs text-gray7">
                   <div>48 months</div>
                   <div>84 months</div>
@@ -569,7 +569,9 @@
       document.getElementById('rate1').value = 10;
       document.getElementById('rate2').value = 2.25;
       document.getElementById('curLoan').innerHTML = '35,000';
-      document.getElementById('curMonth').innerHTML = 60;
+      document.getElementById('loan_range').value = 35000;
+      document.getElementById('curMonth').innerHTML = 48;
+      document.getElementById('month_range').value = 48;
       current_rate_cal();
     }
 
