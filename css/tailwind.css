@@ -131,11 +131,9 @@ header {
 
 .play-img {
   position: absolute;
-  left: 11px; 
-}
-
-.spin:hover .play-img {
-  left: 13px; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -50%);
 }
 
 .spin {
