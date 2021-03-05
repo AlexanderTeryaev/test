@@ -12,27 +12,66 @@
 
       <!-- Header -->
       <header>
-        <div class="py-4 px-20 max-sm:px-4 bg-transparent absolute w-full z-999 max-w-8xl">
-          <div class="mb-4 font-bold text-right text-purple1 text-base max-sm:hidden pr-6">
+        <div id="header" class="py-4 px-20 max-sm:px-4 bg-transparent absolute w-full z-999 max-w-8xl max-lg:flex">
+          <div class="mb-4 font-bold text-right text-purple1 text-base max-lg:hidden pr-6 header-phone-number">
             (844) 336-3365
           </div>
-          <div class="flex-between">
+          <div class="flex-between max-lg:w-full">
             <img class="cursor-pointer" src="icons/logo.svg" alt="" />
-            <div class="flex-center max-sm:hidden">
+            <div class="flex-center max-lg:hidden">
               <button class="text-purple1 text-sm font-bold mx-5">
                 Why Auto Approve
               </button>
-              <button class="text-purple1 text-sm font-bold mx-5">
-                Products
-              </button>
+              <div class="dropdown mx-5">
+                <button class="text-purple1 text-sm font-bold">
+                  Products
+                </button>
+                <div class="dropdown-content pt-5 bg-transparent">
+                  <div class="relative bg-white dropdown-sub-content">
+                    <div class="triangle"></div>
+                    <div class="shadow p-4">
+                      <a href="#" class="flex min-w-max items-center gap-4 py-4">
+                        <img src="icons/taxi2.svg" alt="" />
+                        <div>Vehicle Refinance</div>
+                      </a>
+                      <a href="#" class="flex min-w-max items-center gap-4 py-2">
+                        <img src="icons/percentage.svg" alt="" />
+                        <div>Lease Purchase</div>
+                      </a>
+                      <a href="#" class="flex min-w-max items-center gap-4 py-4">
+                        <img src="icons/motorcycle.svg" alt="" />
+                        <div>Motorcycle Refinance</div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <button class="text-purple1 text-sm font-bold mx-5">
                 Resources
               </button>
               <button class="text-purple1 text-sm font-bold mx-5">FAQ</button>
             </div>
-            <button class="btn-purple btn max-sm:hidden">
+            <button class="btn-purple btn max-lg:hidden">
               Get a quote
             </button>
+            <img id="hamburger" onclick="show_sidemenu()" class="cursor-pointer hidden max-lg:block" src="icons/hamburger.svg" alt="" />
+          </div>
+        </div>
+        <div id="side-bg" onclick="hide_sidemenu()" class="hidden h-full w-full fixed top-0 left-0 cursor-pointer overflow-hidden bg-black bg-opacity-50 z-9999"></div>
+        <div id="side-menu" class="fixed w-72 h-full -right-72 top-0 z-9999 overflow-x-hidden bg-white transition-right duration-700">
+          <div class="flex flex-col gap-8 px-4 py-2 text-purple2 text-base font-bold">
+            <div class="text-right text-4xl mb-2">
+              <a class="p-2" onclick="hide_sidemenu()" href="javascript:void(0)">×</a>
+            </div>
+            <a href="#">Why Auto Approve</a>
+            <a href="#">Products</a>
+            <a href="#">FAQ</a>
+            <div class="flex flex-col-center gap-2">
+              <div>(844) 336-3365</div>
+              <button class="btn-purple w-full btn">
+                Get a quote
+              </button>
+            </div>
           </div>
         </div>
       </header>
@@ -41,7 +80,7 @@
       <main class="relative">
         <div class="pt-40 max-sm:pt-20 pb-24 max-sm:pb-16">
           <!-- page 1 -->
-          <div class="hidden mx-auto max-w-3xl text-center">
+          <div class="mx-auto max-w-3xl text-center">
             <div class="mb-10">
               <div class="text-50 max-sm:text-3xl text-gray5 mb-2">Get a <span class="text-green">Quote</span></div>
               <div class="text-base text-gray5">Complete the form below to recieve your personalized quote</div>
@@ -362,7 +401,7 @@
           </div>
 
           <!-- page 6 -->
-          <div class="mx-24 max-md:mx-8 bg-gray1 congrate-section">
+          <div class="hidden mx-24 max-md:mx-8 bg-gray1 congrate-section">
             <div class="flex flex-col max-w-5xl justify-center text-center mx-auto px-4 pt-28 pb-10 max-md:pt-16 congrate-sub-section">
               <div class="mx-auto mb-10">
                 <img src="images/warning.svg" alt="" />
@@ -414,7 +453,81 @@
   </body>
 </html>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    console.log('document ready');
+    
+    window.addEventListener('scroll', handleScroll);
+  });
+
+  function handleScroll(ev) {
+    let headerElement = document.getElementById("header");
+
+    if (window.scrollY >= 100) {
+      if (!headerElement.classList.contains('fixed-header')) {
+        headerElement.classList.add('fixed-header');
+      }
+    } else {
+      if (headerElement.classList.contains('fixed-header')) {
+        headerElement.classList.remove('fixed-header');
+      }
+    }
+  }
+
+  // Side menu
+  function show_sidemenu() {
+    var side_bg = document.getElementById("side-bg");
+    side_bg.style.display = "block";
+    var side_menu = document.getElementById("side-menu");
+    side_menu.style.right = "0";
+    document.getElementsByTagName("body")[0].style.overflow = "hidden";
+  }
+
+  function hide_sidemenu() {
+    var side_bg = document.getElementById("side-bg");
+    side_bg.style.display = "none";
+    var side_menu = document.getElementById("side-menu");
+    side_menu.style.right = "-18rem";
+    document.getElementsByTagName("body")[0].style.overflow = "auto";
+  }
+</script>
 <style>
+/* Header */
+.fixed-header {
+  background-color: #fff;
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  min-height: 75px;
+  transition: all .5s;
+  top: 0;
+  left: 0;
+  box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
+
+  -webkit-animation-name: slideInDown;
+  animation-name: slideInDown;
+
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.fixed-header .header-phone-number {
+  display: none;
+}
+
+@keyframes slideInDown {
+  0% {
+    transform: translate3d(0,-100%,0);
+    visibility: visible;
+  }
+
+  100% {
+    transform: translateZ(0);
+  }
+}
+
 .tab-icon-box {
   position: relative;
 }
