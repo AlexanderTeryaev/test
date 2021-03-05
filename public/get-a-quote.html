@@ -80,7 +80,7 @@
       <main class="relative">
         <div class="pt-40 max-sm:pt-20 pb-24 max-sm:pb-16">
           <!-- page 1 -->
-          <div class="mx-auto max-w-3xl text-center">
+          <div class="mx-auto max-w-3xl text-center" data-step="1">
             <div class="mb-10">
               <div class="text-50 max-sm:text-3xl text-gray5 mb-2">Get a <span class="text-green">Quote</span></div>
               <div class="text-base text-gray5">Complete the form below to recieve your personalized quote</div>
@@ -107,28 +107,57 @@
               </div>
             </div>
 
-            <form class="px-6">
+            <form class="px-6" name="form_step1">
               <div class="grid grid-cols-2 max-sm:grid-cols-1 gap-12 mb-12">
                 <div class="w-full">
-                  <input class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" type="text" placeholder="First Name" />
+                  <input 
+                    id="first_name"
+                    class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" 
+                    type="text" placeholder="First Name"
+                    oninput="onFirstName(event)" 
+                  />
+                  <div id="firstname_required" class="hidden text-red-500 text-left">required</div>
                 </div>
                 <div class="w-full">
-                  <input class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" type="text" placeholder="Last Name" />
+                  <input 
+                    id="last_name"
+                    class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" 
+                    type="text" placeholder="Last Name" 
+                    oninput="onLastName(event)" 
+                  />
+                  <div id="lastname_required" class="hidden text-red-500 text-left">required</div>
                 </div>
                 <div class="w-full">
-                  <input class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" type="text" placeholder="Phone Number" />
+                  <input 
+                    id="phone_number"
+                    class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" 
+                    type="text" placeholder="Phone Number"
+                    oninput="onPhone(event)"
+                  />
+                  <div id="phone_required" class="hidden text-red-500 text-left">required</div>
+                  <div id="phone_invalid" class="hidden text-red-500 text-left">invalid phone</div>
                 </div>
                 <div class="w-full">
-                  <input class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" type="text" placeholder="Email Address" />
+                  <input 
+                    id="email_address"
+                    class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" 
+                    type="email" placeholder="Email Address" 
+                    oninput="onEmail(event)" 
+                  />
+                  <div id="email_required" class="hidden text-red-500 text-left">required</div>
+                  <div id="email_invalid" class="hidden text-red-500 text-left">invalid email</div>
                 </div>
               </div>
               <div class="mb-12">
                 <div class="text-xs text-purple1 font-bold text-left">Estimated Credit Score</div>
-                <div class="flex font-bold text-gray6"><span class="text-base pt-2 max-sm:pt-0"></span><div class="px-1 text-32 max-sm:text-xl">600</div></div>
-                <input type="range" class="w-full range"/>
+                <div class="flex font-bold text-gray6">
+                  <span class="text-base pt-2 max-sm:pt-0"></span>
+                  <div id="cur_credit" class="px-1 text-32 max-sm:text-xl"></div>
+                </div>
+                <input id="credit_score" type="range" min="400" max="850" oninput="onChangeCredit(this.value)" class="w-full range"/>
                 <div class="flex-between text-xs text-gray7 font-bold">
                   <div>400</div>
-                  <div>800</div>
+                  <div>850</div>
                 </div>
               </div>
               <div class="flex max-sm:flex-col gap-y-4">
@@ -136,7 +165,7 @@
                   <div class="text-xs text-gray2 text-left">By entering your phone number, you consent to receiving calls and/or texts from Auto Approve by any method. Carrier charges may apply.</div>
                 </div>
                 <div class="flex flex-wrap justify-end items-center max-sm:w-full w-5/12 max-sm:px-4">
-                  <button class="btn-purple btn flex items-center justify-center gap-x-4 max-sm:w-full">
+                  <button type="submit" onclick="form_step1_submit(event)" class="btn-purple btn flex items-center justify-center gap-x-4 max-sm:w-full">
                     Next Step
                     <span><img src="icons/Forward Arrow.svg" alt="" /></span>
                   </button>
@@ -146,7 +175,7 @@
           </div>
 
           <!-- page 2 -->
-          <div class="hidden mx-auto max-w-3xl text-center">
+          <div class="hidden mx-auto max-w-3xl text-center" data-step="2">
             <div class="mb-10">
               <div class="text-50 max-sm:text-3xl text-gray5 mb-2">Get a <span class="text-green">Quote</span></div>
               <div class="text-base text-gray5">Complete the form below to recieve your personalized quote</div>
@@ -185,56 +214,93 @@
               </div>
             </div>
 
-            <form class="px-6">
+            <form class="px-6" name="form_step2">
               <div class="flex max-sm:flex-col gap-12 mb-12">
                 <div class="w-7/12 max-sm:w-full">
-                  <input class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" type="text" placeholder="Street Address" />
+                  <input 
+                    id="street_address"
+                    class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" 
+                    type="text" placeholder="Street Address" 
+                    oninput="onStreetAddress(event)"
+                  />
+                  <div id="streetaddress_required" class="hidden text-red-500 text-left">required</div>
                 </div>
                 <div class="w-5/12 max-sm:w-full">
-                  <input class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" type="text" placeholder="Unit/Suite" />
+                  <input 
+                    id="unit_suite"
+                    class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" 
+                    type="text" placeholder="Unit/Suite" 
+                    oninput="onUnitSuite(event)"
+                  />
+                  <div id="unitsuite_required" class="hidden text-red-500 text-left">required</div>
                 </div>
               </div>
               <div class="grid grid-cols-3 max-sm:grid-cols-1 gap-12 mb-12">
                 <div class="w-full">
-                  <input class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" type="text" placeholder="City" />
+                  <input 
+                    id="city"
+                    class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" 
+                    type="text" placeholder="City" 
+                    oninput="onCity(event)"
+                  />
+                  <div id="city_required" class="hidden text-red-500 text-left">required</div>
                 </div>
                 <div class="w-full">
-                  <select class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11">
-                    <option disabled selected>State</option>
+                  <select 
+                    id="state"
+                    class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11"
+                    onchange="onState(event)"
+                  >
+                    <option disabled selected value="0">State</option>
                     <option value="AK">Alaska</option>
                     <option value="CA">California</option>
                   </select>
+                  <div id="state_required" class="hidden text-red-500 text-left">required</div>
                 </div>
                 <div class="w-full">
-                  <input class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" type="text" placeholder="Zip Code" />
+                  <input 
+                    id="zip_code"
+                    class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" 
+                    type="text" placeholder="Zip Code" maxlength="5"
+                    oninput="onZipCode(event)"
+                  />
+                  <div id="zipcode_required" class="hidden text-red-500 text-left">required</div>
+                  <div id="zipcode_invalid" class="hidden text-red-500 text-left">invalid zip code</div>
                 </div>
               </div>
               <div class="grid grid-cols-2 max-sm:grid-cols-1 gap-12 mb-12">
                 <div class="w-full">
-                  <input class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" type="text" placeholder="Date of Birth" />
+                  <input 
+                    id="birth_date"
+                    class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" 
+                    type="text" placeholder="Date of Birth" maxlength="10"
+                    oninput="onBirthDate(event)"
+                  />
+                  <div id="birthdate_required" class="hidden text-red-500 text-left">required</div>
+                  <div id="birthdate_invalid" class="hidden text-red-500 text-left">invalid birth date</div>
                 </div>
                 <div class="w-full">
-                  <input class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" type="text" placeholder="Last 4 Social Security (optional)" />
-                </div>
-              </div>
-              <div class="mb-12">
-                <div class="text-xs text-purple1 font-bold text-left">Estimated Credit Score</div>
-                <div class="flex font-bold text-gray6"><span class="text-base pt-2 max-sm:pt-0"></span><div class="px-1 text-32 max-sm:text-xl">600</div></div>
-                <input type="range" class="w-full range"/>
-                <div class="flex-between text-xs text-gray7 font-bold">
-                  <div>400</div>
-                  <div>800</div>
+                  <input 
+                    id="social_security"
+                    class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" 
+                    type="text" placeholder="Last 4 Social Security (optional)" maxlength="4"
+                    oninput="onSocialSecurity(event)"
+                  />
+                  <div id="socialsecurity_invalid" class="hidden text-red-500 text-left">invalid social security</div>
                 </div>
               </div>
               <div class="flex max-sm:flex-col gap-y-4 mb-12">
                 <div class="flex flex-wrap justify-start items-center max-sm:w-full w-6/12 max-sm:px-4">
-                  <button class="btn text-purple2 bg-lightgray1 flex items-center justify-center gap-x-4 max-sm:w-full">
+                  <button 
+                    type="button" onclick="go_previous()"
+                    class="btn text-purple2 bg-lightgray1 flex items-center justify-center gap-x-4 max-sm:w-full"
+                  >
                     <span><img src="icons/Backward Arrow.svg" alt="" /></span>
                     Previous Step
                   </button>
                 </div>
                 <div class="flex flex-wrap justify-end items-center max-sm:w-full w-6/12 max-sm:px-4">
-                  <button class="btn-purple btn flex items-center justify-center gap-x-4 max-sm:w-full">
+                  <button type="submit" onclick="form_step2_submit(event)" class="btn-purple btn flex items-center justify-center gap-x-4 max-sm:w-full">
                     Next Step
                     <span><img src="icons/Forward Arrow.svg" alt="" /></span>
                   </button>
@@ -248,7 +314,7 @@
           </div>
 
           <!-- page 3 -->
-          <div class="hidden mx-auto max-w-3xl text-center">
+          <div class="hidden mx-auto max-w-3xl text-center" data-step="3">
             <div class="mb-10">
               <div class="text-50 max-sm:text-3xl text-gray5 mb-2">Get a <span class="text-green">Quote</span></div>
               <div class="text-base text-gray5">Complete the form below to recieve your personalized quote</div>
@@ -289,33 +355,69 @@
               </div>
             </div>
 
-            <form class="px-6">
+            <form class="px-6" name="form_step3">
               <div class="grid grid-cols-2 max-sm:grid-cols-1 gap-12 mb-12">
                 <div class="w-full">
-                  <select class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11">
-                    <option disabled selected>Vehicle Type</option>
+                  <select 
+                    id="vehicle_type"
+                    class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11"
+                    onchange="onVehicleType(event)"
+                  >
+                    <option disabled selected value="0">Vehicle Type</option>
+                    <option value="car">Car</option>
+                    <option value="motorcycle">Motorcycle</option>
                   </select>
+                  <div id="vehicletype_required" class="hidden text-red-500 text-left">required</div>
                 </div>
                 <div class="w-full">
-                  <select class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11">
-                    <option disabled selected>Year</option>
+                  <select 
+                    id="year"
+                    class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11"
+                    onchange="onYear(event)"
+                  >
+                    <option disabled selected value="0">Year</option>
+                    <option value="2020">2020</option>
+                    <option value="2019">2019</option>
                   </select>
+                  <div id="year_required" class="hidden text-red-500 text-left">required</div>
                 </div>
                 <div class="w-full">
-                  <select class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11">
-                    <option disabled selected>Make</option>
+                  <select 
+                    id="make"
+                    class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11"
+                    onchange="onMake(event)"
+                  >
+                    <option disabled selected value="0">Make</option>
+                    <option value="bmw">BMW</option>
+                    <option value="honda">HONDA</option>
                   </select>
+                  <div id="make_required" class="hidden text-red-500 text-left">required</div>
                 </div>
                 <div class="w-full">
-                  <select class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11">
-                    <option disabled selected>Model</option>
+                  <select 
+                    id="model"
+                    class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11"
+                    onchange="onModel(event)"
+                  >
+                    <option disabled selected value="0">Model</option>
+                    <option value="f800r">F 800 R</option>
+                    <option value="f800gs">F 800 GS</option>
                   </select>
+                  <div id="model_required" class="hidden text-red-500 text-left">required</div>
                 </div>
                 <div class="w-full">
-                  <input class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" type="text" placeholder="VIN (optional)" />
+                  <input 
+                    id="vin"
+                    class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" 
+                    type="text" placeholder="VIN (optional)" 
+                  />
                 </div>
                 <div class="w-full">
-                  <input class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" type="text" placeholder="Mileage (optionial)" />
+                  <input 
+                    id="mileage"
+                    class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" 
+                    type="text" placeholder="Mileage (optionial)" 
+                  />
                 </div>
               </div>
               <div class="mb-12 text-gray9 text-base text-left">
@@ -325,43 +427,73 @@
               <div class="grid grid-cols-2 max-sm:grid-cols-1 gap-12 mb-12">
                 <div class="w-full">
                   <div class="relative">
-                    <input class="w-full pl-7 h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" type="text" placeholder="Current Payment" />
+                    <input 
+                      id="current_payment"
+                      class="w-full pl-7 h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" 
+                      type="number" placeholder="Current Payment" 
+                      oninput="onCurrentPayment(event)"
+                    />
                     <span class="dollar-txt pt-1">
                       <span class="txt">$</span>
                     </span>
                   </div>
+                  <div id="currentpayment_required" class="hidden text-red-500 text-left">required</div>
                   <div class="text-gray10 text-2.25 text-left">Enter an amount between $5,000 and $150,000</div>
                 </div>
                 <div class="w-full">
                   <div class="relative">
-                    <input class="w-full pl-7 h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" type="text" placeholder="Current Interest Rate" />
+                    <input 
+                      id="current_interest"
+                      class="w-full pl-7 h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" 
+                      type="number" placeholder="Current Interest Rate" 
+                      oninput="onCurrentInterest(event)"
+                    />
                     <span class="dollar-txt pt-1">
                       <span class="txt">%</span>
                     </span>
                   </div>
+                  <div id="currentinterest_required" class="hidden text-red-500 text-left">required</div>
                   <div class="text-gray10 text-2.25 text-left">Example 6.75</div>
                 </div>
                 <div class="w-full">
                   <div class="relative">
-                    <input class="w-full pl-7 h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" type="text" placeholder="Payoff Amount" />
+                    <input
+                      id="payoff_amount" 
+                      class="w-full pl-7 h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" 
+                      type="number" placeholder="Payoff Amount" 
+                      oninput="onPayoffAmount(event)"
+                    />
                     <span class="dollar-txt pt-1">
                       <span class="txt">$</span>
                     </span>
                   </div>
+                  <div id="payoffamount_required" class="hidden text-red-500 text-left">required</div>
                 </div>
                 <div class="w-full">
-                  <input class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" type="text" placeholder="Desired Term" />
+                  <select 
+                    id="desired_term"
+                    class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" 
+                    onchange="onDesiredTerm(event)"
+                  >
+                    <option disabled selected value="0">Desired Term</option>
+                    <option value="24">24 Months</option>
+                    <option value="36">36 Months</option>
+                    <option value="48">48 Months</option>
+                  </select>
+                  <div id="desiredterm_required" class="hidden text-red-500 text-left">required</div>
                 </div>
               </div>
               <div class="flex max-sm:flex-col gap-y-4 mb-12">
                 <div class="flex flex-wrap justify-start items-center max-sm:w-full w-6/12 max-sm:px-4">
-                  <button class="btn text-purple2 bg-lightgray1 flex items-center justify-center gap-x-4 max-sm:w-full">
+                  <button 
+                    type="button" onclick="go_previous()"
+                    class="btn text-purple2 bg-lightgray1 flex items-center justify-center gap-x-4 max-sm:w-full">
                     <span><img src="icons/Backward Arrow.svg" alt="" /></span>
                     Previous Step
                   </button>
                 </div>
                 <div class="flex flex-wrap justify-end items-center max-sm:w-full w-6/12 max-sm:px-4">
-                  <button class="btn-purple btn flex items-center justify-center gap-x-4 max-sm:w-full">
+                  <button type="submit" onclick="form_step3_submit(event)" class="btn-purple btn flex items-center justify-center gap-x-4 max-sm:w-full">
                     Next Step
                     <span><img src="icons/Forward Arrow.svg" alt="" /></span>
                   </button>
@@ -375,7 +507,7 @@
           </div>
 
           <!-- page 4 -->
-          <div class="hidden mx-24 max-md:mx-8 bg-gray1 congrate-section">
+          <div class="hidden mx-24 max-md:mx-8 bg-gray1 congrate-section" data-step="4">
             <div class="flex flex-col max-w-5xl justify-center text-center mx-auto px-4 pt-28 pb-10 max-md:pt-16 congrate-sub-section">
               <div class="font-bold text-6xl max-md:text-4xl text-gray2 mb-4">Congratulation!</div>
               <div class="text-28 max-md:text-xl text-gray2 mb-12">You are on your way to saving money on our vehicles monthly payment.</div>
@@ -388,7 +520,7 @@
           </div>
 
           <!-- page 5 -->
-          <div class="hidden mx-24 max-md:mx-8 bg-gray1 congrate-section">
+          <div class="hidden mx-24 max-md:mx-8 bg-gray1 congrate-section" data-step="5">
             <div class="flex flex-col max-w-5xl justify-center text-center mx-auto px-4 pt-28 pb-10 max-md:pt-16 congrate-sub-section">
               <div class="font-bold text-6xl max-md:text-4xl text-gray2 mb-4">Thank you!</div>
               <div class="text-28 max-md:text-xl text-gray2 mb-12">We are reviewing all of our options and reaching out to our lending partners to try and find a fit for your refinance.</div>
@@ -401,7 +533,7 @@
           </div>
 
           <!-- page 6 -->
-          <div class="hidden mx-24 max-md:mx-8 bg-gray1 congrate-section">
+          <div class="hidden mx-24 max-md:mx-8 bg-gray1 congrate-section" data-step="6">
             <div class="flex flex-col max-w-5xl justify-center text-center mx-auto px-4 pt-28 pb-10 max-md:pt-16 congrate-sub-section">
               <div class="mx-auto mb-10">
                 <img src="images/warning.svg" alt="" />
@@ -458,6 +590,7 @@
     console.log('document ready');
     
     window.addEventListener('scroll', handleScroll);
+
   });
 
   function handleScroll(ev) {
@@ -490,6 +623,377 @@
     side_menu.style.right = "-18rem";
     document.getElementsByTagName("body")[0].style.overflow = "auto";
   }
+
+  // Validation functions
+  function required_validation(val) {
+    if (val && val.length > 0)
+      return true;
+    else
+      return false;
+  }
+
+  function email_validatioin(email) {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  }
+
+  function length_validation(val, len) {
+    if (val && String(val).length == len)
+      return true;
+    else
+      return false;
+  }
+
+  // Show/hide element
+  function setItemDisplay(id, style) {
+    if (form_submitted)
+      document.getElementById(id).style.display = style;
+  }
+
+  var cur_page_idx = 1;
+  var form_submitted = false;
+
+  // Form step1
+  const phone_length = 12;
+  function get_required_validation(value, id) {
+    if (required_validation(value)) {
+      setItemDisplay(id, 'none');
+      return true;
+    } else {
+      setItemDisplay(id, 'block');
+      return false;
+    }
+  }
+
+  function get_phone_validation(value) {
+    if (required_validation(value)) {
+      setItemDisplay('phone_required', 'none');
+      if (length_validation(value, phone_length)) {
+        setItemDisplay('phone_invalid', 'none');
+        return true;
+      } else {
+        setItemDisplay('phone_invalid', 'block');
+        return false;
+      }
+    } else {
+      setItemDisplay('phone_required', 'block');
+      setItemDisplay('phone_invalid', 'none');
+      return false;
+    }
+  }
+
+  function get_email_validation(value) {
+    if (required_validation(value)) {
+      setItemDisplay('email_required', 'none');
+      if (email_validatioin(value)) {
+        setItemDisplay('email_invalid', 'none');
+        return true;
+      } else {
+        setItemDisplay('email_invalid', 'block');
+        return false;
+      }
+    } else {
+      setItemDisplay('email_required', 'block');
+      setItemDisplay('email_invalid', 'none');
+      return false;
+    }
+  }
+
+  function onFirstName(e) {
+    get_required_validation(e.target.value, 'firstname_required');
+  }
+
+  function onLastName(e) {
+    get_required_validation(e.target.value, 'lastname_required');
+  }
+
+  function onPhone(e) {
+    var x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
+    e.target.value = !x[2] ? x[1] : x[1] + '-' + x[2] + (x[3] ? '-' + x[3] : '');
+    get_phone_validation(e.target.value);
+  }
+
+  function onEmail(e) {
+    get_email_validation(e.target.value);
+  }
+
+  document.getElementById('cur_credit').innerHTML = '600';
+  document.getElementById('credit_score').value = 600;
+  function onChangeCredit(val) {
+    document.getElementById('cur_credit').innerHTML = val;
+  }
+
+  function form_step1_submit(e) {
+    e.preventDefault();
+    form_submitted = true;
+
+    const firstname_valid = get_required_validation(document.getElementById('first_name').value, 'firstname_required');
+    const lastname_valid = get_required_validation(document.getElementById('last_name').value, 'lastname_required');
+    const phone_valid = get_phone_validation(document.getElementById('phone_number').value);
+    const email_valid = get_email_validation(document.getElementById('email_address').value);
+    if (isMobile()) {
+      if (!firstname_valid) {
+        scroll_window('first_name');  
+      } else if (!lastname_valid){
+        scroll_window('last_name');
+      } else if (!phone_valid) {
+        scroll_window('phone_number');
+      } else if (!email_valid) {
+        scroll_window('email_address');
+      } else {
+        go_next();
+      }
+    } else {
+      if (firstname_valid && lastname_valid && phone_valid && email_valid) {
+        go_next();
+      }
+    }
+  }
+
+  // Form step2
+  const zipcode_len = 5;
+  const social_len = 4;
+  const birthdate_len = 10;
+  function get_zipcode_validation(value) {
+    if (required_validation(value)) {
+      setItemDisplay('zipcode_required', 'none');
+      if (length_validation(value, zipcode_len)) {
+        setItemDisplay('zipcode_invalid', 'none');
+        return true;
+      } else {
+        setItemDisplay('zipcode_invalid', 'block');
+        return false;
+      }
+    } else {
+      setItemDisplay('zipcode_required', 'block');
+      setItemDisplay('zipcode_invalid', 'none');
+      return false;
+    }
+  }
+
+  function get_birthdate_validation(value) {
+    if (required_validation(value)) {
+      setItemDisplay('birthdate_required', 'none');
+      if (length_validation(value, birthdate_len)) {
+        setItemDisplay('birthdate_invalid', 'none');
+        return true;
+      } else {
+        setItemDisplay('birthdate_invalid', 'block');
+        return false;
+      }
+    } else {
+      setItemDisplay('birthdate_required', 'block');
+      setItemDisplay('birthdate_invalid', 'none');
+      return false;
+    }
+  }
+
+  function get_socialsecurity_validation(value) {
+    if (value.length == 0 || length_validation(value, social_len)) {
+      setItemDisplay('socialsecurity_invalid', 'none');
+      return true;
+    } else {
+      setItemDisplay('socialsecurity_invalid', 'block');
+      return false;
+    }
+  }
+
+  function get_select_validation(value, id) {
+    if (value == '0') {
+      setItemDisplay(id, 'block');
+      return false;
+    } else {
+      setItemDisplay(id, 'none');
+      return true;
+    }
+  }
+
+  function onStreetAddress(e) {
+    get_required_validation(e.target.value, 'streetaddress_required');
+  }
+
+  function onUnitSuite(e) {
+    get_required_validation(e.target.value, 'unitsuite_required');
+  }
+
+  function onCity(e) {
+    get_required_validation(e.target.value, 'city_required');
+  }
+
+  function onZipCode(e) {
+    e.target.value = e.target.value.replace(/[^\d]/,'');
+    get_zipcode_validation(e.target.value);
+  }
+
+  function onBirthDate(e) {
+    var x = e.target.value.replace(/\D/g, '').match(/(\d{0,2})(\d{0,2})(\d{0,4})/);
+    const x1 = x[1]? parseInt(x[1]) : 0;
+    const x2 = x[2]? parseInt(x[2]) : 0;
+    const x3 = x[3]? parseInt(x[3]) : 0;
+
+    if (x[1].length == 1 && x1 > 1) {
+      e.target.value = '';
+    } else if (x[1].length == 2 && x1 > 12) {
+      e.target.value = x[1].substr(0, 1);
+    } else if (x[2].length == 1 && x2 > 3) {
+      e.target.value = x[1];
+    } else if (x[2].length == 2 && x2 > 31) {
+      e.target.value = x[1];
+    } else {
+      e.target.value = !x[2] ? x[1] : x[1] + '/' + x[2] + (x[3] ? '/' + x[3] : '');
+    }
+    get_birthdate_validation(e.target.value);
+  }
+
+  function onSocialSecurity(e) {
+    get_socialsecurity_validation(e.target.value);
+  }
+
+  function onState(e) {
+    get_select_validation(e.target.value, 'state_required');
+  }
+
+  function form_step2_submit(e) {
+    e.preventDefault();
+    form_submitted = true;
+
+    const streetaddress_valid = get_required_validation(document.getElementById('street_address').value, 'streetaddress_required');
+    const unitsuite_valid = get_required_validation(document.getElementById('unit_suite').value, 'unitsuite_required');
+    const city_valid = get_required_validation(document.getElementById('city').value, 'city_required');
+    const state_valid = get_select_validation(document.getElementById('state').value, 'state_required');
+    const zipcode_valid = get_zipcode_validation(document.getElementById('zip_code').value);
+    const birthdate_valid = get_birthdate_validation(document.getElementById('birth_date').value);
+    const socialsecurity_valid = get_socialsecurity_validation(document.getElementById('social_security').value);
+    if (isMobile()) {
+      if (!streetaddress_valid) {
+        scroll_window('street_address');
+      } else if (!unitsuite_valid) {
+        scroll_window('unit_suite');
+      } else if (!city_valid) {
+        scroll_window('city');
+      } else if (!state_valid) {
+        scroll_window('state');
+      } else if (!zipcode_valid) {
+        scroll_window('zip_code');
+      } else if (!birthdate_valid) {
+        scroll_window('birth_date');
+      } else if (!socialsecurity_valid) {
+        scroll_window('social_security');
+      } else {
+        go_next();
+      }
+    } else {
+      if (streetaddress_valid && unitsuite_valid && city_valid && state_valid && zipcode_valid && birthdate_valid && socialsecurity_valid)
+        return go_next();
+    }
+
+  }
+
+  // Form step3
+  function onVehicleType(e) {
+    get_select_validation(e.target.value, 'vehicletype_required');
+  }
+
+  function onYear(e) {
+    get_select_validation(e.target.value, 'year_required');
+  }
+
+  function onMake(e) {
+    get_select_validation(e.target.value, 'make_required');
+  }
+
+  function onModel(e) {
+    get_select_validation(e.target.value, 'model_required');
+  }
+
+  function onCurrentPayment(e) {
+    get_required_validation(e.target.value, 'currentpayment_required');
+  }
+
+  function onCurrentInterest(e) {
+    get_required_validation(e.target.value, 'currentinterest_required');
+  }
+
+  function onPayoffAmount(e) {
+    get_required_validation(e.target.value, 'payoffamount_required');
+  }
+
+  function onDesiredTerm(e) {
+    get_select_validation(e.target.value, 'desiredterm_required');
+  }
+
+  function form_step3_submit(e) {
+    e.preventDefault();
+    form_submitted = true;
+
+    const vehicletype_valid = get_select_validation(document.getElementById('vehicle_type').value, 'vehicletype_required');
+    const year_valid = get_select_validation(document.getElementById('year').value, 'year_required');
+    const make_valid = get_select_validation(document.getElementById('make').value, 'make_required');
+    const model_valid = get_select_validation(document.getElementById('model').value, 'model_required');
+    const currentpayment_valid = get_required_validation(document.getElementById('current_payment').value, 'currentpayment_required');
+    const currentinterest_valid = get_required_validation(document.getElementById('current_interest').value, 'currentinterest_required');
+    const payoffamount_valid = get_required_validation(document.getElementById('payoff_amount').value, 'payoffamount_required');
+    const desiredterm_valid = get_select_validation(document.getElementById('desired_term').value, 'desiredterm_required');
+    if (isMobile()) {
+      if (!vehicletype_valid) {
+        scroll_window('vehicle_type');
+      } else if (!year_valid) {
+        scroll_window('year');
+      } else if (!make_valid) {
+        scroll_window('make');
+      } else if (!model_valid) {
+        scroll_window('model');
+      } else if (!currentpayment_valid) {
+        scroll_window('current_payment');
+      } else if (!currentinterest_valid) {
+        scroll_window('current_interest');
+      } else if (!payoffamount_valid) {
+        scroll_window('payoff_amount');
+      } else if (!desiredterm_valid) {
+        scroll_window('desired_term');
+      } else {
+        go_next();
+      }
+    } else {
+      if (vehicletype_valid && year_valid && make_valid && model_valid && currentpayment_valid && currentinterest_valid && payoffamount_valid && desiredterm_valid)
+        go_next();
+    }
+  }
+
+  // go next step
+  function go_next() {
+    form_submitted = false;
+    if (cur_page_idx < 6) {
+      document.querySelector('[data-step="'+cur_page_idx+'"]').style.display = 'none';
+      cur_page_idx++;
+      document.querySelector('[data-step="'+cur_page_idx+'"]').style.display = 'block';
+    }
+  }
+
+  // go previous step 
+  function go_previous() {
+    form_submitted = false;
+    if (cur_page_idx < 4) {
+      document.querySelector('[data-step="'+cur_page_idx+'"]').style.display = 'none';
+      cur_page_idx--;
+      document.querySelector('[data-step="'+cur_page_idx+'"]').style.display = 'block';
+    }
+  }
+
+  // scroll window to element that has issue
+  function scroll_window(id) {
+    const yOffset = -100; 
+    const element = document.getElementById(id);
+    const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+    window.scrollTo({top: y, behavior: 'smooth'});
+  }
+  
+  function isMobile() {
+    let res = false;
+    if (window.innerWidth < 800)
+      return true;
+  };
 </script>
 <style>
 /* Header */
