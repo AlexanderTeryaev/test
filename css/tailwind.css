@@ -8,6 +8,12 @@ textarea:focus,
 button:focus {
   @apply outline-none shadow-none;
 }
+select {
+  background: url(../icons/arrow-bottom-green.svg) 100% / 12px no-repeat white;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
 header {
   @apply flex justify-center
 }

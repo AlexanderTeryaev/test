@@ -82,11 +82,11 @@
           <!-- page 1 -->
           <div class="mx-auto max-w-3xl text-center" data-step="1">
             <div class="mb-10">
-              <div class="text-50 max-sm:text-3xl text-gray5 mb-2">Get a <span class="text-green">Quote</span></div>
-              <div class="text-base text-gray5">Complete the form below to recieve your personalized quote</div>
+              <div class="text-50 max-sm:text-3xl text-gray5 mb-2">Get a <span class="text-lightgreen">Quote.</span></div>
+              <div class="text-base text-gray5 text-center px-4">Complete the form below to recieve your personalized quote</div>
             </div>
             <div class="flex justify-center mb-20">
-              <div class="flex items-center justify-center gap-x-4 max-sm:gap-x-2 mx-auto px-7 py-3.5 border border-gray9 rounded-22">
+              <div class="flex items-center justify-center gap-x-4 max-sm:gap-x-2 mx-auto px-7 py-3.5 border border-gray12 rounded-22">
                 <div class="w-12 h-12 rounded-full bg-purple2 flex-center">
                   <img src="icons/information 1.svg" alt="" />
                 </div>
@@ -108,44 +108,48 @@
             </div>
 
             <form class="px-6" name="form_step1">
-              <div class="grid grid-cols-2 max-sm:grid-cols-1 gap-12 mb-12">
-                <div class="w-full">
+              <div class="grid grid-cols-2 max-sm:grid-cols-1 gap-12 mb-12">    
+                <div class="w-full input-group">
                   <input 
                     id="first_name"
-                    class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" 
-                    type="text" placeholder="First Name"
-                    oninput="onFirstName(event)" 
+                    class="inputAnimation pt-4 pb-1.5" 
+                    type="text" autocomplete="off"
+                    oninput="onFirstName(event)"
                   />
-                  <div id="firstname_required" class="hidden text-red-500 text-left">required</div>
+                  <label>First Name</label>
+                  <div id="firstname_required" class="hidden text-red-500 text-left text-xs">required</div>
                 </div>
-                <div class="w-full">
+                <div class="w-full input-group">
                   <input 
                     id="last_name"
-                    class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" 
-                    type="text" placeholder="Last Name" 
-                    oninput="onLastName(event)" 
+                    class="inputAnimation pt-4 pb-1.5" 
+                    type="text" autocomplete="off"
+                    oninput="onLastName(event)"
                   />
-                  <div id="lastname_required" class="hidden text-red-500 text-left">required</div>
+                  <label>Last Name</label>
+                  <div id="lastname_required" class="hidden text-red-500 text-left text-xs">required</div>
                 </div>
-                <div class="w-full">
+                <div class="w-full input-group">
                   <input 
                     id="phone_number"
-                    class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" 
-                    type="text" placeholder="Phone Number"
+                    class="inputAnimation pt-4 pb-1.5" 
+                    type="text" autocomplete="off"
                     oninput="onPhone(event)"
                   />
-                  <div id="phone_required" class="hidden text-red-500 text-left">required</div>
-                  <div id="phone_invalid" class="hidden text-red-500 text-left">invalid phone</div>
+                  <label>Phone Number</label>
+                  <div id="phone_required" class="hidden text-red-500 text-left text-xs">required</div>
+                  <div id="phone_invalid" class="hidden text-red-500 text-left text-xs">invalid phone</div>
                 </div>
-                <div class="w-full">
+                <div class="w-full input-group">
                   <input 
                     id="email_address"
-                    class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" 
-                    type="email" placeholder="Email Address" 
-                    oninput="onEmail(event)" 
+                    class="inputAnimation pt-4 pb-1.5" 
+                    type="email" autocomplete="off"
+                    oninput="onEmail(event)"
                   />
-                  <div id="email_required" class="hidden text-red-500 text-left">required</div>
-                  <div id="email_invalid" class="hidden text-red-500 text-left">invalid email</div>
+                  <label>Email Address</label>
+                  <div id="email_required" class="hidden text-red-500 text-left text-xs">required</div>
+                  <div id="email_invalid" class="hidden text-red-500 text-left text-xs">invalid email</div>
                 </div>
               </div>
               <div class="mb-12">
@@ -162,7 +166,7 @@
               </div>
               <div class="flex max-sm:flex-col gap-y-4">
                 <div class="flex flex-wrap justify-start items-center max-sm:w-full w-7/12 max-sm:px-4">
-                  <div class="text-xs text-gray2 text-left">By entering your phone number, you consent to receiving calls and/or texts from Auto Approve by any method. Carrier charges may apply.</div>
+                  <div class="text-xs text-gray4 text-left max-sm:text-center">By entering your phone number, you consent to receiving calls and/or texts from Auto Approve by any method. Carrier charges may apply.</div>
                 </div>
                 <div class="flex flex-wrap justify-end items-center max-sm:w-full w-5/12 max-sm:px-4">
                   <button type="submit" onclick="form_step1_submit(event)" class="btn-purple btn flex items-center justify-center gap-x-4 max-sm:w-full">
@@ -177,11 +181,11 @@
           <!-- page 2 -->
           <div class="hidden mx-auto max-w-3xl text-center" data-step="2">
             <div class="mb-10">
-              <div class="text-50 max-sm:text-3xl text-gray5 mb-2">Get a <span class="text-green">Quote</span></div>
-              <div class="text-base text-gray5">Complete the form below to recieve your personalized quote</div>
+              <div class="text-50 max-sm:text-3xl text-gray5 mb-2">Get a <span class="text-lightgreen">Quote.</span></div>
+              <div class="text-base text-gray5 text-center px-4">Complete the form below to recieve your personalized quote</div>
             </div>
             <div class="flex justify-center mb-20">
-              <div class="flex items-center justify-center gap-x-4 max-sm:gap-x-2 mx-auto px-7 py-3.5 border border-gray9 rounded-22">
+              <div class="flex items-center justify-center gap-x-4 max-sm:gap-x-2 mx-auto px-7 py-3.5 border border-gray12 rounded-22">
                 <div class="pr-3 max-sm:pr-0">
                   <div class="w-12 h-12 rounded-full bg-purple2 bg-opacity-16 flex-center">
                     <svg class="fill-current text-purple2" width="26" height="26" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg">
@@ -215,78 +219,84 @@
             </div>
 
             <form class="px-6" name="form_step2">
-              <div class="flex max-sm:flex-col gap-12 mb-12">
-                <div class="w-7/12 max-sm:w-full">
+              <div class="flex max-sm:flex-col gap-12 mb-12">                
+                <div class="w-7/12 input-group max-sm:w-full">
                   <input 
                     id="street_address"
-                    class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" 
-                    type="text" placeholder="Street Address" 
+                    class="inputAnimation pt-4 pb-1.5" 
+                    type="text" autocomplete="off"
                     oninput="onStreetAddress(event)"
                   />
-                  <div id="streetaddress_required" class="hidden text-red-500 text-left">required</div>
+                  <label>Street Address</label>
+                  <div id="streetaddress_required" class="hidden text-red-500 text-left text-xs">required</div>
                 </div>
-                <div class="w-5/12 max-sm:w-full">
+                <div class="w-5/12 input-group max-sm:w-full">
                   <input 
                     id="unit_suite"
-                    class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" 
-                    type="text" placeholder="Unit/Suite" 
+                    class="inputAnimation pt-4 pb-1.5" 
+                    type="text" autocomplete="off"
                     oninput="onUnitSuite(event)"
                   />
-                  <div id="unitsuite_required" class="hidden text-red-500 text-left">required</div>
+                  <label>Unit/Suite</label>
+                  <div id="unitsuite_required" class="hidden text-red-500 text-left text-xs">required</div>
                 </div>
               </div>
               <div class="grid grid-cols-3 max-sm:grid-cols-1 gap-12 mb-12">
-                <div class="w-full">
+                <div class="w-full input-group">
                   <input 
                     id="city"
-                    class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" 
-                    type="text" placeholder="City" 
+                    class="inputAnimation pt-4 pb-1.5" 
+                    type="text" autocomplete="off"
                     oninput="onCity(event)"
                   />
-                  <div id="city_required" class="hidden text-red-500 text-left">required</div>
+                  <label>City</label>
+                  <div id="city_required" class="hidden text-red-500 text-left text-xs">required</div>
                 </div>
                 <div class="w-full">
                   <select 
                     id="state"
-                    class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11"
+                    class="w-full text-gray10 pt-4 pb-1.5 border-b border-gray11" 
                     onchange="onState(event)"
                   >
                     <option disabled selected value="0">State</option>
                     <option value="AK">Alaska</option>
                     <option value="CA">California</option>
                   </select>
-                  <div id="state_required" class="hidden text-red-500 text-left">required</div>
+                  <div id="state_required" class="hidden text-red-500 text-left text-xs">required</div>
                 </div>
-                <div class="w-full">
+                <div class="w-full input-group">
                   <input 
                     id="zip_code"
-                    class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" 
-                    type="text" placeholder="Zip Code" maxlength="5"
+                    class="inputAnimation pt-4 pb-1.5" 
+                    type="text" maxlength="5" autocomplete="off"
                     oninput="onZipCode(event)"
                   />
-                  <div id="zipcode_required" class="hidden text-red-500 text-left">required</div>
-                  <div id="zipcode_invalid" class="hidden text-red-500 text-left">invalid zip code</div>
+                  <label>Zip Code</label>
+                  <div id="zipcode_required" class="hidden text-red-500 text-left text-xs">required</div>
+                  <div id="zipcode_invalid" class="hidden text-red-500 text-left text-xs">invalid zip code</div>
                 </div>
               </div>
               <div class="grid grid-cols-2 max-sm:grid-cols-1 gap-12 mb-12">
-                <div class="w-full">
+                <div class="w-full input-group">
                   <input 
                     id="birth_date"
-                    class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" 
-                    type="text" placeholder="Date of Birth" maxlength="10"
+                    class="inputAnimation pt-4 pb-1.5" 
+                    type="text" maxlength="10" autocomplete="off"
                     oninput="onBirthDate(event)"
                   />
-                  <div id="birthdate_required" class="hidden text-red-500 text-left">required</div>
-                  <div id="birthdate_invalid" class="hidden text-red-500 text-left">invalid birth date</div>
+                  <label>Date of Birth</label>
+                  <div id="birthdate_required" class="hidden text-red-500 text-left text-xs">required</div>
+                  <div id="birthdate_invalid" class="hidden text-red-500 text-left text-xs">invalid birth date</div>
                 </div>
-                <div class="w-full">
+                <div class="w-full input-group">
                   <input 
                     id="social_security"
-                    class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" 
-                    type="text" placeholder="Last 4 Social Security (optional)" maxlength="4"
+                    class="inputAnimation pt-4 pb-1.5" 
+                    type="text" maxlength="4" autocomplete="off"
                     oninput="onSocialSecurity(event)"
                   />
-                  <div id="socialsecurity_invalid" class="hidden text-red-500 text-left">invalid social security</div>
+                  <label>Last 4 Social Security (optional)</label>
+                  <div id="socialsecurity_invalid" class="hidden text-red-500 text-left text-xs">invalid social security</div>
                 </div>
               </div>
               <div class="flex max-sm:flex-col gap-y-4 mb-12">
@@ -306,7 +316,7 @@
                   </button>
                 </div>
               </div>
-              <div class="text-left">
+              <div class="text-left text-gray4 max-sm:text-center">
                 <div>Don't see your vehicle listed? We refinance cars, trucks, SUVs, Motorcycles, RVs, Boats and ATVs.</div>
                 <div>Call us at <span class="text-lightgreen">(844) 238-3075</span> for a quote.</div>
               </div>
@@ -316,11 +326,11 @@
           <!-- page 3 -->
           <div class="hidden mx-auto max-w-3xl text-center" data-step="3">
             <div class="mb-10">
-              <div class="text-50 max-sm:text-3xl text-gray5 mb-2">Get a <span class="text-green">Quote</span></div>
-              <div class="text-base text-gray5">Complete the form below to recieve your personalized quote</div>
+              <div class="text-50 max-sm:text-3xl text-gray5 mb-2">Get a <span class="text-lightgreen">Quote.</span></div>
+              <div class="text-base text-gray5 text-center px-4">Complete the form below to recieve your personalized quote</div>
             </div>
             <div class="flex justify-center mb-20">
-              <div class="flex items-center justify-center gap-x-4 max-sm:gap-x-2 mx-auto px-7 py-3.5 border border-gray9 rounded-22">
+              <div class="flex items-center justify-center gap-x-4 max-sm:gap-x-2 mx-auto px-7 py-3.5 border border-gray12 rounded-22">
                 <div class="pr-3 max-sm:pr-0">
                   <div class="w-12 h-12 rounded-full bg-purple2 bg-opacity-16 flex-center">
                     <svg class="fill-current text-purple2" width="26" height="26" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg">
@@ -360,64 +370,66 @@
                 <div class="w-full">
                   <select 
                     id="vehicle_type"
-                    class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11"
+                    class="w-full text-gray10 pt-4 pb-1.5 border-b border-gray11" 
                     onchange="onVehicleType(event)"
                   >
                     <option disabled selected value="0">Vehicle Type</option>
                     <option value="car">Car</option>
                     <option value="motorcycle">Motorcycle</option>
                   </select>
-                  <div id="vehicletype_required" class="hidden text-red-500 text-left">required</div>
+                  <div id="vehicletype_required" class="hidden text-red-500 text-left text-xs">required</div>
                 </div>
                 <div class="w-full">
                   <select 
                     id="year"
-                    class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11"
+                    class="w-full text-gray10 pt-4 pb-1.5 border-b border-gray11" 
                     onchange="onYear(event)"
                   >
                     <option disabled selected value="0">Year</option>
                     <option value="2020">2020</option>
                     <option value="2019">2019</option>
                   </select>
-                  <div id="year_required" class="hidden text-red-500 text-left">required</div>
+                  <div id="year_required" class="hidden text-red-500 text-left text-xs">required</div>
                 </div>
                 <div class="w-full">
                   <select 
                     id="make"
-                    class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11"
+                    class="w-full text-gray10 pt-4 pb-1.5 border-b border-gray11" 
                     onchange="onMake(event)"
                   >
                     <option disabled selected value="0">Make</option>
                     <option value="bmw">BMW</option>
                     <option value="honda">HONDA</option>
                   </select>
-                  <div id="make_required" class="hidden text-red-500 text-left">required</div>
+                  <div id="make_required" class="hidden text-red-500 text-left text-xs">required</div>
                 </div>
                 <div class="w-full">
                   <select 
                     id="model"
-                    class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11"
+                    class="w-full text-gray10 pt-4 pb-1.5 border-b border-gray11" 
                     onchange="onModel(event)"
                   >
                     <option disabled selected value="0">Model</option>
                     <option value="f800r">F 800 R</option>
                     <option value="f800gs">F 800 GS</option>
                   </select>
-                  <div id="model_required" class="hidden text-red-500 text-left">required</div>
+                  <div id="model_required" class="hidden text-red-500 text-left text-xs">required</div>
                 </div>
-                <div class="w-full">
+                <div class="w-full input-group">
                   <input 
                     id="vin"
-                    class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" 
-                    type="text" placeholder="VIN (optional)" 
+                    class="inputAnimation pt-4 pb-1.5" 
+                    type="text" autocomplete="off"
                   />
+                  <label>VIN (optional)</label>
                 </div>
-                <div class="w-full">
+                <div class="w-full input-group">
                   <input 
                     id="mileage"
-                    class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" 
-                    type="text" placeholder="Mileage (optionial)" 
+                    class="inputAnimation pt-4 pb-1.5" 
+                    type="text" autocomplete="off"
                   />
+                  <label>Mileage (optionial)</label>
                 </div>
               </div>
               <div class="mb-12 text-gray9 text-base text-left">
@@ -426,53 +438,56 @@
               </div>
               <div class="grid grid-cols-2 max-sm:grid-cols-1 gap-12 mb-12">
                 <div class="w-full">
-                  <div class="relative">
+                  <div class="relative input-group">
                     <input 
                       id="current_payment"
-                      class="w-full pl-7 h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" 
-                      type="number" placeholder="Current Payment" 
+                      class="inputAnimation w-full pl-7 pt-4 pb-1.5" 
+                      type="number" autocomplete="off"
                       oninput="onCurrentPayment(event)"
                     />
+                    <label class="pl-7">Current Payment</label>
                     <span class="dollar-txt pt-1">
                       <span class="txt">$</span>
                     </span>
                   </div>
-                  <div id="currentpayment_required" class="hidden text-red-500 text-left">required</div>
+                  <div id="currentpayment_required" class="hidden text-red-500 text-left text-xs">required</div>
                   <div class="text-gray10 text-2.25 text-left">Enter an amount between $5,000 and $150,000</div>
                 </div>
                 <div class="w-full">
-                  <div class="relative">
+                  <div class="relative input-group">
                     <input 
                       id="current_interest"
-                      class="w-full pl-7 h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" 
-                      type="number" placeholder="Current Interest Rate" 
+                      class="w-full pl-7 inputAnimation pt-4 pb-1.5" 
+                      type="number" autocomplete="off"
                       oninput="onCurrentInterest(event)"
                     />
+                    <label class="pl-7">Current Interest Rate</label>
                     <span class="dollar-txt pt-1">
                       <span class="txt">%</span>
                     </span>
                   </div>
-                  <div id="currentinterest_required" class="hidden text-red-500 text-left">required</div>
+                  <div id="currentinterest_required" class="hidden text-red-500 text-left text-xs">required</div>
                   <div class="text-gray10 text-2.25 text-left">Example 6.75</div>
                 </div>
                 <div class="w-full">
-                  <div class="relative">
+                  <div class="relative input-group">
                     <input
                       id="payoff_amount" 
-                      class="w-full pl-7 h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" 
-                      type="number" placeholder="Payoff Amount" 
+                      class="w-full pl-7 inputAnimation relative pt-4 pb-1.5" 
+                      type="number" 
                       oninput="onPayoffAmount(event)"
                     />
+                    <label class="pl-7">Payoff Amount</label>
                     <span class="dollar-txt pt-1">
                       <span class="txt">$</span>
                     </span>
                   </div>
-                  <div id="payoffamount_required" class="hidden text-red-500 text-left">required</div>
+                  <div id="payoffamount_required" class="hidden text-red-500 text-left text-xs">required</div>
                 </div>
                 <div class="w-full">
                   <select 
                     id="desired_term"
-                    class="w-full h-50 font-bold text-gray8 mb-1 relative pt-4 pb-1.5 border-b border-gray11" 
+                    class="w-full text-gray10 pt-4 pb-1.5 border-b border-gray11" 
                     onchange="onDesiredTerm(event)"
                   >
                     <option disabled selected value="0">Desired Term</option>
@@ -480,7 +495,7 @@
                     <option value="36">36 Months</option>
                     <option value="48">48 Months</option>
                   </select>
-                  <div id="desiredterm_required" class="hidden text-red-500 text-left">required</div>
+                  <div id="desiredterm_required" class="hidden text-red-500 text-left text-xs">required</div>
                 </div>
               </div>
               <div class="flex max-sm:flex-col gap-y-4 mb-12">
@@ -499,7 +514,7 @@
                   </button>
                 </div>
               </div>
-              <div class="text-left">
+              <div class="text-left text-gray4 max-sm:text-center">
                 <div>Don't see your vehicle listed? We refinance cars, trucks, SUVs, Motorcycles, RVs, Boats and ATVs.</div>
                 <div>Call us at <span class="text-lightgreen">(844) 238-3075</span> for a quote.</div>
               </div>
@@ -507,7 +522,7 @@
           </div>
 
           <!-- page 4 -->
-          <div class="hidden mx-24 max-md:mx-8 bg-gray1 congrate-section" data-step="4">
+          <div class="hidden mx-24 max-md:mx-8 max-sm:mx-4 bg-gray1 congrate-section" data-step="4">
             <div class="flex flex-col max-w-5xl justify-center text-center mx-auto px-4 pt-28 pb-10 max-md:pt-16 congrate-sub-section">
               <div class="font-bold text-6xl max-md:text-4xl text-gray2 mb-4">Congratulation!</div>
               <div class="text-28 max-md:text-xl text-gray2 mb-12">You are on your way to saving money on our vehicles monthly payment.</div>
@@ -520,7 +535,7 @@
           </div>
 
           <!-- page 5 -->
-          <div class="hidden mx-24 max-md:mx-8 bg-gray1 congrate-section" data-step="5">
+          <div class="hidden mx-24 max-md:mx-8 max-sm:mx-4 bg-gray1 congrate-section" data-step="5">
             <div class="flex flex-col max-w-5xl justify-center text-center mx-auto px-4 pt-28 pb-10 max-md:pt-16 congrate-sub-section">
               <div class="font-bold text-6xl max-md:text-4xl text-gray2 mb-4">Thank you!</div>
               <div class="text-28 max-md:text-xl text-gray2 mb-12">We are reviewing all of our options and reaching out to our lending partners to try and find a fit for your refinance.</div>
@@ -533,7 +548,7 @@
           </div>
 
           <!-- page 6 -->
-          <div class="hidden mx-24 max-md:mx-8 bg-gray1 congrate-section" data-step="6">
+          <div class="hidden mx-24 max-md:mx-8 max-sm:mx-4 bg-gray1 congrate-section" data-step="6">
             <div class="flex flex-col max-w-5xl justify-center text-center mx-auto px-4 pt-28 pb-10 max-md:pt-16 congrate-sub-section">
               <div class="mx-auto mb-10">
                 <img src="images/warning.svg" alt="" />
@@ -994,8 +1009,25 @@
     if (window.innerWidth < 800)
       return true;
   };
+
+  function onFocusOutEvent(element){
+    if(element.value){
+      element.classList.add("has-content");
+    }else{
+      element.classList.remove("has-content");
+    }
+  }
+
+  var inputElements = document.getElementsByClassName("inputAnimation");
+  
+  for (var i = 0; i < inputElements.length; i++) {
+    inputElements[i].addEventListener("focusout", function(event){
+      onFocusOutEvent(event.target);
+    });
+  }
 </script>
 <style>
+
 /* Header */
 .fixed-header {
   background-color: #fff;
@@ -1153,4 +1185,12 @@ span.dollar-txt .txt:before {
     height: 0px;
   }
 }
+/* Input */
+input[type="text"]{width: 100% !important;color: #65676A;}
+input[type="email"]{width: 100% !important;color: #65676A;}
+.input-group{position: relative;}
+.inputAnimation{border: 0; border-bottom: 1px solid #BDBEBF; background-color: transparent;}
+.inputAnimation ~ label{position: absolute; left: 0; width: 100%; top: 17px; color: #65676A; transition: 0.3s; z-index: -1; text-align: left;}
+.inputAnimation:focus ~ label, .has-content.inputAnimation ~ label{top: -16px; font-size: 12px; color: #6948B7; transition: 0.3s;}
+
 </style>
