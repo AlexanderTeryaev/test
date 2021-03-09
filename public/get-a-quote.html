@@ -236,7 +236,7 @@
                     class="inputAnimation pt-4 pb-1.5" 
                     type="text" autocomplete="off"
                   />
-                  <label>Unit/Suite</label>
+                  <label>Unit/Suite(optional)</label>
                 </div>
               </div>
               <div class="grid grid-cols-3 max-sm:grid-cols-1 gap-12 mb-12">
@@ -254,7 +254,7 @@
                   <select 
                     id="state"
                     class="w-full text-gray10 pt-4 pb-1.5 border-b border-gray11" 
-                    onchange="onTextValidation(event)"
+                    onchange="onSelectValidation(event)"
                   >
                     <option disabled selected value="0">State</option>
                     <option value="AK">Alaska</option>
@@ -291,7 +291,7 @@
                     id="social_security"
                     class="inputAnimation pt-4 pb-1.5" 
                     type="text" maxlength="4" autocomplete="off"
-                    oninput="onTextValidation(event)"
+                    oninput="onSocialSecurity(event)"
                   />
                   <label>Last 4 Social Security (optional)</label>
                   <div id="social_security_invalid" class="hidden text-red-500 text-left text-xs">invalid social security</div>
@@ -369,7 +369,7 @@
                   <select 
                     id="vehicle_type"
                     class="w-full text-gray10 pt-4 pb-1.5 border-b border-gray11" 
-                    onchange="onTextValidation(event)"
+                    onchange="onSelectValidation(event)"
                   >
                     <option disabled selected value="0">Vehicle Type</option>
                     <option value="car">Car</option>
@@ -381,7 +381,7 @@
                   <select 
                     id="year"
                     class="w-full text-gray10 pt-4 pb-1.5 border-b border-gray11" 
-                    onchange="onTextValidation(event)"
+                    onchange="onSelectValidation(event)"
                   >
                     <option disabled selected value="0">Year</option>
                     <option value="2020">2020</option>
@@ -393,7 +393,7 @@
                   <select 
                     id="make"
                     class="w-full text-gray10 pt-4 pb-1.5 border-b border-gray11" 
-                    onchange="onTextValidation(event)"
+                    onchange="onSelectValidation(event)"
                   >
                     <option disabled selected value="0">Make</option>
                     <option value="bmw">BMW</option>
@@ -405,7 +405,7 @@
                   <select 
                     id="model"
                     class="w-full text-gray10 pt-4 pb-1.5 border-b border-gray11" 
-                    onchange="onTextValidation(event)"
+                    onchange="onSelectValidation(event)"
                   >
                     <option disabled selected value="0">Model</option>
                     <option value="f800r">F 800 R</option>
@@ -486,7 +486,7 @@
                   <select 
                     id="desired_term"
                     class="w-full text-gray10 pt-4 pb-1.5 border-b border-gray11" 
-                    onchange="onTextValidation(event)"
+                    onchange="onSelectValidation(event)"
                   >
                     <option disabled selected value="0">Desired Term</option>
                     <option value="24">24 Months</option>
@@ -712,12 +712,24 @@
     }
   }
 
-  function onTextValidation(e){
-    var value = e.target.id + "_required";
-    if (e.target.id === "social_security") {
-      value = e.target.id + "_invalid"
-    } 
-    get_required_validation(e.target.value, value);
+  function onTextValidation(e) {
+    var id = e.target.id + "_required";
+    get_required_validation(e.target.value, id);
+  }  
+
+  function onSelectValidation(e) {
+    var id = e.target.id + "_required";
+    get_select_validation(e.target.value, id)
+  }
+
+  function get_select_validation(value, id) {
+    if (value == '0') {
+      setItemDisplay(id, 'block');
+      return false;
+    } else {
+      setItemDisplay(id, 'none');
+      return true;
+    }
   }
 
   function onPhone(e) {
@@ -803,6 +815,10 @@
     }
   }
 
+  function onSocialSecurity(e) {
+    get_socialsecurity_validation(e.target.value)
+  }
+
   function get_socialsecurity_validation(value) {
     if (value.length == 0 || length_validation(value, social_len)) {
       setItemDisplay('social_security_invalid', 'none');
@@ -811,17 +827,7 @@
       setItemDisplay('social_security_invalid', 'block');
       return false;
     }
-  }
-
-  function get_select_validation(value, id) {
-    if (value == '0') {
-      setItemDisplay(id, 'block');
-      return false;
-    } else {
-      setItemDisplay(id, 'none');
-      return true;
-    }
-  }
+  }  
 
   function onZipCode(e) {
     e.target.value = e.target.value.replace(/[^\d]/,'');
