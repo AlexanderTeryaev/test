@@ -86,21 +86,21 @@
               <div class="text-base text-gray5 text-center px-4">Complete the form below to recieve your personalized quote</div>
             </div>
             <div class="flex justify-center mb-20">
-              <div class="flex items-center justify-center gap-x-4 max-sm:gap-x-2 mx-auto px-7 py-3.5 border border-gray12 rounded-22">
-                <div class="w-12 h-12 rounded-full bg-purple2 flex-center">
+              <div class="flex items-center justify-center gap-x-4 mx-auto px-7 max-sm:px-4 py-3.5 max-sm:py-2 border border-gray12 rounded-22 max-sm:rounded-2xl">
+                <div class="w-12 h-12 max-sm:w-9 max-sm:h-9 rounded-full bg-purple2 flex-center">
                   <img src="icons/information 1.svg" alt="" />
                 </div>
                 <div class="text-left">
-                  <div class="text-xs text-purple2">Step 1/3</div>
-                  <div class="font-bold text-base max-sm:text-sm text-gray3">Basic Information</div>
+                  <div class="text-xs max-sm:text-2.25 text-purple2">Step 1/3</div>
+                  <div class="font-bold text-base max-sm:text-xs max-sm:text-xs text-gray8">Basic Information</div>
                 </div>
-                <div class="pl-7 pr-3 max-sm:pl-2 max-sm:pr-0 tab-icon-box">
-                  <div class="w-12 h-12 flex items-center justify-center">
+                <div class="pl-7 max-sm:pl-4 max-sm:pr-0 tab-icon-box">
+                  <div class="w-12 h-12 max-sm:w-9 max-sm:h-9 flex items-center justify-center">
                     <img src="icons/user-profile.svg" alt="" />
                   </div>
                 </div>
-                <div class="pl-7 pr-3 max-sm:pl-2 max-sm:pr-0 tab-icon-box">
-                  <div class="w-12 h-12 flex items-center justify-center">
+                <div class="pl-7 pr-3 max-sm:pl-4 max-sm:pr-0 tab-icon-box">
+                  <div class="w-12 h-12 max-sm:w-9 max-sm:h-9 flex items-center justify-center">
                     <img src="icons/car-icon.svg" alt="" />
                   </div>
                 </div>
@@ -114,20 +114,20 @@
                     id="first_name"
                     class="inputAnimation pt-4 pb-1.5" 
                     type="text" autocomplete="off"
-                    oninput="onFirstName(event)"
+                    oninput="onTextValidation(event)"
                   />
                   <label>First Name</label>
-                  <div id="firstname_required" class="hidden text-red-500 text-left text-xs">required</div>
+                  <div id="first_name_required" class="hidden text-red-500 text-left text-xs">required</div>
                 </div>
                 <div class="w-full input-group">
                   <input 
                     id="last_name"
                     class="inputAnimation pt-4 pb-1.5" 
                     type="text" autocomplete="off"
-                    oninput="onLastName(event)"
+                    oninput="onTextValidation(event)"
                   />
                   <label>Last Name</label>
-                  <div id="lastname_required" class="hidden text-red-500 text-left text-xs">required</div>
+                  <div id="last_name_required" class="hidden text-red-500 text-left text-xs">required</div>
                 </div>
                 <div class="w-full input-group">
                   <input 
@@ -165,7 +165,7 @@
                 </div>
               </div>
               <div class="flex max-sm:flex-col gap-y-4">
-                <div class="flex flex-wrap justify-start items-center max-sm:w-full w-7/12 max-sm:px-4">
+                <div class="flex flex-wrap justify-start items-center max-sm:w-full w-7/12 max-sm:px-4 max-sm:mb-6">
                   <div class="text-xs text-gray4 text-left max-sm:text-center">By entering your phone number, you consent to receiving calls and/or texts from Auto Approve by any method. Carrier charges may apply.</div>
                 </div>
                 <div class="flex flex-wrap justify-end items-center max-sm:w-full w-5/12 max-sm:px-4">
@@ -185,9 +185,9 @@
               <div class="text-base text-gray5 text-center px-4">Complete the form below to recieve your personalized quote</div>
             </div>
             <div class="flex justify-center mb-20">
-              <div class="flex items-center justify-center gap-x-4 max-sm:gap-x-2 mx-auto px-7 py-3.5 border border-gray12 rounded-22">
+              <div class="flex items-center justify-center gap-x-4 mx-auto px-7 max-sm:px-4 py-3.5 max-sm:py-2 border border-gray12 rounded-22 max-sm:rounded-2xl">
                 <div class="pr-3 max-sm:pr-0">
-                  <div class="w-12 h-12 rounded-full bg-purple2 bg-opacity-16 flex-center">
+                  <div class="w-12 h-12 max-sm:w-9 max-sm:h-9 rounded-full bg-purple2 bg-opacity-16 flex-center">
                     <svg class="fill-current text-purple2" width="26" height="26" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg">
                       <path d="M13.8125 17.875V11.375H10.5625V13H12.1875V17.875H9.75V19.5H16.25V17.875H13.8125Z"/>
                       <path d="M13 6.5C12.759 6.5 12.5233 6.57148 12.3229 6.7054C12.1225 6.83931 11.9663 7.02966 11.874 7.25235C11.7818 7.47505 11.7576 7.7201 11.8047 7.95652C11.8517 8.19293 11.9678 8.41009 12.1382 8.58054C12.3087 8.75098 12.5258 8.86706 12.7622 8.91408C12.9986 8.96111 13.2437 8.93697 13.4664 8.84473C13.6891 8.75248 13.8794 8.59627 14.0134 8.39585C14.1473 8.19543 14.2188 7.9598 14.2188 7.71875C14.2188 7.39552 14.0903 7.08552 13.8618 6.85696C13.6332 6.6284 13.3232 6.5 13 6.5Z"/>
@@ -195,8 +195,8 @@
                     </svg>
                   </div>
                 </div>
-                <div class="flex items-center gap-x-4 max-sm:gap-x-2 pl-7 pr-3 max-sm:pl-2 max-sm:pr-0 tab-icon-box">
-                  <div class="w-12 h-12 rounded-full bg-purple2 flex-center">
+                <div class="flex items-center gap-x-4 max-sm:gap-x-2 pl-7 pr-3 max-sm:pl-3 max-sm:pr-0 tab-icon-box">
+                  <div class="w-12 h-12 max-sm:w-9 max-sm:h-9 rounded-full bg-purple2 flex-center">
                     <svg class="fill-current text-white" width="22" height="22" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
                       <path d="M8.25 2.75C8.92988 2.75 9.59448 2.95161 10.1598 3.32932C10.7251 3.70704 11.1657 4.2439 11.4258 4.87203C11.686 5.50015 11.7541 6.19131 11.6215 6.85812C11.4888 7.52493 11.1614 8.13744 10.6807 8.61818C10.1999 9.09892 9.58743 9.42631 8.92063 9.55895C8.25382 9.69159 7.56265 9.62351 6.93453 9.36334C6.30641 9.10316 5.76954 8.66257 5.39183 8.09727C5.01411 7.53198 4.8125 6.86737 4.8125 6.1875C4.8125 5.27582 5.17467 4.40148 5.81932 3.75682C6.46398 3.11216 7.33832 2.75 8.25 2.75ZM8.25 1.375C7.29818 1.375 6.36773 1.65725 5.57632 2.18605C4.78491 2.71486 4.16808 3.46647 3.80383 4.34584C3.43959 5.22521 3.34428 6.19284 3.52997 7.12637C3.71566 8.05991 4.17401 8.91741 4.84705 9.59045C5.52009 10.2635 6.3776 10.7218 7.31113 10.9075C8.24466 11.0932 9.2123 10.9979 10.0917 10.6337C10.971 10.2694 11.7226 9.65259 12.2514 8.86118C12.7803 8.06977 13.0625 7.13932 13.0625 6.1875C13.0625 4.91115 12.5555 3.68707 11.653 2.78455C10.7504 1.88203 9.52636 1.375 8.25 1.375Z"/>
                       <path d="M15.125 20.625H13.75V17.1875C13.75 16.2758 13.3878 15.4015 12.7432 14.7568C12.0985 14.1122 11.2242 13.75 10.3125 13.75H6.1875C5.27582 13.75 4.40148 14.1122 3.75682 14.7568C3.11216 15.4015 2.75 16.2758 2.75 17.1875V20.625H1.375V17.1875C1.375 15.9111 1.88203 14.6871 2.78455 13.7845C3.68707 12.882 4.91115 12.375 6.1875 12.375H10.3125C11.5889 12.375 12.8129 12.882 13.7155 13.7845C14.618 14.6871 15.125 15.9111 15.125 17.1875V20.625Z"/>
@@ -206,12 +206,12 @@
                     </svg>
                   </div>
                   <div class="text-left">
-                    <div class="text-xs text-purple2">Step 2/3</div>
-                    <div class="font-bold text-base max-sm:text-sm text-gray3">Personal Information</div>
+                    <div class="text-xs max-sm:text-2.25 text-purple2">Step 2/3</div>
+                    <div class="font-bold text-base max-sm:text-xs max-sm:text-sm text-gray8">Personal Information</div>
                   </div>
                 </div>
-                <div class="pl-7 pr-3 max-sm:pl-2 max-sm:pr-0 tab-icon-box">
-                  <div class="w-12 h-12 flex items-center justify-center">
+                <div class="pl-7 pr-3 max-sm:pl-4 max-sm:pr-0 tab-icon-box">
+                  <div class="w-12 h-12 max-sm:w-9 max-sm:h-9 flex items-center justify-center">
                     <img src="icons/car-icon.svg" alt="" />
                   </div>
                 </div>
@@ -219,26 +219,24 @@
             </div>
 
             <form class="px-6" name="form_step2">
-              <div class="flex max-sm:flex-col gap-12 mb-12">                
-                <div class="w-7/12 input-group max-sm:w-full">
+              <div class="grid grid-cols-2 max-sm:grid-cols-1 gap-12 mb-12">                
+                <div class="input-group">
                   <input 
                     id="street_address"
                     class="inputAnimation pt-4 pb-1.5" 
                     type="text" autocomplete="off"
-                    oninput="onStreetAddress(event)"
+                    oninput="onTextValidation(event)"
                   />
                   <label>Street Address</label>
-                  <div id="streetaddress_required" class="hidden text-red-500 text-left text-xs">required</div>
+                  <div id="street_address_required" class="hidden text-red-500 text-left text-xs">required</div>
                 </div>
-                <div class="w-5/12 input-group max-sm:w-full">
+                <div class="input-group">
                   <input 
                     id="unit_suite"
                     class="inputAnimation pt-4 pb-1.5" 
                     type="text" autocomplete="off"
-                    oninput="onUnitSuite(event)"
                   />
                   <label>Unit/Suite</label>
-                  <div id="unitsuite_required" class="hidden text-red-500 text-left text-xs">required</div>
                 </div>
               </div>
               <div class="grid grid-cols-3 max-sm:grid-cols-1 gap-12 mb-12">
@@ -247,7 +245,7 @@
                     id="city"
                     class="inputAnimation pt-4 pb-1.5" 
                     type="text" autocomplete="off"
-                    oninput="onCity(event)"
+                    oninput="onTextValidation(event)"
                   />
                   <label>City</label>
                   <div id="city_required" class="hidden text-red-500 text-left text-xs">required</div>
@@ -256,7 +254,7 @@
                   <select 
                     id="state"
                     class="w-full text-gray10 pt-4 pb-1.5 border-b border-gray11" 
-                    onchange="onState(event)"
+                    onchange="onTextValidation(event)"
                   >
                     <option disabled selected value="0">State</option>
                     <option value="AK">Alaska</option>
@@ -293,14 +291,14 @@
                     id="social_security"
                     class="inputAnimation pt-4 pb-1.5" 
                     type="text" maxlength="4" autocomplete="off"
-                    oninput="onSocialSecurity(event)"
+                    oninput="onTextValidation(event)"
                   />
                   <label>Last 4 Social Security (optional)</label>
-                  <div id="socialsecurity_invalid" class="hidden text-red-500 text-left text-xs">invalid social security</div>
+                  <div id="social_security_invalid" class="hidden text-red-500 text-left text-xs">invalid social security</div>
                 </div>
               </div>
-              <div class="flex max-sm:flex-col gap-y-4 mb-12">
-                <div class="flex flex-wrap justify-start items-center max-sm:w-full w-6/12 max-sm:px-4">
+              <div class="flex max-sm:flex-col w-full mb-6 justify-between max-sm:flex-col-reverse">                
+                <div class="flex items-center max-sm:w-full max-sm:px-3 mb-6">
                   <button 
                     type="button" onclick="go_previous()"
                     class="btn text-purple2 bg-lightgray1 flex items-center justify-center gap-x-4 max-sm:w-full"
@@ -309,7 +307,7 @@
                     Previous Step
                   </button>
                 </div>
-                <div class="flex flex-wrap justify-end items-center max-sm:w-full w-6/12 max-sm:px-4">
+                <div class="flex items-center max-sm:w-full max-sm:px-3 mb-6">
                   <button type="submit" onclick="form_step2_submit(event)" class="btn-purple btn flex items-center justify-center gap-x-4 max-sm:w-full">
                     Next Step
                     <span><img src="icons/Forward Arrow.svg" alt="" /></span>
@@ -330,9 +328,9 @@
               <div class="text-base text-gray5 text-center px-4">Complete the form below to recieve your personalized quote</div>
             </div>
             <div class="flex justify-center mb-20">
-              <div class="flex items-center justify-center gap-x-4 max-sm:gap-x-2 mx-auto px-7 py-3.5 border border-gray12 rounded-22">
+              <div class="flex items-center justify-center gap-x-4 mx-auto px-7 max-sm:px-4 py-3.5 max-sm:py-2 border border-gray12 rounded-22 max-sm:rounded-2xl">
                 <div class="pr-3 max-sm:pr-0">
-                  <div class="w-12 h-12 rounded-full bg-purple2 bg-opacity-16 flex-center">
+                  <div class="w-12 h-12 max-sm:w-9 max-sm:h-9 rounded-full bg-purple2 bg-opacity-16 flex-center">
                     <svg class="fill-current text-purple2" width="26" height="26" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg">
                       <path d="M13.8125 17.875V11.375H10.5625V13H12.1875V17.875H9.75V19.5H16.25V17.875H13.8125Z"/>
                       <path d="M13 6.5C12.759 6.5 12.5233 6.57148 12.3229 6.7054C12.1225 6.83931 11.9663 7.02966 11.874 7.25235C11.7818 7.47505 11.7576 7.7201 11.8047 7.95652C11.8517 8.19293 11.9678 8.41009 12.1382 8.58054C12.3087 8.75098 12.5258 8.86706 12.7622 8.91408C12.9986 8.96111 13.2437 8.93697 13.4664 8.84473C13.6891 8.75248 13.8794 8.59627 14.0134 8.39585C14.1473 8.19543 14.2188 7.9598 14.2188 7.71875C14.2188 7.39552 14.0903 7.08552 13.8618 6.85696C13.6332 6.6284 13.3232 6.5 13 6.5Z"/>
@@ -340,8 +338,8 @@
                     </svg>
                   </div>
                 </div>
-                <div class="pl-7 pr-3 max-sm:pl-2 max-sm:pr-0 tab-icon-box">
-                  <div class="w-12 h-12 rounded-full bg-purple2 bg-opacity-16 flex-center">
+                <div class="pl-7 pr-3 max-sm:pl-4 max-sm:pr-0 tab-icon-box">
+                  <div class="w-12 h-12 max-sm:w-9 max-sm:h-9 rounded-full bg-purple2 bg-opacity-16 flex-center">
                     <svg class="fill-current text-purple2" width="22" height="22" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
                       <path d="M8.25 2.75C8.92988 2.75 9.59448 2.95161 10.1598 3.32932C10.7251 3.70704 11.1657 4.2439 11.4258 4.87203C11.686 5.50015 11.7541 6.19131 11.6215 6.85812C11.4888 7.52493 11.1614 8.13744 10.6807 8.61818C10.1999 9.09892 9.58743 9.42631 8.92063 9.55895C8.25382 9.69159 7.56265 9.62351 6.93453 9.36334C6.30641 9.10316 5.76954 8.66257 5.39183 8.09727C5.01411 7.53198 4.8125 6.86737 4.8125 6.1875C4.8125 5.27582 5.17467 4.40148 5.81932 3.75682C6.46398 3.11216 7.33832 2.75 8.25 2.75ZM8.25 1.375C7.29818 1.375 6.36773 1.65725 5.57632 2.18605C4.78491 2.71486 4.16808 3.46647 3.80383 4.34584C3.43959 5.22521 3.34428 6.19284 3.52997 7.12637C3.71566 8.05991 4.17401 8.91741 4.84705 9.59045C5.52009 10.2635 6.3776 10.7218 7.31113 10.9075C8.24466 11.0932 9.2123 10.9979 10.0917 10.6337C10.971 10.2694 11.7226 9.65259 12.2514 8.86118C12.7803 8.06977 13.0625 7.13932 13.0625 6.1875C13.0625 4.91115 12.5555 3.68707 11.653 2.78455C10.7504 1.88203 9.52636 1.375 8.25 1.375Z"/>
                       <path d="M15.125 20.625H13.75V17.1875C13.75 16.2758 13.3878 15.4015 12.7432 14.7568C12.0985 14.1122 11.2242 13.75 10.3125 13.75H6.1875C5.27582 13.75 4.40148 14.1122 3.75682 14.7568C3.11216 15.4015 2.75 16.2758 2.75 17.1875V20.625H1.375V17.1875C1.375 15.9111 1.88203 14.6871 2.78455 13.7845C3.68707 12.882 4.91115 12.375 6.1875 12.375H10.3125C11.5889 12.375 12.8129 12.882 13.7155 13.7845C14.618 14.6871 15.125 15.9111 15.125 17.1875V20.625Z"/>
@@ -352,14 +350,14 @@
                   </div>
                 </div>
                 <div class="flex items-center gap-x-4 max-sm:gap-x-2 pl-7 pr-3 max-sm:pl-2 max-sm:pr-0 tab-icon-box">
-                  <div class="w-12 h-12 rounded-full bg-purple2 flex-center">
+                  <div class="w-12 h-12 max-sm:w-9 max-sm:h-9 rounded-full bg-purple2 flex-center">
                     <svg class="fill-current text-white" width="22" height="16" viewBox="0 0 22 16" xmlns="http://www.w3.org/2000/svg">
                       <path d="M21.5207 6.34858L16.2643 4.09358L14.2686 0.683579L14.2057 0.589294C14.0586 0.405536 13.8721 0.257179 13.6599 0.155182C13.4478 0.0531853 13.2154 0.000154882 12.98 7.77989e-06H6.69429C6.43484 -0.00080852 6.17923 0.0626245 5.95028 0.184644C5.72132 0.306664 5.52613 0.483475 5.38214 0.699294L2.71857 4.71429H0.785714C0.57733 4.71429 0.37748 4.79707 0.23013 4.94442C0.0827803 5.09177 0 5.29162 0 5.50001V12.5714C0 12.7798 0.0827803 12.9797 0.23013 13.127C0.37748 13.2744 0.57733 13.3572 0.785714 13.3572H2.46714C2.64808 14.0229 3.04307 14.6107 3.59118 15.0297C4.13929 15.4488 4.81006 15.6758 5.5 15.6758C6.18994 15.6758 6.86071 15.4488 7.40882 15.0297C7.95693 14.6107 8.35192 14.0229 8.53286 13.3572H13.4671C13.6481 14.0229 14.0431 14.6107 14.5912 15.0297C15.1393 15.4488 15.8101 15.6758 16.5 15.6758C17.1899 15.6758 17.8607 15.4488 18.4088 15.0297C18.9569 14.6107 19.3519 14.0229 19.5329 13.3572H21.2143C21.4227 13.3572 21.6225 13.2744 21.7699 13.127C21.9172 12.9797 22 12.7798 22 12.5714V7.07144C21.9999 6.91721 21.9544 6.76643 21.8691 6.63789C21.7839 6.50934 21.6627 6.40873 21.5207 6.34858ZM5.5 14.1429C5.1892 14.1429 4.88538 14.0507 4.62696 13.878C4.36854 13.7054 4.16713 13.4599 4.04819 13.1728C3.92925 12.8857 3.89813 12.5697 3.95877 12.2649C4.0194 11.96 4.16906 11.68 4.38883 11.4603C4.6086 11.2405 4.8886 11.0908 5.19343 11.0302C5.49826 10.9696 5.81422 11.0007 6.10136 11.1196C6.3885 11.2386 6.63392 11.44 6.80659 11.6984C6.97927 11.9568 7.07143 12.2606 7.07143 12.5714C7.07143 12.9882 6.90587 13.3879 6.61117 13.6826C6.31647 13.9773 5.91677 14.1429 5.5 14.1429ZM16.5 14.1429C16.1892 14.1429 15.8854 14.0507 15.627 13.878C15.3685 13.7054 15.1671 13.4599 15.0482 13.1728C14.9293 12.8857 14.8981 12.5697 14.9588 12.2649C15.0194 11.96 15.1691 11.68 15.3888 11.4603C15.6086 11.2405 15.8886 11.0908 16.1934 11.0302C16.4983 10.9696 16.8142 11.0007 17.1014 11.1196C17.3885 11.2386 17.6339 11.44 17.8066 11.6984C17.9793 11.9568 18.0714 12.2606 18.0714 12.5714C18.0714 12.9882 17.9059 13.3879 17.6112 13.6826C17.3165 13.9773 16.9168 14.1429 16.5 14.1429ZM20.4286 11.7857H19.5329C19.3519 11.1199 18.9569 10.5322 18.4088 10.1131C17.8607 9.69411 17.1899 9.46708 16.5 9.46708C15.8101 9.46708 15.1393 9.69411 14.5912 10.1131C14.0431 10.5322 13.6481 11.1199 13.4671 11.7857H8.53286C8.35192 11.1199 7.95693 10.5322 7.40882 10.1131C6.86071 9.69411 6.18994 9.46708 5.5 9.46708C4.81006 9.46708 4.13929 9.69411 3.59118 10.1131C3.04307 10.5322 2.64808 11.1199 2.46714 11.7857H1.57143V6.28572H3.14286C3.27227 6.28505 3.39951 6.25243 3.51328 6.19075C3.62705 6.12906 3.72382 6.04023 3.795 5.93215L6.71 1.57144H12.9957L15.0621 5.10715C15.1464 5.25408 15.276 5.36984 15.4314 5.43715L20.4286 7.59001V11.7857Z"/>
                     </svg>
                   </div>
                   <div class="text-left">
-                    <div class="text-xs text-purple2">Step 3/3</div>
-                    <div class="font-bold text-base max-sm:text-sm text-gray3">Vehicle Information</div>
+                    <div class="text-xs max-sm:text-2.25 text-purple2">Step 3/3</div>
+                    <div class="font-bold text-base max-sm:text-xs max-sm:text-sm text-gray8">Vehicle Information</div>
                   </div>
                 </div>
               </div>
@@ -371,19 +369,19 @@
                   <select 
                     id="vehicle_type"
                     class="w-full text-gray10 pt-4 pb-1.5 border-b border-gray11" 
-                    onchange="onVehicleType(event)"
+                    onchange="onTextValidation(event)"
                   >
                     <option disabled selected value="0">Vehicle Type</option>
                     <option value="car">Car</option>
                     <option value="motorcycle">Motorcycle</option>
                   </select>
-                  <div id="vehicletype_required" class="hidden text-red-500 text-left text-xs">required</div>
+                  <div id="vehicle_type_required" class="hidden text-red-500 text-left text-xs">required</div>
                 </div>
                 <div class="w-full">
                   <select 
                     id="year"
                     class="w-full text-gray10 pt-4 pb-1.5 border-b border-gray11" 
-                    onchange="onYear(event)"
+                    onchange="onTextValidation(event)"
                   >
                     <option disabled selected value="0">Year</option>
                     <option value="2020">2020</option>
@@ -395,7 +393,7 @@
                   <select 
                     id="make"
                     class="w-full text-gray10 pt-4 pb-1.5 border-b border-gray11" 
-                    onchange="onMake(event)"
+                    onchange="ontimeupdate(event)"
                   >
                     <option disabled selected value="0">Make</option>
                     <option value="bmw">BMW</option>
@@ -407,7 +405,7 @@
                   <select 
                     id="model"
                     class="w-full text-gray10 pt-4 pb-1.5 border-b border-gray11" 
-                    onchange="onModel(event)"
+                    onchange="onTextValidation(event)"
                   >
                     <option disabled selected value="0">Model</option>
                     <option value="f800r">F 800 R</option>
@@ -443,14 +441,14 @@
                       id="current_payment"
                       class="inputAnimation w-full pl-7 pt-4 pb-1.5" 
                       type="number" autocomplete="off"
-                      oninput="onCurrentPayment(event)"
+                      oninput="onTextValidation(event)"
                     />
                     <label class="pl-7">Current Payment</label>
                     <span class="dollar-txt pt-1">
                       <span class="txt">$</span>
                     </span>
                   </div>
-                  <div id="currentpayment_required" class="hidden text-red-500 text-left text-xs">required</div>
+                  <div id="current_payment_required" class="hidden text-red-500 text-left text-xs">required</div>
                   <div class="text-gray10 text-2.25 text-left">Enter an amount between $5,000 and $150,000</div>
                 </div>
                 <div class="w-full">
@@ -459,14 +457,14 @@
                       id="current_interest"
                       class="w-full pl-7 inputAnimation pt-4 pb-1.5" 
                       type="number" autocomplete="off"
-                      oninput="onCurrentInterest(event)"
+                      oninput="onTextValidation(event)"
                     />
                     <label class="pl-7">Current Interest Rate</label>
                     <span class="dollar-txt pt-1">
                       <span class="txt">%</span>
                     </span>
                   </div>
-                  <div id="currentinterest_required" class="hidden text-red-500 text-left text-xs">required</div>
+                  <div id="current_interest_required" class="hidden text-red-500 text-left text-xs">required</div>
                   <div class="text-gray10 text-2.25 text-left">Example 6.75</div>
                 </div>
                 <div class="w-full">
@@ -475,31 +473,31 @@
                       id="payoff_amount" 
                       class="w-full pl-7 inputAnimation relative pt-4 pb-1.5" 
                       type="number" 
-                      oninput="onPayoffAmount(event)"
+                      oninput="onTextValidation(event)"
                     />
                     <label class="pl-7">Payoff Amount</label>
                     <span class="dollar-txt pt-1">
                       <span class="txt">$</span>
                     </span>
                   </div>
-                  <div id="payoffamount_required" class="hidden text-red-500 text-left text-xs">required</div>
+                  <div id="payoff_amount_required" class="hidden text-red-500 text-left text-xs">required</div>
                 </div>
                 <div class="w-full">
                   <select 
                     id="desired_term"
                     class="w-full text-gray10 pt-4 pb-1.5 border-b border-gray11" 
-                    onchange="onDesiredTerm(event)"
+                    onchange="onTextValidation(event)"
                   >
                     <option disabled selected value="0">Desired Term</option>
                     <option value="24">24 Months</option>
                     <option value="36">36 Months</option>
                     <option value="48">48 Months</option>
                   </select>
-                  <div id="desiredterm_required" class="hidden text-red-500 text-left text-xs">required</div>
+                  <div id="desired_term_required" class="hidden text-red-500 text-left text-xs">required</div>
                 </div>
               </div>
-              <div class="flex max-sm:flex-col gap-y-4 mb-12">
-                <div class="flex flex-wrap justify-start items-center max-sm:w-full w-6/12 max-sm:px-4">
+              <div class="flex max-sm:flex-col w-full mb-6 justify-between max-sm:flex-col-reverse">
+                <div class="flex items-center max-sm:w-full max-sm:px-3 mb-6">
                   <button 
                     type="button" onclick="go_previous()"
                     class="btn text-purple2 bg-lightgray1 flex items-center justify-center gap-x-4 max-sm:w-full">
@@ -507,7 +505,7 @@
                     Previous Step
                   </button>
                 </div>
-                <div class="flex flex-wrap justify-end items-center max-sm:w-full w-6/12 max-sm:px-4">
+                <div class="flex items-center max-sm:w-full max-sm:px-3 mb-6">
                   <button type="submit" onclick="form_step3_submit(event)" class="btn-purple btn flex items-center justify-center gap-x-4 max-sm:w-full">
                     Next Step
                     <span><img src="icons/Forward Arrow.svg" alt="" /></span>
@@ -714,12 +712,12 @@
     }
   }
 
-  function onFirstName(e) {
-    get_required_validation(e.target.value, 'firstname_required');
-  }
-
-  function onLastName(e) {
-    get_required_validation(e.target.value, 'lastname_required');
+  function onTextValidation(e){
+    var value = e.target.id + "_required";
+    if (e.target.id === "social_security") {
+      value = e.target.id + "_invalid"
+    } 
+    get_required_validation(e.target.value, value);
   }
 
   function onPhone(e) {
@@ -742,8 +740,8 @@
     e.preventDefault();
     form_submitted = true;
 
-    const firstname_valid = get_required_validation(document.getElementById('first_name').value, 'firstname_required');
-    const lastname_valid = get_required_validation(document.getElementById('last_name').value, 'lastname_required');
+    const firstname_valid = get_required_validation(document.getElementById('first_name').value, 'first_name_required');
+    const lastname_valid = get_required_validation(document.getElementById('last_name').value, 'last_name_required');
     const phone_valid = get_phone_validation(document.getElementById('phone_number').value);
     const email_valid = get_email_validation(document.getElementById('email_address').value);
     if (isMobile()) {
@@ -756,10 +754,12 @@
       } else if (!email_valid) {
         scroll_window('email_address');
       } else {
+        window.scrollTo({top: 200, behavior: 'smooth'});
         go_next();
       }
     } else {
       if (firstname_valid && lastname_valid && phone_valid && email_valid) {
+        window.scrollTo({top: 200, behavior: 'smooth'});
         go_next();
       }
     }
@@ -805,10 +805,10 @@
 
   function get_socialsecurity_validation(value) {
     if (value.length == 0 || length_validation(value, social_len)) {
-      setItemDisplay('socialsecurity_invalid', 'none');
+      setItemDisplay('social_security_invalid', 'none');
       return true;
     } else {
-      setItemDisplay('socialsecurity_invalid', 'block');
+      setItemDisplay('social_security_invalid', 'block');
       return false;
     }
   }
@@ -821,18 +821,6 @@
       setItemDisplay(id, 'none');
       return true;
     }
-  }
-
-  function onStreetAddress(e) {
-    get_required_validation(e.target.value, 'streetaddress_required');
-  }
-
-  function onUnitSuite(e) {
-    get_required_validation(e.target.value, 'unitsuite_required');
-  }
-
-  function onCity(e) {
-    get_required_validation(e.target.value, 'city_required');
   }
 
   function onZipCode(e) {
@@ -860,20 +848,11 @@
     get_birthdate_validation(e.target.value);
   }
 
-  function onSocialSecurity(e) {
-    get_socialsecurity_validation(e.target.value);
-  }
-
-  function onState(e) {
-    get_select_validation(e.target.value, 'state_required');
-  }
-
   function form_step2_submit(e) {
     e.preventDefault();
     form_submitted = true;
 
-    const streetaddress_valid = get_required_validation(document.getElementById('street_address').value, 'streetaddress_required');
-    const unitsuite_valid = get_required_validation(document.getElementById('unit_suite').value, 'unitsuite_required');
+    const streetaddress_valid = get_required_validation(document.getElementById('street_address').value, 'street_address_required');
     const city_valid = get_required_validation(document.getElementById('city').value, 'city_required');
     const state_valid = get_select_validation(document.getElementById('state').value, 'state_required');
     const zipcode_valid = get_zipcode_validation(document.getElementById('zip_code').value);
@@ -882,8 +861,6 @@
     if (isMobile()) {
       if (!streetaddress_valid) {
         scroll_window('street_address');
-      } else if (!unitsuite_valid) {
-        scroll_window('unit_suite');
       } else if (!city_valid) {
         scroll_window('city');
       } else if (!state_valid) {
@@ -895,60 +872,30 @@
       } else if (!socialsecurity_valid) {
         scroll_window('social_security');
       } else {
+        window.scrollTo({top: 200, behavior: 'smooth'});
         go_next();
       }
     } else {
-      if (streetaddress_valid && unitsuite_valid && city_valid && state_valid && zipcode_valid && birthdate_valid && socialsecurity_valid)
+      if (streetaddress_valid && city_valid && state_valid && zipcode_valid && birthdate_valid && socialsecurity_valid)
         return go_next();
     }
 
   }
 
   // Form step3
-  function onVehicleType(e) {
-    get_select_validation(e.target.value, 'vehicletype_required');
-  }
-
-  function onYear(e) {
-    get_select_validation(e.target.value, 'year_required');
-  }
-
-  function onMake(e) {
-    get_select_validation(e.target.value, 'make_required');
-  }
-
-  function onModel(e) {
-    get_select_validation(e.target.value, 'model_required');
-  }
-
-  function onCurrentPayment(e) {
-    get_required_validation(e.target.value, 'currentpayment_required');
-  }
-
-  function onCurrentInterest(e) {
-    get_required_validation(e.target.value, 'currentinterest_required');
-  }
-
-  function onPayoffAmount(e) {
-    get_required_validation(e.target.value, 'payoffamount_required');
-  }
-
-  function onDesiredTerm(e) {
-    get_select_validation(e.target.value, 'desiredterm_required');
-  }
 
   function form_step3_submit(e) {
     e.preventDefault();
     form_submitted = true;
 
-    const vehicletype_valid = get_select_validation(document.getElementById('vehicle_type').value, 'vehicletype_required');
+    const vehicletype_valid = get_select_validation(document.getElementById('vehicle_type').value, 'vehicle_type_required');
     const year_valid = get_select_validation(document.getElementById('year').value, 'year_required');
     const make_valid = get_select_validation(document.getElementById('make').value, 'make_required');
     const model_valid = get_select_validation(document.getElementById('model').value, 'model_required');
-    const currentpayment_valid = get_required_validation(document.getElementById('current_payment').value, 'currentpayment_required');
-    const currentinterest_valid = get_required_validation(document.getElementById('current_interest').value, 'currentinterest_required');
-    const payoffamount_valid = get_required_validation(document.getElementById('payoff_amount').value, 'payoffamount_required');
-    const desiredterm_valid = get_select_validation(document.getElementById('desired_term').value, 'desiredterm_required');
+    const currentpayment_valid = get_required_validation(document.getElementById('current_payment').value, 'current_payment_required');
+    const currentinterest_valid = get_required_validation(document.getElementById('current_interest').value, 'current_interest_required');
+    const payoffamount_valid = get_required_validation(document.getElementById('payoff_amount').value, 'payoff_amount_required');
+    const desiredterm_valid = get_select_validation(document.getElementById('desired_term').value, 'desired_term_required');
     if (isMobile()) {
       if (!vehicletype_valid) {
         scroll_window('vehicle_type');
@@ -967,11 +914,14 @@
       } else if (!desiredterm_valid) {
         scroll_window('desired_term');
       } else {
+        window.scrollTo({top: 200, behavior: 'smooth'});
         go_next();
       }
     } else {
-      if (vehicletype_valid && year_valid && make_valid && model_valid && currentpayment_valid && currentinterest_valid && payoffamount_valid && desiredterm_valid)
+      if (vehicletype_valid && year_valid && make_valid && model_valid && currentpayment_valid && currentinterest_valid && payoffamount_valid && desiredterm_valid) {
+        window.scrollTo({top: 200, behavior: 'smooth'});
         go_next();
+      }
     }
   }
 
@@ -1075,6 +1025,12 @@
   width: 1px;
   height: 42px;
   background-color: #d3d3d4;
+}
+
+@media (max-width: 639px) {
+  .tab-icon-box::before {
+    height: 36px;
+  }
 }
 
 ::-webkit-input-placeholder {
