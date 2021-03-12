@@ -80,8 +80,8 @@
                 <div class="w-full input-group">
                   <input 
                     id="first_name"
-                    class="inputAnimation pt-4 pb-1.5" 
-                    type="text" autocomplete="off"
+                    class="inputAnimation" 
+                    type="text" autocomplete="given-name"
                     oninput="onTextValidation(event)"
                   />
                   <label>First Name</label>
@@ -90,8 +90,8 @@
                 <div class="w-full input-group">
                   <input 
                     id="last_name"
-                    class="inputAnimation pt-4 pb-1.5" 
-                    type="text" autocomplete="off"
+                    class="inputAnimation" autocomplete="family-name"
+                    type="text"
                     oninput="onTextValidation(event)"
                   />
                   <label>Last Name</label>
@@ -100,8 +100,8 @@
                 <div class="w-full input-group max-sm:cursor-pointer">
                   <input 
                     id="phone_number"
-                    class="inputAnimation pt-4 pb-1.5 max-sm:cursor-pointer" 
-                    type="text" autocomplete="off"
+                    class="inputAnimation" autocomplete="tel"
+                    type="text"
                     oninput="onPhone(event)"
                   />
                   <label>Phone Number</label>
@@ -111,8 +111,8 @@
                 <div class="w-full input-group">
                   <input 
                     id="email_address"
-                    class="inputAnimation pt-4 pb-1.5" 
-                    type="email" autocomplete="off"
+                    class="inputAnimation" autocomplete="email"
+                    type="email"
                     oninput="onEmail(event)"
                   />
                   <label>Email Address</label>
@@ -187,8 +187,8 @@
                 <div class="input-group">
                   <input 
                     id="street_address"
-                    class="inputAnimation pt-4 pb-1.5" 
-                    type="text" autocomplete="off"
+                    class="inputAnimation" autocomplete="off"
+                    type="text" 
                     oninput="onTextValidation(event)"
                   />
                   <label>Street Address</label>
@@ -197,8 +197,8 @@
                 <div class="input-group">
                   <input 
                     id="unit_suite"
-                    class="inputAnimation pt-4 pb-1.5" 
-                    type="text" autocomplete="off"
+                    class="inputAnimation" 
+                    type="text"
                   />
                   <label>Unit/Suite(optional)</label>
                 </div>
@@ -207,8 +207,8 @@
                 <div class="w-full input-group">
                   <input 
                     id="city"
-                    class="inputAnimation pt-4 pb-1.5" 
-                    type="text" autocomplete="off"
+                    class="inputAnimation" 
+                    type="text"
                     oninput="onTextValidation(event)"
                   />
                   <label>City</label>
@@ -229,8 +229,8 @@
                 <div class="w-full input-group">
                   <input 
                     id="zip_code"
-                    class="inputAnimation pt-4 pb-1.5" 
-                    type="text" maxlength="5" autocomplete="off"
+                    class="inputAnimation" 
+                    type="text" maxlength="5"
                     oninput="onZipCode(event)"
                   />
                   <label>Zip Code</label>
@@ -242,8 +242,8 @@
                 <div class="w-full input-group">
                   <input 
                     id="birth_date"
-                    class="inputAnimation pt-4 pb-1.5" 
-                    type="text" maxlength="10" autocomplete="off"
+                    class="inputAnimation" 
+                    type="text" maxlength="10"
                     oninput="onBirthDate(event)"
                   />
                   <label>Date of Birth</label>
@@ -253,8 +253,8 @@
                 <div class="w-full input-group">
                   <input 
                     id="social_security"
-                    class="inputAnimation pt-4 pb-1.5" 
-                    type="text" maxlength="4" autocomplete="off"
+                    class="inputAnimation" 
+                    type="text" maxlength="4"
                     oninput="onSocialSecurity(event)"
                   />
                   <label>Last 4 Social Security (optional)</label>
@@ -380,16 +380,16 @@
                 <div class="w-full input-group">
                   <input 
                     id="vin"
-                    class="inputAnimation pt-4 pb-1.5" 
-                    type="text" autocomplete="off"
+                    class="inputAnimation" 
+                    type="text"
                   />
                   <label>VIN (optional)</label>
                 </div>
                 <div class="w-full input-group">
                   <input 
                     id="mileage"
-                    class="inputAnimation pt-4 pb-1.5" 
-                    type="text" autocomplete="off"
+                    class="inputAnimation" 
+                    type="text"
                   />
                   <label>Mileage (optionial)</label>
                 </div>
@@ -403,8 +403,8 @@
                   <div class="relative input-group">
                     <input 
                       id="current_payment"
-                      class="inputAnimation w-full pl-7 pt-4 pb-1.5" 
-                      type="number" autocomplete="off"
+                      class="inputAnimation pl-7" 
+                      type="number"
                       oninput="onTextValidation(event)"
                     />
                     <label class="pl-7">Current Payment</label>
@@ -419,8 +419,8 @@
                   <div class="relative input-group">
                     <input 
                       id="current_interest"
-                      class="w-full pl-7 inputAnimation pt-4 pb-1.5" 
-                      type="number" autocomplete="off"
+                      class="w-full pl-7 inputAnimation" 
+                      type="number"
                       oninput="onTextValidation(event)"
                     />
                     <label class="pl-7">Current Interest Rate</label>
@@ -435,7 +435,7 @@
                   <div class="relative input-group">
                     <input
                       id="payoff_amount" 
-                      class="w-full pl-7 inputAnimation relative pt-4 pb-1.5" 
+                      class="w-full pl-7 inputAnimation relative" 
                       type="number" 
                       oninput="onTextValidation(event)"
                     />
@@ -1319,15 +1319,6 @@ span.dollar-txt .txt:before {
     height: 0px;
   }
 }
-/* Input */
-input[type="text"]{width: 100% !important;color: #65676A;}
-input[type="email"]{width: 100% !important;color: #65676A;}
-.input-group{position: relative;}
-.inputAnimation{border: 0; border-bottom: 1px solid #BDBEBF; background-color: transparent;}
-.inputAnimation ~ label{position: absolute; left: 0; width: 100%; top: 17px; color: #65676A; transition: 0.3s; z-index: -1; text-align: left;}
-.inputAnimation:focus ~ label, .has-content.inputAnimation ~ label{top: -16px; font-size: 12px; color: #6948B7; transition: 0.3s;}
-
-/* //////////////////////////// */
 
 /* splide */
   @media (min-width: 840px) and (max-width: 1280px) {
