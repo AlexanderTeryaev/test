@@ -5,11 +5,12 @@ module.exports = {
     extend: {
       fontSize: {
         2.25: '0.5625rem',
-        90: '5.625rem',
-        60: '3.75rem',
-        50: '3.125rem',
         28: '1.75rem',
         32: '2rem',
+        37: '37px',
+        50: '3.125rem',
+        60: '3.75rem',
+        90: '5.625rem',
         207: '207px'
       },
       height: {
@@ -18,7 +19,8 @@ module.exports = {
       },
       width: {
         47.5: '11.875rem',
-        84: '21rem'
+        84: '21rem',
+        102: '25.5rem'        
       },
       minWidth: {
         '120': '30rem',
@@ -70,7 +72,7 @@ module.exports = {
         gray10: '#65676A',
         gray11: '#BDBEBF',
         gray12: '#D3D3D4',
-        gray13: '#fbfafc',
+        gray13: '#FBFAFC',
         lightgray1: '#F4F4F4',
         green: '#34D399',
         lightgreen: '#44e0b7'
