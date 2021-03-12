@@ -27,6 +27,22 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+/* Input */
+input[type="text"]{width: 100% !important;color: #65676A;}
+input[type="email"]{width: 100% !important;color: #65676A;}
+.input-group{position: relative;}
+.inputAnimation{border: 0; border-bottom: 1px solid #BDBEBF; background-color: transparent;padding-top: 1rem;padding-bottom: 0.5rem;width: 100%;}
+.inputAnimation ~ label{position: absolute; left: 0; width: 100%; top: 17px; color: #65676A; transition: 0.3s; z-index: -1; text-align: left;}
+.inputAnimation:focus ~ label, .has-content.inputAnimation ~ label{top: -16px; font-size: 12px; color: #6948B7; transition: 0.3s;}
+/* Change the white to any color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active
+{
+-webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
 header {
   @apply flex justify-center
 }
