@@ -19,16 +19,25 @@ module.exports = {
       },
       width: {
         47.5: '11.875rem',
-        102: '25.5rem'
+        84: '21rem',
+        102: '25.5rem'        
       },
       minWidth: {
-        '120': '30rem'
+        '120': '30rem',
+        '84': '21rem',
+        '64': '16rem'
       },
       maxWidth: {
         '8xl': '120rem'
-      },      
+      },   
+      minHeight: {
+        '100vh': '100vh'
+      },  
       margin: {
         'initial': 'initial'
+      },
+      marginBottom: {
+        26: '6.5rem'
       },
       body: ['"TypoGrotesk"'],
       display: ['TypoGrotesk'],
@@ -47,7 +56,7 @@ module.exports = {
       },
       transitionProperty: {
         'right': 'right'
-      },
+      },      
       colors: {
         purple1: '#6948B7',
         purple2: '#5230A2',
@@ -63,7 +72,11 @@ module.exports = {
         gray10: '#65676A',
         gray11: '#BDBEBF',
         gray12: '#D3D3D4',
+<<<<<<< HEAD
         gray13: '#FBFAFC',
+=======
+        gray13: '#fbfafc',
+>>>>>>> 831a9df347b44189d543b5c00b79cfaac2e9d9f8
         lightgray1: '#F4F4F4',
         green: '#34D399',
         lightgreen: '#44e0b7'
@@ -90,12 +103,34 @@ module.exports = {
       'max-md': { max: '767px' },
       // => @media (max-width: 767px) { ... }
 
-      'max-sm': { max: '639px' }
+      'max-sm': { max: '639px' },
       // => @media (max-width: 639px) { ... }
+
+
+
+      'min-3xl': { min: '1920px' },
+      // => @media (min-width: 1920px) { ... }
+
+      'min-2xl': { min: '1535px' },
+      // => @media (min-width: 1535px) { ... }
+
+      'min-xl': { min: '1279px' },
+      // => @media (min-width: 1279px) { ... }
+
+      'min-lg': { min: '1023px' },
+      // => @media (min-width: 1023px) { ... }
+
+      'min-md': { min: '767px' },
+      // => @media (min-width: 767px) { ... }
+
+      'min-sm': { min: '639px' }
+      // => @media (min-width: 639px) { ... }
     }
   },
   variants: {
-    extend: {}
+    extend: {
+      fontWeight: ['hover'],
+    }
   },
   plugins: []
 }

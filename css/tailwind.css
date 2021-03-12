@@ -271,6 +271,25 @@ header {
   @apply border-none;
 }
 
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* Admin CSS */
+
+.admin-side {
+  @apply py-16 max-sm:py-12 min-h-100vh bg-gray2 w-84 min-w-84 max-sm:w-64 max-sm:min-w-64
+}
+.admin-side-item {
+  @apply mb-8 py-1 max-sm:mb-5 flex items-center cursor-pointer pl-14 max-sm:pl-7 hover:font-bold
+}
+.admin-main {
+  @apply flex flex-col flex-1 overflow-hidden bg-gray13
+}
+.admin-header {
+  @apply pt-14 pb-8 px-20 max-sm:p-6
+}
+.admin-wrap {
+  @apply container py-8 px-20 max-sm:p-6
+}
+
 @tailwind utilities;
 
 @font-face {
