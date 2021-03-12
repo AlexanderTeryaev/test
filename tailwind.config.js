@@ -19,15 +19,22 @@ module.exports = {
       width: {
         47.5: '11.875rem'
       },
-      minWidth: {},
+      minWidth: {
+        '120': '30rem'
+      },
       maxWidth: {
         '8xl': '120rem'
       },      
-      margin: {},
+      margin: {
+        'initial': 'initial'
+      },
       body: ['"TypoGrotesk"'],
       display: ['TypoGrotesk'],
       fontFamily: {
         typoGrotesk: 'TypoGrotesk'
+      },
+      letterSpacing: {
+        moretight: '-.035em',
       },
       borderRadius: {
         '24': '1.5rem',
