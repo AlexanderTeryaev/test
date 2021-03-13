@@ -4,9 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>New User</title>
+    <title>New Job</title>
     <script type="text/javascript" src="https://www.bugherd.com/sidebarv2.js?apikey=qsoryock2pvnkksftvyera" async="true"></script>
     <link href="../css/tailwind.css" rel="stylesheet" />
+
+    <link href="https://cdn.jsdelivr.net/npm/froala-editor@3.1.0/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/froala-editor@3.1.0/js/froala_editor.pkgd.min.js"></script>
   </head>
   <body>
     <div class="flex h-screen">
@@ -91,74 +94,61 @@
             </svg>
           </button>
           <div>
-            <div class="text-xs text-gray5 mb-2"><span class="text-purple2">Users</span> / New User</div>
-            <div class="text-4xl max-sm:text-2xl text-gray5">New User</div>
+            <div class="text-xs text-gray5 mb-2"><span class="text-purple2">Jobs</span> / New Job</div>
+            <div class="text-4xl max-sm:text-2xl text-gray5">New Job</div>
           </div>
         </div>
   
         <main class="flex-1 overflow-x-hidden overflow-y-auto">
           <!-- Content -->
           <div class="py-8 px-20 max-sm:p-6">
-            <form class="w-1/2 max-sm:w-full text-gray3">
-              <div class="grid grid-cols-2 max-xl:grid-cols-1 gap-4 mb-4">
-                <div>
-                  <input 
-                    id="first_name"
-                    type="text" 
-                    class="w-full border border-gray12 rounded-lg px-6 py-2" 
-                    placeholder="First Name" 
-                    oninput="onTextValidation(event)"
-                  />
-                  <div id="first_name_required" class="hidden text-red-500 text-left text-xs">required</div>
-                </div>
-                <div>
-                  <input 
-                    id="last_name"
-                    type="text" 
-                    class="w-full border border-gray12 rounded-lg px-6 py-2" 
-                    placeholder="Last Name" 
-                    oninput="onTextValidation(event)"
-                  />
-                  <div id="last_name_required" class="hidden text-red-500 text-left text-xs">required</div>
-                </div>
-              </div>
-              <div class="mb-4">
-                <select 
-                  id="access"
-                  class="w-full border border-gray12 rounded-lg px-6 py-2"
-                  onchange="onSelectValidation(event)"
-                >
-                  <option disabled selected value="0">Access</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                </select>
-                <div id="access_required" class="hidden text-red-500 text-left text-xs">required</div>
-              </div>
-              <div class="mb-4">
+            <form class="w-full text-gray3">
+              <div class="mb-8">
                 <input 
-                  id="email_address"
-                  type="email" 
+                  id="title"
+                  type="text" 
                   class="w-full border border-gray12 rounded-lg px-6 py-2" 
-                  placeholder="Email Address" 
-                  oninput="onEmail(event)"
-                />
-                <div id="email_required" class="hidden text-red-500 text-left text-xs">required</div>
-                <div id="email_invalid" class="hidden text-red-500 text-left text-xs">invalid email</div>
-              </div>
-              <div class="mb-10">
-                <input 
-                  id="password"
-                  type="password" 
-                  class="w-full border border-gray12 rounded-lg px-6 py-2" 
-                  placeholder="Password" 
+                  placeholder="Job Title Here" 
                   oninput="onTextValidation(event)"
                 />
-                <div id="password_required" class="hidden text-red-500 text-left text-xs">required</div>
+                <div id="title_required" class="hidden text-red-500 text-left text-xs">required</div>
               </div>
-              <div>
+              <div class="text-gray9 mb-4">Application Type</div>
+              <div class="grid grid-cols-2 max-xl:grid-cols-1 gap-4 mb-8">
+                <div>
+                  <input 
+                    id="location"
+                    type="text" 
+                    class="w-full border border-gray12 rounded-lg px-6 py-2" 
+                    placeholder="Location" 
+                    oninput="onTextValidation(event)"
+                  />
+                  <div id="location_required" class="hidden text-red-500 text-left text-xs">required</div>
+                </div>
+                <div>
+                  <input 
+                    id="cta_email"
+                    type="text" 
+                    class="w-full border border-gray12 rounded-lg px-6 py-2" 
+                    placeholder="Enter CTA/Email" 
+                    oninput="onTextValidation(event)"
+                  />
+                  <div id="cta_email_required" class="hidden text-red-500 text-left text-xs">required</div>
+                </div>
+              </div>
+              <div id="description" class="mb-10">
+              </div>
+              <div class="flex items-center gap-6">
+                <label>
+                  <label class="switch">
+                    <input id="live" type="checkbox">
+                    <span class="slider round"></span>
+                  </label>
+                  <span class="text-lightgreen font-bold">Live</span>
+                </label>
                 <button 
                   type="submit" 
-                  class="bg-gray3 hover:bg-gray7 text-white btn max-sm:w-full"
+                  class="bg-gray3 hover:bg-gray7 text-white btn"
                   onclick="form_submit(event)"
                 >
                   Save
@@ -190,17 +180,22 @@
     side_menu.classList.add("-translate-x-full", "ease-in")
   }
 
+  var editor = new FroalaEditor('#description', {
+    toolbarButtons: [
+      'fontSize', 'bold', 'italic', 'underline', 'textColor', 'alignLeft', 
+      'alignCenter', 'alignRight', 'alignJustify', 'formatOL', 'formatUL',
+      'insertImage', 'insertFile', 'insertTable', 'insertLink', 'emoticons'
+    ],
+    placeholderText: 'Job description',
+    height: 300
+  });
+
   // Validation functions
   function required_validation(val) {
     if (val && val.length > 0)
       return true;
     else
       return false;
-  }
-
-  function email_validatioin(email) {
-    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
   }
 
   // Show/hide element
@@ -220,60 +215,85 @@
     }
   }
 
-  function get_email_validation(value) {
-    if (required_validation(value)) {
-      setItemDisplay('email_required', 'none');
-      if (email_validatioin(value)) {
-        setItemDisplay('email_invalid', 'none');
-        return true;
-      } else {
-        setItemDisplay('email_invalid', 'block');
-        return false;
-      }
-    } else {
-      setItemDisplay('email_required', 'block');
-      setItemDisplay('email_invalid', 'none');
-      return false;
-    }
-  }
-
   function onTextValidation(e) {
     var id = e.target.id + "_required";
     get_required_validation(e.target.value, id);
   }  
 
-  function onSelectValidation(e) {
-    var id = e.target.id + "_required";
-    get_select_validation(e.target.value, id)
-  }
-
-  function get_select_validation(value, id) {
-    if (value == '0') {
-      setItemDisplay(id, 'block');
-      return false;
-    } else {
-      setItemDisplay(id, 'none');
-      return true;
-    }
-  }
-
-  function onEmail(e) {
-    get_email_validation(e.target.value);
-  }
-
   function form_submit(e) {
     e.preventDefault();
     form_submitted = true;
 
-    const firstname_valid = get_required_validation(document.getElementById('first_name').value, 'first_name_required');
-    const lastname_valid = get_required_validation(document.getElementById('last_name').value, 'last_name_required');
-    const access_valid = get_select_validation(document.getElementById('access').value, 'access_required');
-    const email_valid = get_email_validation(document.getElementById('email_address').value);
-    const password_valid = get_required_validation(document.getElementById('password').value, 'password_required');
+    const title_valid = get_required_validation(document.getElementById('title').value, 'title_required');
+    const location_valid = get_required_validation(document.getElementById('location').value, 'location_required');
+    const catemail_valid = get_required_validation(document.getElementById('cta_email').value, 'cta_email_required');
     
-    if (firstname_valid && lastname_valid && access_valid && password_valid && email_valid) {
+    
+    if (title_valid && location_valid && catemail_valid) {
       // submit
-
+      editor.html.get(); // value of description
+      document.getElementById('live').checked; // live value
     }
   }  
 </script>
+<style>
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+  }
+
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 13px;
+    width: 13px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  input:checked + .slider {
+    background-color: #44E0B7;
+  }
+
+  input:focus + .slider {
+    box-shadow: 0 0 1px #44E0B7;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(19px);
+    -ms-transform: translateX(19px);
+    transform: translateX(19px);
+  }
+
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 10px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }  
+</style>
