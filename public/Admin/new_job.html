@@ -141,10 +141,10 @@
               <div class="flex items-center gap-6">
                 <label>
                   <label class="switch">
-                    <input id="live" type="checkbox">
+                    <input id="live" type="checkbox" onclick="onSwitch()">
                     <span class="slider round"></span>
                   </label>
-                  <span class="text-lightgreen font-bold">Live</span>
+                  <span id="livetext" class="text-gray3 font-bold">Live</span>
                 </label>
                 <button 
                   type="submit" 
@@ -220,6 +220,14 @@
     get_required_validation(e.target.value, id);
   }  
 
+  function onSwitch() {
+    if (document.getElementById('live').checked) {
+      document.getElementById('livetext').style.color = '#44e0b7';
+    } else {
+      document.getElementById('livetext').style.color = '#898A8D';
+    }
+  }
+
   function form_submit(e) {
     e.preventDefault();
     form_submitted = true;
@@ -228,7 +236,6 @@
     const location_valid = get_required_validation(document.getElementById('location').value, 'location_required');
     const catemail_valid = get_required_validation(document.getElementById('cta_email').value, 'cta_email_required');
     
-    
     if (title_valid && location_valid && catemail_valid) {
       // submit
       editor.html.get(); // value of description
@@ -236,64 +243,3 @@
     }
   }  
 </script>
-<style>
-  .switch {
-    position: relative;
-    display: inline-block;
-    width: 40px;
-    height: 20px;
-  }
-
-  .switch input { 
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 13px;
-    width: 13px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-
-  input:checked + .slider {
-    background-color: #44E0B7;
-  }
-
-  input:focus + .slider {
-    box-shadow: 0 0 1px #44E0B7;
-  }
-
-  input:checked + .slider:before {
-    -webkit-transform: translateX(19px);
-    -ms-transform: translateX(19px);
-    transform: translateX(19px);
-  }
-
-  /* Rounded sliders */
-  .slider.round {
-    border-radius: 10px;
-  }
-
-  .slider.round:before {
-    border-radius: 50%;
-  }  
-</style>
