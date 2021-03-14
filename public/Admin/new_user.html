@@ -91,7 +91,7 @@
             </svg>
           </button>
           <div>
-            <div class="text-xs text-gray5 mb-2"><span class="text-purple2">New</span> / User</div>
+            <div class="text-xs text-gray5 mb-2"><span class="text-purple2">Users</span> / New User</div>
             <div class="text-4xl max-sm:text-2xl text-gray5">New User</div>
           </div>
         </div>
@@ -158,7 +158,7 @@
               <div>
                 <button 
                   type="submit" 
-                  class="bg-gray3 hover:bg-gray7 text-white btn max-sm:w-full"
+                  class="bg-gray3 hover:bg-purple1 text-white btn max-sm:w-full"
                   onclick="form_submit(event)"
                 >
                   Save
@@ -269,7 +269,7 @@
     const lastname_valid = get_required_validation(document.getElementById('last_name').value, 'last_name_required');
     const access_valid = get_select_validation(document.getElementById('access').value, 'access_required');
     const email_valid = get_email_validation(document.getElementById('email_address').value);
-    const password_valid = get_required_validation(document.getElementById('last_name').value, 'last_name_required');
+    const password_valid = get_required_validation(document.getElementById('password').value, 'password_required');
     
     if (firstname_valid && lastname_valid && access_valid && password_valid && email_valid) {
       // submit
