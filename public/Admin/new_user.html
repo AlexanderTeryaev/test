@@ -106,7 +106,7 @@
                     id="first_name"
                     type="text" 
                     class="w-full border border-gray12 rounded-lg px-6 py-2" 
-                    placeholder="First Name" 
+                    placeholder="First Name" autocomplete="given-name"
                     oninput="onTextValidation(event)"
                   />
                   <div id="first_name_required" class="hidden text-red-500 text-left text-xs">required</div>
@@ -116,7 +116,7 @@
                     id="last_name"
                     type="text" 
                     class="w-full border border-gray12 rounded-lg px-6 py-2" 
-                    placeholder="Last Name" 
+                    placeholder="Last Name" autocomplete="family-name"
                     oninput="onTextValidation(event)"
                   />
                   <div id="last_name_required" class="hidden text-red-500 text-left text-xs">required</div>
@@ -139,7 +139,7 @@
                   id="email_address"
                   type="email" 
                   class="w-full border border-gray12 rounded-lg px-6 py-2" 
-                  placeholder="Email Address" 
+                  placeholder="Email Address" autocomplete="email"
                   oninput="onEmail(event)"
                 />
                 <div id="email_required" class="hidden text-red-500 text-left text-xs">required</div>
