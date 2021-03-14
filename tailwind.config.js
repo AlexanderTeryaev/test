@@ -74,9 +74,11 @@ module.exports = {
         gray12: '#D3D3D4',
         gray13: '#FBFAFC',
         gray14: '#B5A3DF',
+        gray15: '#E9EAEA',
         lightgray1: '#F4F4F4',
         green: '#34D399',
-        lightgreen: '#44e0b7'
+        lightgreen: '#44e0b7',
+        lightblue: '#f0fdf9'
       },
       zIndex: {
         '-1': '-1',

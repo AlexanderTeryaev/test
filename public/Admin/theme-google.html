@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Google Landing Page</title>
+    <script type="text/javascript" src="https://www.bugherd.com/sidebarv2.js?apikey=qsoryock2pvnkksftvyera" async="true"></script>
+    <link href="../css/tailwind.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="flex h-screen">
+      <!-- SideMenu -->
+      <div class="flex">
+        <!-- Backdrop -->
+        <div
+          id="side-bg" 
+          onclick="hide_sidemenu()"
+          class="fixed z-20 inset-0 bg-black opacity-50 transition-opacity max-3xl:hidden"
+        ></div>
+        <!-- End Backdrop -->
+    
+        <div
+          id="side-menu"
+          class="-translate-x-full ease-in admin-side fixed z-30 inset-y-0 left-0 transition duration-300 transform overflow-y-auto min-lg:translate-x-0 min-lg:static min-lg:inset-0"
+        >
+          <div class="flex flex-col justify-between h-full">
+            <div>
+              <img class="cursor-pointer mx-14 max-sm:mx-7 mb-24 max-sm:mb-8" src="../_icons/logo_white.svg" alt="" />
+              <div class="admin-side-items">
+                <div class="admin-side-item">
+                  <img class="mr-6" src="../_icons/home.svg" alt="" />
+                  <span class="text-white">Dashboard</span>
+                </div>
+                <div class="admin-side-item border-l-4 border-lightgreen">
+                  <img class="mr-6" src="../_icons/color_palette.svg" alt="" />
+                  <span class="text-white">Themes</span>
+                </div>
+                <div class="admin-side-item">
+                  <img class="mr-6" src="../_icons/website.svg" alt="" />
+                  <span class="text-white">Landing Pages</span>
+                </div>
+                <div class="admin-side-item">
+                  <img class="mr-6" src="../_icons/note.svg" alt="" />
+                  <span class="text-white">Resources</span>
+                </div>
+                <div class="admin-side-item">
+                  <img class="mr-6" src="../_icons/like.svg" alt="" />
+                  <span class="text-white">Reviews</span>
+                </div>
+                <div class="admin-side-item">
+                  <img class="mr-6" src="../_icons/close_circled.svg" alt="" />
+                  <span class="text-white">FAQ</span>
+                </div>
+                <div class="admin-side-item">
+                  <img class="mr-6" src="../_icons/hire.svg" alt="" />
+                  <span class="text-white">Jobs</span>
+                </div>
+                <div class="admin-side-item">
+                  <img class="mr-6" src="../_icons/people.svg" alt="" />
+                  <span class="text-white">Users</span>
+                </div>
+              </div>    
+            </div>
+            <img class="w-12 h-12 cursor-pointer mx-14 max-sm:mx-7" src="../_icons/logo_circle.svg" alt="" />
+          </div>
+        </div>
+      </div>
+      
+      <!-- Main -->
+      <div class="admin-main">
+        <!-- Header -->
+        <div class="admin-header">
+          <button
+            id="hamburger" onclick="show_sidemenu()"
+            class="text-gray-500 focus:outline-none min-lg:hidden"
+          >
+            <svg
+              class="h-6 w-6"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M4 6H20M4 12H20M4 18H11"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          <div>
+            <div class="text-xs pb-2 max-lg:hidden">
+              <span class="text-gray2">Landing Pages</span>
+              <span class="text-gray5">/ Google Landing Page</span>
+            </div>
+            <!-- <div class="h-6">&nbsp;</div> -->
+            <div class="flex-between">
+              <div class="text-4xl max-sm:text-2xl text-gray5 max-lg:pt-8">4-Step-Landing-Theme</div>
+              <div class="max-2xl:hidden flex items-end">
+                <img class="-mr-6 pb-2" src="../_icons/search.svg" alt="">
+                <div class="flex items-end ">
+                  <div class="relative mr-8">
+                    <input
+                      id="search-text" 
+                      class="pl-7 w-80 text-gray10 border-b border-gray11 py-2 bg-transparent font-bold" 
+                      type="text" 
+                      placeholder="Search"
+                    />
+                  </div>
+                  <button class="btn btn-purple flex items-center">Create New Template
+                    <img class="ml-4" src="../_icons/plus-white.svg" alt="" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <main class="flex-1 overflow-x-hidden overflow-y-auto">
+          <!-- Content -->
+          <div class="py-8 px-20 max-sm:p-6">
+            <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
+              <div
+                class="inline-block min-w-full rounded-2xl overflow-hidden"
+              >
+                <table class="min-w-full leading-normal">
+                  <thead>
+                    <tr>
+                      <th class="table-th min-w-84">Page Name</th>
+                      <th class="table-th">Date Created</th>
+                      <th class="table-th text-center">Live</th>
+                      <th class="table-th text-center">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="table-td flex items-center">
+                        <img class="rounded-md" src="../_images/AutoApprove-Quote Step1.svg" alt="">
+                        <span class="text-gray5 font-bold pl-4 whitespace-no-wrap fit-content">Get a quote theme 1</span>
+                      </td>
+                      <td class="table-td">
+                        <p class="text-gray4 whitespace-no-wrap">
+                          Jan 1 2021
+                        </p>
+                      </td>
+                      <td class="table-td">
+                        <p class="text-lightgreen bg-lightblue font-bold text-center rounded-2xl py-1 px-4 whitespace-no-wrap fit-content mx-auto">
+                          Yes
+                        </p>
+                      </td>
+                      <td class="table-td">
+                        <div class="flex items-center w-40 mx-auto">
+                          <button class="btn-outline-purple">Edit</button>
+                          <button class="mx-4"><img src="../_icons/copy.svg" alt=""></button>
+                          <button><img src="../_icons/delete.svg" alt=""></button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="table-td flex items-center">
+                        <img class="rounded-md" src="../_images/AutoApprove-Landing-C.svg" alt="">
+                        <span class="text-gray5 font-bold pl-4 whitespace-no-wrap fit-content">Google Landing Page Version 5</span>
+                      </td>
+                      <td class="table-td">
+                        <p class="text-gray4 whitespace-no-wrap">
+                          Jan 1 2021
+                        </p>
+                      </td>
+                      <td class="table-td">
+                        <p class="text-lightgreen bg-lightblue font-bold text-center rounded-2xl py-1 px-4 whitespace-no-wrap fit-content mx-auto">
+                          Yes
+                        </p>
+                      </td>
+                      <td class="table-td">
+                        <div class="flex items-center w-40 mx-auto">
+                          <button class="btn-outline-purple">Edit</button>
+                          <button class="mx-4"><img src="../_icons/copy.svg" alt=""></button>
+                          <button><img src="../_icons/delete.svg" alt=""></button>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>         
+          </div>
+        </main>
+      </div>
+      
+    </div>    
+  </body>
+</html>
+<script>
+  // Side menu
+  function show_sidemenu() {
+    var side_bg = document.getElementById("side-bg");
+    side_bg.style.display = "block";
+    var side_menu = document.getElementById("side-menu");
+    side_menu.classList.add("translate-x-0", "ease-out")
+    side_menu.classList.remove("-translate-x-full", "ease-in")
+  }
+
+  function hide_sidemenu() {
+    var side_bg = document.getElementById("side-bg");
+    side_bg.style.display = "none";
+    var side_menu = document.getElementById("side-menu");
+    side_menu.classList.remove("translate-x-0", "ease-out")
+    side_menu.classList.add("-translate-x-full", "ease-in")
+  }
+  
+</script>
+<style>
+  ::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+  }
+  ::-webkit-scrollbar-thumb {
+      background: #CBD5E0;
+  }
+  ::-webkit-scrollbar-track {
+      background: #2D3748;
+  }
+</style>

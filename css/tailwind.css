@@ -268,6 +268,7 @@ header {
 /* ///////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 /* Admin CSS */
 
+/* Layout */
 .admin-side {
   @apply py-16 max-sm:py-12 min-h-100vh bg-gray2 w-84 min-w-84 max-sm:w-64 max-sm:min-w-64
 }
@@ -278,10 +279,22 @@ header {
   @apply flex flex-col flex-1 overflow-hidden bg-gray13
 }
 .admin-header {
-  @apply pt-14 pb-8 px-20 max-sm:p-6
+  @apply pt-8 pb-8 px-20 max-lg:p-6 max-lg:pb-0
 }
 .admin-wrap {
-  @apply container py-8 px-20 max-sm:p-6
+  @apply container py-8 px-20 max-sm:px-6 max-sm:py-4
+}
+
+/* Table */
+.table-th {
+  @apply px-8 py-4 bg-white font-normal text-left text-xs text-gray3 tracking-wider
+}
+.table-td {
+  @apply px-8 py-4 border-t border-gray14 bg-white text-sm
+}
+
+.btn-outline-purple {
+  @apply text-purple2 border border-purple2 py-1.5 px-8 rounded-full
 }
 
 /* live switch */
