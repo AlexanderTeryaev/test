@@ -33,6 +33,9 @@ module.exports = {
       minHeight: {
         '100vh': '100vh'
       },  
+      padding: {
+        0.25: '1px'
+      },
       margin: {
         'initial': 'initial'
       },
@@ -75,10 +78,13 @@ module.exports = {
         gray13: '#FBFAFC',
         gray14: '#B5A3DF',
         gray15: '#E9EAEA',
+        gray16: '#ebebeb',
         lightgray1: '#F4F4F4',
         green: '#34D399',
         lightgreen: '#44e0b7',
-        lightblue: '#f0fdf9'
+        lightblue: '#f0fdf9',
+        lightyellow: '#fcfdf0',
+        yellow: '#d2ca0c'
       },
       zIndex: {
         '-1': '-1',

@@ -32,7 +32,7 @@
                   <img class="mr-6" src="../_icons/home.svg" alt="" />
                   <span class="text-white">Dashboard</span>
                 </div>
-                <div class="admin-side-item border-l-4 border-lightgreen">
+                <div class="admin-side-item">
                   <img class="mr-6" src="../_icons/color_palette.svg" alt="" />
                   <span class="text-white">Themes</span>
                 </div>
@@ -48,7 +48,7 @@
                   <img class="mr-6" src="../_icons/like.svg" alt="" />
                   <span class="text-white">Reviews</span>
                 </div>
-                <div class="admin-side-item">
+                <div class="admin-side-item admin-side-active">
                   <img class="mr-6" src="../_icons/close_circled.svg" alt="" />
                   <span class="text-white">FAQ</span>
                 </div>
@@ -91,8 +91,11 @@
             </svg>
           </button>
           <div>
-            <div class="text-xs text-gray5 mb-2"><span class="text-purple2">FAQ</span> / New Faq</div>
-            <div class="text-4xl max-sm:text-2xl text-gray5">FAQ</div>
+            <div class="text-xs pb-2 max-lg:hidden">
+              <span class="text-purple2">FAQ</span>
+              <span class="text-gray5">/ New FAQ</span>
+            </div>
+            <div class="text-4xl max-sm:text-2xl text-gray5 max-lg:pt-6">New FAQ</div>
           </div>
         </div>
   
@@ -130,7 +133,7 @@
                 </label>
                 <button 
                   type="submit" 
-                  class="bg-gray3 hover:bg-purple1 text-white btn"
+                  class="bg-gray3 text-white btn hover:bg-gray-500"
                   onclick="form_submit(event)"
                 >
                   Save
