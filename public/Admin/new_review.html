@@ -7,9 +7,6 @@
     <title>New Review</title>
     <script type="text/javascript" src="https://www.bugherd.com/sidebarv2.js?apikey=qsoryock2pvnkksftvyera" async="true"></script>
     <link href="../css/tailwind.css" rel="stylesheet" />
-
-    <link href="https://cdn.jsdelivr.net/npm/froala-editor@3.1.0/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/froala-editor@3.1.0/js/froala_editor.pkgd.min.js"></script>
   </head>
   <body>
     <div class="flex h-screen">
@@ -102,7 +99,7 @@
         <main class="flex-1 overflow-x-hidden overflow-y-auto">
           <!-- Content -->
           <div class="py-8 px-20 max-sm:p-6">
-            <form class="w-1/2 max-xl:w-full text-gray3">
+            <form class="w-1/2 max-xl:w-full text-gray5">
               <div class="mb-8">
                 <input 
                   id="name"
@@ -422,4 +419,21 @@
 .source-bar input[type="radio"]:checked + label {
   border-color: #44e0b7;
 }
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #898A8D;
+}
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+  color: #898A8D;
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: #898A8D;
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #898A8D;
+}  
 </style>
