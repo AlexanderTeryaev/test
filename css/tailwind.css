@@ -275,6 +275,9 @@ header {
 .admin-side-item {
   @apply mb-8 py-1 max-sm:mb-5 flex items-center cursor-pointer pl-14 max-sm:pl-7 hover:font-bold
 }
+.admin-side-active {
+  @apply border-l-4 border-lightgreen font-bold
+}
 .admin-main {
   @apply flex flex-col flex-1 overflow-hidden bg-gray13
 }
@@ -290,12 +293,23 @@ header {
   @apply px-8 py-4 bg-white font-normal text-left text-xs text-gray3 tracking-wider
 }
 .table-td {
-  @apply px-8 py-4 border-t border-gray14 bg-white text-sm
+  @apply px-8 py-4 border-t border-gray15 bg-white text-sm
 }
 
 .btn-outline-purple {
   @apply text-purple2 border border-purple2 py-1.5 px-8 rounded-full
 }
+
+.status-live {
+  @apply text-lightgreen bg-lightblue font-bold text-center rounded-2xl py-1 px-4
+}
+.status-archived {
+  @apply text-black bg-gray16 font-bold text-center rounded-2xl py-1 px-4
+}
+.status-pedding {
+  @apply text-yellow bg-lightyellow font-bold text-center rounded-2xl py-1 px-4
+}
+
 
 /* live switch */
 .switch {

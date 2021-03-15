@@ -32,7 +32,7 @@
                   <img class="mr-6" src="../_icons/home.svg" alt="" />
                   <span class="text-white">Dashboard</span>
                 </div>
-                <div class="admin-side-item border-l-4 border-lightgreen">
+                <div class="admin-side-item admin-side-active">
                   <img class="mr-6" src="../_icons/color_palette.svg" alt="" />
                   <span class="text-white">Themes</span>
                 </div>
@@ -90,17 +90,20 @@
               />
             </svg>
           </button>
-          <div class="flex-between max-lg:hidden">
-            <div class="text-4xl max-sm:text-2xl text-gray5">Themes</div>
-            <button class="btn btn-purple flex items-center">Create New Template
-              <img class="ml-4" src="../_icons/plus-white.svg" alt="" />
-            </button>
+          <div>
+            <div class="h-6 max-lg:hidden">&nbsp;</div>
+            <div class="flex-between">
+              <div class="text-4xl max-sm:text-2xl text-gray5  max-lg:pt-6">Themes</div>
+              <button class="btn btn-purple flex items-center max-2xl:hidden">Create New Template
+                <img class="ml-4" src="../_icons/plus-white.svg" alt="" />
+              </button>
+            </div>
           </div>
         </div>
   
         <main class="flex-1 overflow-x-hidden overflow-y-auto">
           <!-- Content -->
-          <div class="py-8 px-20 max-sm:p-6">
+          <div class="py-8 px-20 max-lg:p-6">
             content            
           </div>
         </main>

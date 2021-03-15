@@ -35,7 +35,7 @@
                   <img class="mr-6" src="../_icons/home.svg" alt="" />
                   <span class="text-white">Dashboard</span>
                 </div>
-                <div class="admin-side-item border-l-4 border-lightgreen">
+                <div class="admin-side-item">
                   <img class="mr-6" src="../_icons/color_palette.svg" alt="" />
                   <span class="text-white">Themes</span>
                 </div>
@@ -47,7 +47,7 @@
                   <img class="mr-6" src="../_icons/note.svg" alt="" />
                   <span class="text-white">Resources</span>
                 </div>
-                <div class="admin-side-item">
+                <div class="admin-side-item admin-side-active">
                   <img class="mr-6" src="../_icons/like.svg" alt="" />
                   <span class="text-white">Reviews</span>
                 </div>
@@ -94,14 +94,17 @@
             </svg>
           </button>
           <div>
-            <div class="text-xs text-gray5 mb-2"><span class="text-purple2">Review Sites</span> / Add Review Site</div>
-            <div class="text-4xl max-sm:text-2xl text-gray5">Add Review Site</div>
+            <div class="text-xs pb-2 max-lg:hidden">
+              <span class="text-purple2">Review Sites</span>
+              <span class="text-gray5">/ Add Review Site</span>
+            </div>
+            <div class="text-4xl max-sm:text-2xl text-gray5 max-lg:pt-6">Add Review Site</div>
           </div>
         </div>
   
         <main class="flex-1 overflow-x-hidden overflow-y-auto">
           <!-- Content -->
-          <div class="py-8 px-20 max-sm:p-6">
+          <div class="py-8 px-20 max-lg:p-6">
             <form class="w-1/2 max-xl:w-full text-gray3">
               <div class="mb-8">
                 <input 
@@ -134,7 +137,7 @@
               <div>
                 <button 
                   type="submit" 
-                  class="bg-gray3 hover:bg-purple1 text-white btn max-sm:w-full"
+                  class="bg-gray3 text-white btn max-sm:w-full"
                   onclick="form_submit(event)"
                 >
                   Save
