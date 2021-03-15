@@ -91,15 +91,15 @@
             </svg>
           </button>
           <div>
-            <div class="text-xs text-gray5 mb-2"><span class="text-purple2">Reviews</span> / Add Review</div>
+            <div class="text-xs text-gray5 mb-2 max-lg:hidden"><span class="text-purple2">Reviews</span> / Add Review</div>
             <div class="text-4xl max-sm:text-2xl text-gray5">Add Review</div>
           </div>
         </div>
   
         <main class="flex-1 overflow-x-hidden overflow-y-auto">
           <!-- Content -->
-          <div class="py-8 px-20 max-sm:p-6">
-            <form class="w-1/2 max-xl:w-full text-gray5">
+          <div class="py-4 px-20 max-lg:p-6">
+            <form class="max-w-xl max-xl:w-full text-gray5">
               <div class="mb-8">
                 <input 
                   id="name"
@@ -111,7 +111,7 @@
                 <div id="name_required" class="hidden text-red-500 text-left text-xs">required</div>
               </div>
               <div class="text-gray9 text-xl mb-4">Star Rating</div>
-              <div class="rating mb-8">
+              <div class="rating mb-4">
                 <label>
                   <input type="radio" name="stars" value="1" onclick="handleStar(this)" />
                   <span class="icon">
