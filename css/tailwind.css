@@ -290,13 +290,16 @@ header {
 
 /* Table */
 .table-th {
-  @apply px-8 py-4 bg-white font-normal text-left text-xs text-gray3 tracking-wider
+  @apply px-8 py-4 font-normal text-left text-xs text-gray3 tracking-wider
 }
 .table-td {
-  @apply px-8 py-4 border-t border-gray15 bg-white text-sm
+  @apply px-8 py-4 border-t border-gray15 text-sm
 }
-tr {
+tbody tr {
   @apply hover:bg-gray-200
+}
+table {
+  @apply bg-white rounded-2xl
 }
 
 .btn-outline-purple {
