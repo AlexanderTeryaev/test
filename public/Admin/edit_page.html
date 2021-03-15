@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>New Review Site</title>
+    <title>Edit Page</title>
     <script type="text/javascript" src="https://www.bugherd.com/sidebarv2.js?apikey=qsoryock2pvnkksftvyera" async="true"></script>
     <link href="../css/tailwind.css" rel="stylesheet" />
   </head>
@@ -32,7 +32,7 @@
                   <img class="mr-6" src="../_icons/home.svg" alt="" />
                   <span class="text-white">Dashboard</span>
                 </div>
-                <div class="admin-side-item">
+                <div class="admin-side-item border-l-4 border-lightgreen">
                   <img class="mr-6" src="../_icons/color_palette.svg" alt="" />
                   <span class="text-white">Themes</span>
                 </div>
@@ -44,7 +44,7 @@
                   <img class="mr-6" src="../_icons/note.svg" alt="" />
                   <span class="text-white">Resources</span>
                 </div>
-                <div class="admin-side-item admin-side-active">
+                <div class="admin-side-item">
                   <img class="mr-6" src="../_icons/like.svg" alt="" />
                   <span class="text-white">Reviews</span>
                 </div>
@@ -92,55 +92,50 @@
           </button>
           <div>
             <div class="text-xs pb-2 max-lg:hidden">
-              <span class="text-purple2">Review Sites</span>
-              <span class="text-gray5">/ Add Review Site</span>
+              <span class="text-gray2">Landing Pages / Google Landing Page</span>
+              <span class="text-gray5"> / Google Landing Page Version 6</span>
             </div>
-            <div class="text-4xl max-sm:text-2xl text-gray5 max-lg:pt-6">Add Review Site</div>
+            <!-- <div class="h-6">&nbsp;</div> -->
+            <div class="flex-between">
+              <div class="text-4xl max-sm:text-2xl text-gray5 max-lg:pt-8">Edit Page</div>
+            </div>
           </div>
         </div>
   
         <main class="flex-1 overflow-x-hidden overflow-y-auto">
           <!-- Content -->
           <div class="py-8 px-20 max-sm:p-6">
-            <form class="w-1/2 max-xl:w-full text-gray5">
-              <div class="mb-8">
-                <input 
-                  id="name"
-                  type="text" 
-                  class="w-full border border-gray12 rounded-lg px-6 py-2" 
-                  placeholder="Review Site Name" 
-                  oninput="onTextValidation(event)"
-                />
-                <div id="name_required" class="hidden text-red-500 text-left text-xs">required</div>
-              </div>
-              <div class="text-gray9 text-xl mb-2">Upload Logo</div>
+            <div class="w-full text-gray5">
               <div class="mb-10">
-                <div class="border border-dashed rounded-2xl border-gray14 pt-8 pb-6 flex flex-col justify-center text-center">
-                  <img id="site_logo" width="47" height="35" class="mx-auto" src="../_icons/alt_icon.svg" alt="" />
-                  <div class="text-gray5 mt-4">Upload Image</div>
-                  <div class="text-gray5 font-bold mt-4">Review Site Logo</div>
-                  <div class="">
-                    <input 
-                      id="site_logo_file"
-                      type="file" 
-                      accept="image/*" 
-                      class="custom-file-input mt-4"
-                      onchange="onImage(this)"
-                    >
-                  </div>
-                </div>
-                <div id="site_logo_required" class="hidden text-red-500 text-left text-xs">required</div>
+                <input 
+                  id="title"
+                  type="title" 
+                  class="w-full border border-gray12 rounded-lg px-6 py-2" 
+                  value="Google Landing Page Version 6"
+                />
               </div>
-              <div>
+              <div class="flex items-center gap-6">
+                <label>
+                  <label class="switch">
+                    <input id="live" type="checkbox" onclick="onSwitch()">
+                    <span class="slider round"></span>
+                  </label>
+                  <span id="livetext" class="text-gray3 font-bold">Live</span>
+                </label>
                 <button 
-                  type="submit" 
-                  class="bg-gray3 text-white btn max-sm:w-full"
-                  onclick="form_submit(event)"
+                  type="button"
+                  class="border border-gray3 hover:border-purple2 text-purple2 btn"
+                >
+                  Preview
+                </button>
+                <button 
+                  type="button" 
+                  class="bg-gray3 hover:bg-purple1 text-white btn"
                 >
                   Save
                 </button>
               </div>
-            </form>   
+            </form>                
           </div>
         </main>
       </div>
@@ -165,127 +160,26 @@
     side_menu.classList.remove("translate-x-0", "ease-out")
     side_menu.classList.add("-translate-x-full", "ease-in")
   }
-
-  // Validation functions
-  function required_validation(val) {
-    if (val && val.length > 0)
-      return true;
-    else
-      return false;
-  }
-
-  function file_required_validation(files) {
-    if (files && files[0])
-      return true;
-    else
-      return false;
-  }
-
-  // Show/hide element
-  function setItemDisplay(id, style) {
-    if (form_submitted)
-      document.getElementById(id).style.display = style;
-  }
-
-  var form_submitted = false;
-  function get_required_validation(value, id) {
-    if (required_validation(value)) {
-      setItemDisplay(id, 'none');
-      return true;
+  
+  function onSwitch() {
+    if (document.getElementById('live').checked) {
+      document.getElementById('livetext').style.color = '#44e0b7';
     } else {
-      setItemDisplay(id, 'block');
-      return false;
+      document.getElementById('livetext').style.color = '#898A8D';
     }
   }
-
-  function get_file_required_validation(files, id) {
-    if (file_required_validation(files)) {
-      setItemDisplay(id, 'none');
-      return true;
-    } else {
-      setItemDisplay(id, 'block');
-      return false;
-    }
-  }
-
-  function onTextValidation(e) {
-    var id = e.target.id + "_required";
-    get_required_validation(e.target.value, id);
-  }  
-
-  function onImage(input) {
-    get_file_required_validation(input.files, "site_logo_required")
-    readURL(input);
-  }
-
-  function readURL(input) {
-    if (input.files && input.files[0]) {
-      var reader = new FileReader();
-      
-      reader.onload = function(e) {
-        document.getElementById('site_logo').src = e.target.result;
-      }
-      
-      reader.readAsDataURL(input.files[0]); // convert to base64 string
-    } else {
-      document.getElementById('site_logo').src = "../_icons/alt_icon.svg";
-    }
-  }
-
-  function form_submit(e) {
-    e.preventDefault();
-    form_submitted = true;
-
-    const name_valid = get_required_validation(document.getElementById('name').value, 'name_required');
-    const file_valid = get_file_required_validation(document.getElementById('site_logo_file').files, "site_logo_required");
-    if (name_valid && file_valid) {
-      // submit
-    }
-  }  
 </script>
 <style>
-.custom-file-input {
-  width: 180px;
-  color: transparent;
-}
-.custom-file-input::-webkit-file-upload-button {
-  visibility: hidden;
-}
-.custom-file-input::before {
-  content: 'Select an image';
-  width: 100%;
-  text-align: center;
-  color: #5230A2;
-  display: inline-block;
-  background: white;
-  border: 1px solid #5230A2;
-  border-radius: 35px;
-  padding: 14px 32px;
-  outline: none;
-  white-space: nowrap;
-  -webkit-user-select: none;
-  cursor: pointer;
-  font-weight: 700;
-  font-size: 14px;
-}
-.custom-file-input:hover::before {
-  border-color: #6948B7;
-  color: #6948B7;
-}
-.custom-file-input:active {
-  outline: 0;
-}
-
-input::-webkit-input-placeholder {
-  color: #898A8D;
-}
-input:-moz-placeholder {
-  color: #898A8D;
-}
-input::-moz-placeholder {
-  color: #898A8D;
-}
-input:-ms-input-placeholder {
-  color: #898A8D;
-}  
+  input::-webkit-input-placeholder {
+    color: #898A8D;
+  }
+  input:-moz-placeholder {
+    color: #898A8D;
+  }
+  input::-moz-placeholder {
+    color: #898A8D;
+  }
+  input:-ms-input-placeholder {
+    color: #898A8D;
+  }  
 </style>
