@@ -47,200 +47,385 @@
         </div>
 
         <div class="flex flex-col px-4">
-          <a class="cursor-pointer">
-            <div class="flex justify-between items-start py-2 px-4">
-              <div class="flex text-gray4 text-xl">
-                <div>Q:</div>
-                <div class="pl-2">How does refinancing my vehicle work?</div>
+          <div class="border-b border-gray12 py-4">
+            <a id="faq1" class="cursor-pointer" onclick="onViewContent(this.id)">
+              <div class="flex justify-between items-start py-2">
+                <div class="flex text-gray4 text-xl">
+                  <div>Q:</div>
+                  <div class="pl-2">How does refinancing my vehicle work?</div>
+                </div>
+                <img id="faq1_img" class="m-3" src="icons/green-below-arrow.svg" alt="" />
               </div>
-              <img class="m-3" src="icons/green-top-arrow.svg" alt="" />
+            </a>
+            <div id="faq1_grow" class="text-gray4 answer-content">
+              <div id="faq1_content" class="flex">
+                <div class="text-xl py-2">A:</div>
+                <div class="flex flex-col pt-1 pl-3">
+                  <div class="py-2">All we need is a little information from you to get started. Then our team takes care of the rest:</div>
+                  <div class="table">
+                    <div class="table-row py-2">
+                      <div class="table-cell font-bold whitespace-nowrap">Step 1</div>
+                      <div class="table-cell py-2 pl-2">
+                        Provide your personal, vehicle and employment information.
+                      </div>
+                    </div>
+                    <div class="table-row py-2">
+                      <div class="table-cell font-bold whitespace-nowrap">Step 2</div>
+                      <div class="table-cell py-2 pl-2">
+                        Our loan consultants will determine which loans you qualify for and walk you through your options.
+                      </div>
+                    </div>
+                    <div class="table-row py-2">
+                      <div class="table-cell font-bold whitespace-nowrap">Step 3</div>
+                      <div class="table-cell py-2 pl-2">
+                        We’ll submit your application to your chosen lender.
+                      </div>
+                    </div>
+                    <div class="table-row py-2">
+                      <div class="table-cell font-bold whitespace-nowrap">Step 4</div>
+                      <div class="table-cell py-2 pl-2">
+                        Auto Approve will generate all of your new loan and title documents. We’ll send them to you for an e-signature.
+                      </div>
+                    </div>
+                    <div class="table-row py-2">
+                      <div class="table-cell font-bold whitespace-nowrap">Step 5</div>
+                      <div class="table-cell py-2 pl-2">
+                        Auto Approve will handle the rest and get your loan funded. We’ll also work with the DMV to take care of the vehicle title.
+                      </div>
+                    </div>
+                    <div class="table-row py-2">
+                      <div class="table-cell font-bold whitespace-nowrap">Step 6</div>
+                      <div class="table-cell py-2 pl-2">
+                        You’ll begin to make your payments to the new lender.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="py-2">It’s that simple and fast!</div>
+                </div>
+              </div>
             </div>
-          </a>
-          <div class="flex text-gray4 px-4">
-            <div class="text-xl py-2">A:</div>
-            <div class="flex flex-col pt-1 pl-3">
-              <div class="py-2">All we need is a little information from you to get started. Then our team takes care of the rest:</div>
-              <div class="table">
-                <div class="table-row py-2">
-                  <div class="table-cell font-bold whitespace-nowrap">Step 1</div>
-                  <div class="table-cell py-2 pl-2">
-                    Provide your personal, vehicle and employment information.
-                  </div>
+          </div>
+          
+          <div class="border-b border-gray12 py-4">
+            <a id="faq2" class="cursor-pointer" onclick="onViewContent(this.id)">
+              <div class="flex justify-between items-start py-2">
+                <div class="flex text-gray4 text-xl">
+                  <div>Q:</div>
+                  <div class="pl-2">What do I need to get started?</div>
                 </div>
-                <div class="table-row py-2">
-                  <div class="table-cell font-bold whitespace-nowrap">Step 2</div>
-                  <div class="table-cell py-2 pl-2">
-                    Our loan consultants will determine which loans you qualify for and walk you through your options.
-                  </div>
-                </div>
-                <div class="table-row py-2">
-                  <div class="table-cell font-bold whitespace-nowrap">Step 3</div>
-                  <div class="table-cell py-2 pl-2">
-                    We’ll submit your application to your chosen lender.
-                  </div>
-                </div>
-                <div class="table-row py-2">
-                  <div class="table-cell font-bold whitespace-nowrap">Step 4</div>
-                  <div class="table-cell py-2 pl-2">
-                    Auto Approve will generate all of your new loan and title documents. We’ll send them to you for an e-signature.
-                  </div>
-                </div>
-                <div class="table-row py-2">
-                  <div class="table-cell font-bold whitespace-nowrap">Step 5</div>
-                  <div class="table-cell py-2 pl-2">
-                    Auto Approve will handle the rest and get your loan funded. We’ll also work with the DMV to take care of the vehicle title.
-                  </div>
-                </div>
-                <div class="table-row py-2">
-                  <div class="table-cell font-bold whitespace-nowrap">Step 6</div>
-                  <div class="table-cell py-2 pl-2">
-                    You’ll begin to make your payments to the new lender.
-                  </div>
+                <img id="faq2_img" class="m-3" src="icons/green-below-arrow.svg" alt="" />
+              </div>
+            </a>
+
+            <div id="faq2_grow" class="text-gray4 answer-content">
+              <div id="faq2_content" class="flex">
+                <div class="text-xl py-2">A:</div>
+                <div class="flex flex-col pt-1 pl-3">
+                  <div class="py-2">To get your new lower rate, we’ll need the following documents and information:</div>
+                  <ul class="list-disc list-inside">
+                    <li class="py-2">Driver’s License</li>
+                    <li class="py-2">Current Proof of Insurance</li>
+                    <li class="py-2">Current Registration</li>
+                    <li class="py-2">Pay Stubs or Proof of Income</li>
+                    <li class="py-2">Current Loan Finance Contract (optional)</li>
+                  </ul>
+                  <div class="py-2">That’s it — contact one of our expert loan consultants to get started.</div>
                 </div>
               </div>
-              <div class="py-2">It’s that simple and fast!</div>
             </div>
           </div>
 
-          <a class="cursor-pointer">
-            <div class="flex justify-between items-start py-2 px-4">
-              <div class="flex text-gray4 text-xl">
-                <div>Q:</div>
-                <div class="pl-2">What do I need to get started?</div>
+          <div class="border-b border-gray12 py-4">
+            <a id="faq3" class="cursor-pointer" onclick="onViewContent(this.id)">
+              <div class="flex justify-between items-start py-2">
+                <div class="flex text-gray4 text-xl">
+                  <div>Q:</div>
+                  <div class="pl-2">Does refinancing affect my credit score?</div>
+                </div>
+                <img id="faq3_img" class="m-3" src="icons/green-below-arrow.svg" alt="" />
               </div>
-              <img class="m-3" src="icons/green-below-arrow.svg" alt="" />
-            </div>
-          </a>
+            </a>
 
-          <a class="cursor-pointer">
-            <div class="flex justify-between items-start py-2 px-4">
-              <div class="flex text-gray4 text-xl">
-                <div>Q:</div>
-                <div class="pl-2">Does refinancing affect my credit score?</div>
+            <div id="faq3_grow" class="text-gray4 answer-content">
+              <div id="faq3_content" class="flex">
+                <div class="text-xl py-2">A:</div>
+                <div class="flex flex-col pt-1 pl-3">
+                  <div class="py-2">Getting a quote does not affect your credit score. The ‘soft’ inquiry that Auto Approve performs is viewable only by you (no one else reviewing your credit can see these types of inquiries) and it does not impact your credit score in any way. When you choose to move forward with refinancing your vehicle, a ‘hard’ credit inquiry will occur and appear on your credit history. This is standard practice and is generally not a significant impact on your overall credit score. The short-term impact that a ‘hard’ inquiry may have on your credit will likely be far outweighed by the long-term benefits of finding a loan with more favorable terms.</div>
+                </div>
               </div>
-              <img class="m-3" src="icons/green-below-arrow.svg" alt="" />
             </div>
-          </a>
+          </div>
 
-          <a class="cursor-pointer">
-            <div class="flex justify-between items-start py-2 px-4">
-              <div class="flex text-gray4 text-xl">
-                <div>Q:</div>
-                <div class="pl-2">What are the benefits of refinancing my car?</div>
+          <div class="border-b border-gray12 py-4">
+            <a id="faq4" class="cursor-pointer" onclick="onViewContent(this.id)">
+              <div class="flex justify-between items-start py-2">
+                <div class="flex text-gray4 text-xl">
+                  <div>Q:</div>
+                  <div class="pl-2">What are the benefits of refinancing my car?</div>
+                </div>
+                <img id="faq4_img" class="m-3" src="icons/green-below-arrow.svg" alt="" />
               </div>
-              <img class="m-3" src="icons/green-below-arrow.svg" alt="" />
-            </div>
-          </a>
+            </a>
 
-          <a class="cursor-pointer">
-            <div class="flex justify-between items-start py-2 px-4">
-              <div class="flex text-gray4 text-xl">
-                <div>Q:</div>
-                <div class="pl-2">Why should I choose Auto Approve?</div>
+            <div id="faq4_grow" class="text-gray4 answer-content">
+              <div id="faq4_content" class="flex">
+                <div class="text-xl py-2">A:</div>
+                <div class="flex flex-col pt-1 pl-3">
+                  <div class="py-2">Most of our customers consider refinancing to enjoy the benefit of lower monthly payments. With our help, Auto Approve customers save over $100 per month on average. That’s money you can put toward paying off bills or use for exciting purchases. If nothing else, it’s added peace of mind for when life’s unexpected moments catch you off guard.</div>
+                </div>
               </div>
-              <img class="m-3" src="icons/green-below-arrow.svg" alt="" />
             </div>
-          </a>
+          </div>
 
-          <a class="cursor-pointer">
-            <div class="flex justify-between items-start py-2 px-4">
-              <div class="flex text-gray4 text-xl">
-                <div>Q:</div>
-                <div class="pl-2">Do you only refinance cars?</div>
+          <div class="border-b border-gray12 py-4">
+            <a id="faq5" class="cursor-pointer" onclick="onViewContent(this.id)">
+              <div class="flex justify-between items-start py-2">
+                <div class="flex text-gray4 text-xl">
+                  <div>Q:</div>
+                  <div class="pl-2">Why should I choose Auto Approve?</div>
+                </div>
+                <img id="faq5_img" class="m-3" src="icons/green-below-arrow.svg" alt="" />
               </div>
-              <img class="m-3" src="icons/green-below-arrow.svg" alt="" />
-            </div>
-          </a>
+            </a>
 
-          <a class="cursor-pointer">
-            <div class="flex justify-between items-start py-2 px-4">
-              <div class="flex text-gray4 text-xl">
-                <div>Q:</div>
-                <div class="pl-2">When is my first payment due?</div>
+            <div id="faq5_grow" class="text-gray4 answer-content">
+              <div id="faq5_content" class="flex">
+                <div class="text-xl py-2">A:</div>
+                <div class="flex flex-col pt-1 pl-3">
+                  <div class="pt-2 pb-3">At Auto Approve, you’ll be our top priority.</div>
+                  <div class="py-1">We operate with a customer-first mentality.</div>
+                  <div class="py-1">We value your time and work hard to save you money.</div>
+                  <div class="py-1">Our customers love us — we have an A+ rating on BBB and a 96% customer satisfaction rate on Lending Tree.</div>
+                  <div class="pt-1 pb-2">We work with premier lending partners to get you the best loan rate possible.</div>
+                </div>
               </div>
-              <img class="m-3" src="icons/green-below-arrow.svg" alt="" />
             </div>
-          </a>
+          </div>
 
-          <a class="cursor-pointer">
-            <div class="flex justify-between items-start py-2 px-4">
-              <div class="flex text-gray4 text-xl">
-                <div>Q:</div>
-                <div class="pl-2">How soon will I know if my application is approved?</div>
+          <div class="border-b border-gray12 py-4">
+            <a id="faq6" class="cursor-pointer" onclick="onViewContent(this.id)">
+              <div class="flex justify-between items-start py-2">
+                <div class="flex text-gray4 text-xl">
+                  <div>Q:</div>
+                  <div class="pl-2">Do you only refinance cars?</div>
+                </div>
+                <img id="faq6_img" class="m-3" src="icons/green-below-arrow.svg" alt="" />
               </div>
-              <img class="m-3" src="icons/green-below-arrow.svg" alt="" />
-            </div>
-          </a>
+            </a>
 
-          <a class="cursor-pointer">
-            <div class="flex justify-between items-start py-2 px-4">
-              <div class="flex text-gray4 text-xl">
-                <div>Q:</div>
-                <div class="pl-2">Why does my offer expire?</div>
+            <div id="faq6_grow" class="text-gray4 answer-content">
+              <div id="faq6_content" class="flex">
+                <div class="text-xl py-2">A:</div>
+                <div class="flex flex-col pt-1 pl-3">
+                  <div class="pt-2 pb-3">Auto Approve refinances cars, trucks and SUVs. We also refinance:</div>
+                  <div class="py-1">Motorcycles</div>
+                  <div class="py-1">RVs</div>
+                  <div class="py-1">Boats</div>
+                  <div class="py-1">ATVs</div>
+                  <div class="pb-2 pt-8">At this time, commercial vehicles and heavy equipment machinery are not eligible for refinancing. We are also unable to refinance a vehicle under a company’s name.</div>
+                </div>
               </div>
-              <img class="m-3" src="icons/green-below-arrow.svg" alt="" />
             </div>
-          </a>
+          </div>
 
-          <a class="cursor-pointer">
-            <div class="flex justify-between items-start py-2 px-4">
-              <div class="flex text-gray4 text-xl">
-                <div>Q:</div>
-                <div class="pl-2">Does Auto Approve charge an application fee?</div>
+          <div class="border-b border-gray12 py-4">
+            <a id="faq7" class="cursor-pointer" onclick="onViewContent(this.id)">
+              <div class="flex justify-between items-start py-2">
+                <div class="flex text-gray4 text-xl">
+                  <div>Q:</div>
+                  <div class="pl-2">When is my first payment due?</div>
+                </div>
+                <img id="faq7_img" class="m-3" src="icons/green-below-arrow.svg" alt="" />
               </div>
-              <img class="m-3" src="icons/green-below-arrow.svg" alt="" />
-            </div>
-          </a>
+            </a>
 
-          <a class="cursor-pointer">
-            <div class="flex justify-between items-start py-2 px-4">
-              <div class="flex text-gray4 text-xl">
-                <div>Q:</div>
-                <div class="pl-2">Can I add or remove a co-borrower to my loan?</div>
+            <div id="faq7_grow" class="text-gray4 answer-content">
+              <div id="faq7_content" class="flex">
+                <div class="text-xl py-2">A:</div>
+                <div class="flex flex-col pt-1 pl-3">
+                  <div class="py-2">The due date of your monthly payment will be listed in your loan package. Your first payment is typically due 45 days from the contract date, which means you get to skip a payment. We even offer a 90 day deferred payment option for qualified buyers.</div>
+                </div>
               </div>
-              <img class="m-3" src="icons/green-below-arrow.svg" alt="" />
             </div>
-          </a>
+          </div>
 
-          <a class="cursor-pointer">
-            <div class="flex justify-between items-start py-2 px-4">
-              <div class="flex text-gray4 text-xl">
-                <div>Q:</div>
-                <div class="pl-2">Will my information be secure?</div>
+          <div class="border-b border-gray12 py-4">
+            <a id="faq8" class="cursor-pointer" onclick="onViewContent(this.id)">
+              <div class="flex justify-between items-start py-2">
+                <div class="flex text-gray4 text-xl">
+                  <div>Q:</div>
+                  <div class="pl-2">How soon will I know if my application is approved?</div>
+                </div>
+                <img id="faq8_img" class="m-3" src="icons/green-below-arrow.svg" alt="" />
               </div>
-              <img class="m-3" src="icons/green-below-arrow.svg" alt="" />
-            </div>
-          </a>
+            </a>
 
-          <a class="cursor-pointer">
-            <div class="flex justify-between items-start py-2 px-4">
-              <div class="flex text-gray4 text-xl">
-                <div>Q:</div>
-                <div class="pl-2">What are the terms of Auto Approve loans?</div>
+            <div id="faq8_grow" class="text-gray4 answer-content">
+              <div id="faq8_content" class="flex">
+                <div class="text-xl py-2">A:</div>
+                <div class="flex flex-col pt-1 pl-3">
+                  <div class="py-2">Receiving a quote online only takes a few seconds.</div>
+                  <div class="pt-12 pb-2">Once your information is received, your dedicated loan consultant will work with you to submit your application to one of our preferred lending partners. In most cases you will receive a decision within minutes of submitting your application.</div>
+                </div>
               </div>
-              <img class="m-3" src="icons/green-below-arrow.svg" alt="" />
             </div>
-          </a>
+          </div>
 
-          <a class="cursor-pointer">
-            <div class="flex justify-between items-start py-2 px-4">
-              <div class="flex text-gray4 text-xl">
-                <div>Q:</div>
-                <div class="pl-2">Can I buyout/refinance my lease with Auto Approve?</div>
+          <div class="border-b border-gray12 py-4">
+            <a id="faq9" class="cursor-pointer" onclick="onViewContent(this.id)">
+              <div class="flex justify-between items-start py-2">
+                <div class="flex text-gray4 text-xl">
+                  <div>Q:</div>
+                  <div class="pl-2">Why does my offer expire?</div>
+                </div>
+                <img id="faq9_img" class="m-3" src="icons/green-below-arrow.svg" alt="" />
               </div>
-              <img class="m-3" src="icons/green-below-arrow.svg" alt="" />
-            </div>
-          </a>
+            </a>
 
-          <a class="cursor-pointer">
-            <div class="flex justify-between items-start py-2 px-4">
-              <div class="flex text-gray4 text-xl">
-                <div>Q:</div>
-                <div class="pl-2">Who are the lenders Auto Approve works with?</div>
+            <div id="faq9_grow" class="text-gray4 answer-content">
+              <div id="faq9_content" class="flex">
+                <div class="text-xl py-2">A:</div>
+                <div class="flex flex-col pt-1 pl-3">
+                  <div class="py-2">Interest rates fluctuate for a variety of reasons, and they can even change daily. When you receive a lender-approved offer from Auto Approve, we lock in your rate so it doesn't change for up to 30 days.</div>
+                </div>
               </div>
-              <img class="m-3" src="icons/green-below-arrow.svg" alt="" />
             </div>
-          </a>
+          </div>
+
+          <div class="border-b border-gray12 py-4">
+            <a id="faq10" class="cursor-pointer" onclick="onViewContent(this.id)">
+              <div class="flex justify-between items-start py-2">
+                <div class="flex text-gray4 text-xl">
+                  <div>Q:</div>
+                  <div class="pl-2">Does Auto Approve charge an application fee?</div>
+                </div>
+                <img id="faq10_img" class="m-3" src="icons/green-below-arrow.svg" alt="" />
+              </div>
+            </a>
+
+            <div id="faq10_grow" class="text-gray4 answer-content">
+              <div id="faq10_content" class="flex">
+                <div class="text-xl py-2">A:</div>
+                <div class="flex flex-col pt-1 pl-3">
+                  <div class="pt-2 pb-8"><b>No, Auto Approve does not charge an application fee.</b> Receiving a quote is free and completing your refinance requires no out of pocket fees.</div>
+                  <div class="py-8">Once you move forward with refinancing your vehicle, the cost of refinancing your auto loan includes admin/doc fees, title transfer fees, state fees (if applicable) and the cost of any extra services you choose to add, such as a GAP and extended warranty or other optional service plans.</div>
+                  <div class="pt-8 pb-2">Your dedicated Aut oApprove loan consultant will provide you with an itemized breakdown as part of your auto loan refinance package.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="border-b border-gray12 py-4">
+            <a id="faq11" class="cursor-pointer" onclick="onViewContent(this.id)">
+              <div class="flex justify-between items-start py-2">
+                <div class="flex text-gray4 text-xl">
+                  <div>Q:</div>
+                  <div class="pl-2">Can I add or remove a co-borrower to my loan?</div>
+                </div>
+                <img id="faq11_img" class="m-3" src="icons/green-below-arrow.svg" alt="" />
+              </div>
+            </a>
+
+            <div id="faq11_grow" class="text-gray4 answer-content">
+              <div id="faq11_content" class="flex">
+                <div class="text-xl py-2">A:</div>
+                <div class="flex flex-col pt-1 pl-3">
+                  <div class="py-2">Yes. You can add or remove a co-borrower (also called a co-signer) to your new loan. Your new loan will be determined based on the person(s) applying or being removed.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="border-b border-gray12 py-4">
+            <a id="faq12" class="cursor-pointer" onclick="onViewContent(this.id)">
+              <div class="flex justify-between items-start py-2">
+                <div class="flex text-gray4 text-xl">
+                  <div>Q:</div>
+                  <div class="pl-2">Will my information be secure?</div>
+                </div>
+                <img id="faq12_img" class="m-3" src="icons/green-below-arrow.svg" alt="" />
+              </div>
+            </a>
+
+            <div id="faq12_grow" class="text-gray4 answer-content">
+              <div id="faq12_content" class="flex">
+                <div class="text-xl py-2">A:</div>
+                <div class="flex flex-col pt-1 pl-3">
+                  <div class="pt-2 pb-8"><b>Yes.</b> We value your trust in us and work with credible lending partners who also use up-to-date data security software to ensure your information remains private.</div>
+                  <div class="py-8">Auto Approve does not sell, rent or lease its customer lists to third parties.</div>
+                  <div class="pt-8 pb-2">For more information, please refer to our privacy policy.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="border-b border-gray12 py-4">
+            <a id="faq13" class="cursor-pointer" onclick="onViewContent(this.id)">
+              <div class="flex justify-between items-start py-2">
+                <div class="flex text-gray4 text-xl">
+                  <div>Q:</div>
+                  <div class="pl-2">What are the terms of Auto Approve loans?</div>
+                </div>
+                <img id="faq13_img" class="m-3" src="icons/green-below-arrow.svg" alt="" />
+              </div>
+            </a>
+
+            <div id="faq13_grow" class="text-gray4 answer-content">
+              <div id="faq13_content" class="flex">
+                <div class="text-xl py-2">A:</div>
+                <div class="flex flex-col pt-1 pl-3">
+                  <div class="py-2">Loan terms vary for each customer as there are several factors that impact the terms of your new loan. <span class="text-red-500">Loan terms typically range from 12 to 84 months.</span> We work with multiple lenders to find you the best option to fit your current budget, financial goals, and ideal repayment timeline.</div>
+                  <div class="pt-12 pb-2">Your dedicated loan consultant will help you find the right loan for you.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="border-b border-gray12 py-4">
+            <a id="faq14" class="cursor-pointer" onclick="onViewContent(this.id)">
+              <div class="flex justify-between items-start py-2">
+                <div class="flex text-gray4 text-xl">
+                  <div>Q:</div>
+                  <div class="pl-2">Can I buyout/refinance my lease with Auto Approve?</div>
+                </div>
+                <img id="faq14_img" class="m-3" src="icons/green-below-arrow.svg" alt="" />
+              </div>
+            </a>
+
+            <div id="faq14_grow" class="text-gray4 answer-content">
+              <div id="faq14_content" class="flex">
+                <div class="text-xl py-2">A:</div>
+                <div class="flex flex-col pt-1 pl-3">
+                  <div class="pt-2 pb-3">Auto Approve is proud to assist our customers with multiple lease buyout options:</div>
+                  <div class="py-1">Lease-End Buyout allows you to purchase/refinance your vehicle at the end of your lease.</div>
+                  <div class="pb-2 pt-1">Early Buyout option gives you the chance to purchase your vehicle before your lease is up.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="border-b border-gray12 py-4">
+            <a id="faq15" class="cursor-pointer" onclick="onViewContent(this.id)">
+              <div class="flex justify-between items-start py-2">
+                <div class="flex text-gray4 text-xl">
+                  <div>Q:</div>
+                  <div class="pl-2">Who are the lenders Auto Approve works with?</div>
+                </div>
+                <img id="faq15_img" class="m-3" src="icons/green-below-arrow.svg" alt="" />
+              </div>
+            </a>
+
+            <div id="faq15_grow" class="text-gray4 answer-content">
+              <div id="faq15_content" class="flex">
+                <div class="text-xl py-2">A:</div>
+                <div class="flex flex-col pt-1 pl-3">
+                  <div class="py-2">Our lender network consists of banks, finance companies, and credit unions across the country.</div>
+                  <div class="pt-8 pb-2">Each lending partner has a different set of criteria for applicants. Since our trained loan consultants know their criteria and will search for the best financing solutions for you.</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="mx-auto my-20">
@@ -294,3 +479,30 @@
     </div>
   </body>
 </html>
+
+<script>
+  function onViewContent(id) {
+    let element = document.getElementById(id + "_content");
+    let growDiv = document.getElementById(id + "_grow");
+    let arrowImg = document.getElementById(id + "_img");
+    if (growDiv.clientHeight) {
+      growDiv.style.height = 0;
+      arrowImg.src = "./icons/green-below-arrow.svg";
+    } else {
+      growDiv.style.height = element.clientHeight + "px";
+      arrowImg.src = "./icons/green-top-arrow.svg";
+    }
+  }
+</script>
+
+<style>
+  .answer-content {
+    -moz-transition: height .5s;
+    -ms-transition: height .5s;
+    -o-transition: height .5s;
+    -webkit-transition: height .5s;
+    transition: height .5s;
+    height: 0;
+    overflow: hidden;
+  }
+</style>
